@@ -1,0 +1,2046 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>벚꽃 축제 · 대한민국 벚꽃 지도</title>
+<meta name="description" content="전국 17개 시·도의 벚꽃 명소를 지도에서 둘러보고, 벚꽃 포토부스에서 나만의 사진을 남겨보세요.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://thumb.wikimedia.org" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100;400;700&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'SF Pro';src:local('SF Pro Text'),local('SFProText-Regular'),local('SF Pro');font-weight:400}
+@font-face{font-family:'SF Pro';src:local('SF Pro Text Bold'),local('SFProText-Bold');font-weight:700}
+@font-face{font-family:'SF Pro Thin';src:local('SF Pro Display Thin'),local('SFProDisplay-Thin');font-weight:100}
+@font-face{font-family:'Aalto';src:local('Aalto');font-weight:400}
+
+:root{
+  --bg:#0b0709;--ink:#fff;--pink:#ffd6e4;--pink-2:#ff8fb1;--pink-3:#ffb3c9;
+  --line:rgba(255,255,255,.48);--glass:rgba(255,255,255,.1);
+  --gutter:clamp(18px,1.95vw,28px);
+  --display:'Black Han Sans',Aalto,'Arial Narrow',sans-serif;
+  font-family:'SF Pro','Noto Sans KR',Arial,sans-serif;color:#fff;background:#090807;font-synthesis:none;
+}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg)}
+button{font:inherit;color:inherit}
+:root{--cur-arrow:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M3.5 2.5v21.2l5.7-5.3 3.9 8.7 3.7-1.6-3.9-8.5h7.9z' fill='rgba%2840,0,15,.35%29' transform='translate%281.2 1.4%29'/%3E%3Cpath d='M3.5 2.5v21.2l5.7-5.3 3.9 8.7 3.7-1.6-3.9-8.5h7.9z' fill='%23fff' stroke='%23ff7aa5' stroke-width='1.6' stroke-linejoin='round'/%3E%3Cg transform='translate%2824 24%29'%3E%3Cg fill='%23ffc2d6' stroke='%23fff' stroke-width='.8'%3E%3Cellipse cx='0' cy='-3.23' rx='2.11' ry='3.23' transform='rotate%280%29'/%3E%3Cellipse cx='0' cy='-3.23' rx='2.11' ry='3.23' transform='rotate%2872%29'/%3E%3Cellipse cx='0' cy='-3.23' rx='2.11' ry='3.23' transform='rotate%28144%29'/%3E%3Cellipse cx='0' cy='-3.23' rx='2.11' ry='3.23' transform='rotate%28216%29'/%3E%3Cellipse cx='0' cy='-3.23' rx='2.11' ry='3.23' transform='rotate%28288%29'/%3E%3C/g%3E%3Ccircle r='1.29' fill='%23ff5c8f'/%3E%3C/g%3E%3C/svg%3E") 3 2,auto;--cur-hand:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M3.5 2.5v21.2l5.7-5.3 3.9 8.7 3.7-1.6-3.9-8.5h7.9z' fill='rgba%2840,0,15,.35%29' transform='translate%281.2 1.4%29'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23ffb3c9'/%3E%3Cstop offset='1' stop-color='%23ff6f9c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M3.5 2.5v21.2l5.7-5.3 3.9 8.7 3.7-1.6-3.9-8.5h7.9z' fill='url%28%23g%29' stroke='%23fff' stroke-width='1.6' stroke-linejoin='round'/%3E%3Cg transform='translate%2823.2 23.2%29'%3E%3Cg fill='%23fff' stroke='%23ff8fb1' stroke-width='.8'%3E%3Cellipse cx='0' cy='-3.70' rx='2.42' ry='3.70' transform='rotate%280%29'/%3E%3Cellipse cx='0' cy='-3.70' rx='2.42' ry='3.70' transform='rotate%2872%29'/%3E%3Cellipse cx='0' cy='-3.70' rx='2.42' ry='3.70' transform='rotate%28144%29'/%3E%3Cellipse cx='0' cy='-3.70' rx='2.42' ry='3.70' transform='rotate%28216%29'/%3E%3Cellipse cx='0' cy='-3.70' rx='2.42' ry='3.70' transform='rotate%28288%29'/%3E%3C/g%3E%3Ccircle r='1.48' fill='%23ff5c8f'/%3E%3C/g%3E%3C/svg%3E") 3 2,pointer}
+html,body{cursor:var(--cur-arrow)}
+button,a,select,label,.portal,.province,.g-item,.guide-text,input[type=checkbox],input[type=range]{cursor:var(--cur-hand)!important}
+@media (hover:none){.custom-cursor{display:none!important}}
+:focus-visible{outline:2px solid var(--pink-2);outline-offset:3px}
+
+.experience{position:relative;width:100%;height:100%;min-height:540px;overflow:hidden;background:#0a0908}
+.backgrounds,.background,.shade,.map-dim{position:absolute;inset:0;width:100%;height:100%}
+.background{object-fit:cover;opacity:0;transition:opacity .8s ease}
+.background.is-visible{opacity:1}
+.map-dim{z-index:1;pointer-events:none;background:
+  radial-gradient(120% 90% at 30% 45%,rgba(20,8,14,.55),rgba(8,4,7,.92) 70%),
+  linear-gradient(to right,rgba(8,4,7,.35),rgba(8,4,7,.75));
+  opacity:0;transition:opacity .8s ease}
+.experience[data-view="map"] .map-dim{opacity:1}
+.shade{z-index:1;background:linear-gradient(to bottom,transparent 52%,rgba(0,0,0,.88) 100%);pointer-events:none}
+.shade:before{content:'';position:absolute;inset:0;background:
+  linear-gradient(to bottom,rgba(0,0,0,.5),transparent 20%),
+  linear-gradient(to right,rgba(0,0,0,.42),transparent 22%)}
+.chrome{position:absolute;z-index:4;transition:opacity .45s ease,filter .45s ease;text-shadow:0 1px 14px rgba(0,0,0,.45)}
+.experience.is-transitioning .chrome{opacity:0;filter:blur(8px);pointer-events:none}
+.experience.is-transitioning .header,.experience.is-transitioning .planet-list{opacity:1;filter:none;pointer-events:auto}
+.experience.is-transitioning .shade{opacity:1}
+.experience.is-committing .background,.experience.is-committing .map-dim{transition:none!important}
+
+/* ---------- preloader ---------- */
+.preloader{position:absolute;inset:0;z-index:20;background:#000;overflow:hidden;transition:opacity 1.4s ease}
+.preloader img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.28);filter:brightness(.8) saturate(1.05)}
+.preloader.is-playing img{animation:approach 3.2s cubic-bezier(.3,.1,.2,1) forwards}
+@keyframes approach{0%{opacity:0;transform:scale(1.28);filter:blur(10px) brightness(.5)}25%{opacity:1}100%{opacity:1;transform:scale(1);filter:blur(0) brightness(.8)}}
+.preloader-shade{position:absolute;inset:auto 0 0;height:35%;background:linear-gradient(to bottom,transparent,#000)}
+.preloader.is-background{z-index:0}
+.preloader.is-background .preloader-shade{opacity:0}
+.preloader.is-done{opacity:0}
+.floating-logo{pointer-events:none;position:fixed;z-index:22;left:50%;top:50%;width:59px;height:58px;transform:translate(-50%,-50%);
+  will-change:left,top,width,height,transform;color:#fff;
+  transition:left 2s cubic-bezier(.16,1,.3,1),top 2s cubic-bezier(.16,1,.3,1),width 2s cubic-bezier(.16,1,.3,1),height 2s cubic-bezier(.16,1,.3,1),transform 2s cubic-bezier(.16,1,.3,1)}
+.floating-logo .petals{transform-origin:50% 50%;animation:logo-spin 14s linear infinite}
+@keyframes logo-spin{to{transform:rotate(360deg)}}
+.floating-logo.is-docked{left:var(--gutter);top:clamp(18px,3.1vh,28px);width:37px;height:36px;transform:none}
+.floating-logo.is-settled{z-index:5}
+.preloader-count{pointer-events:none;position:fixed;z-index:22;left:50%;bottom:clamp(22px,3.1vh,28px);display:flex;align-items:flex-end;gap:4px;
+  transform:translateX(-50%);font-family:'SF Pro','Noto Sans KR',Arial,sans-serif;line-height:1}
+.preloader-count>span:first-child{font-family:'SF Pro Thin','Noto Sans KR','SF Pro',Arial,sans-serif;font-size:64px;font-weight:100;font-variant-numeric:tabular-nums}
+.preloader-count .percent{font-size:24px;padding-bottom:4px}
+.preloader-count.is-leaving{animation:preload-count-out .75s cubic-bezier(.22,1,.36,1) both}
+@keyframes preload-count-out{to{opacity:0;filter:blur(7px);transform:translate(-50%,-34px)}}
+.preloader-caption{pointer-events:none;position:fixed;z-index:22;left:50%;top:calc(50% + 52px);transform:translateX(-50%);font-size:13px;letter-spacing:.32em;
+  white-space:nowrap;opacity:.85;transition:opacity .6s ease,filter .6s ease}
+body.preload-complete .preloader-caption{opacity:0;filter:blur(6px)}
+body:not(.preload-complete) .custom-cursor{opacity:0!important}
+.enter-gate{position:fixed;z-index:23;left:50%;bottom:calc(clamp(40px,9vh,90px) + env(safe-area-inset-bottom));transform:translate(-50%,16px);display:flex;align-items:center;gap:14px;
+  padding:10px 26px 10px 10px;border:0;border-radius:999px;background:#fff;color:#000;text-align:left;opacity:0;filter:blur(6px);
+  transition:opacity .6s ease,transform .6s cubic-bezier(.22,1,.36,1),filter .6s ease;box-shadow:0 0 0 0 rgba(255,143,177,.5);touch-action:manipulation}
+.enter-gate.is-visible{opacity:1;filter:none;transform:translate(-50%,0);animation:ring 2s ease-out 1s infinite}
+.enter-gate[hidden]{display:none}
+.enter-gate .eg-icon{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--pink-2);color:#fff;font-size:22px}
+.enter-gate b{display:block;font-size:18px}
+.enter-gate small{display:block;font-size:12px;opacity:.6;margin-top:2px;white-space:nowrap}
+
+.scene-canvas{display:none}
+.portal-canvas{position:fixed;inset:0;z-index:3;width:100%;height:100%;pointer-events:none}
+.petal-canvas{position:fixed;inset:0;z-index:21;width:100%;height:100%;pointer-events:none}
+body.preload-complete .petal-canvas{z-index:3}
+
+/* ---------- header ---------- */
+.header{left:var(--gutter);right:var(--gutter);top:clamp(18px,3.1vh,28px);display:flex;justify-content:space-between;align-items:center}
+.brand{display:flex;align-items:center;min-height:36px;padding-left:50px;color:#fff;text-decoration:none;font-weight:700;font-size:15px;letter-spacing:.02em;white-space:nowrap}
+.brand small{font-weight:400;opacity:.65;margin-left:10px;font-size:13px}
+.header-actions{margin-left:auto;display:flex;align-items:center;gap:8px}
+.nav{display:flex;align-items:center;height:42px;padding:4px 5px;border:1px solid rgba(255,255,255,.45);
+  background:rgba(255,255,255,.1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:999px}
+.nav a{color:#fff;text-decoration:none;padding:8px 19px;border-radius:999px;line-height:1;transition:background .3s,color .3s}
+.nav a.active{background:#fff;color:#000}
+.menu{height:42px;padding:0 20px;border:0;border-radius:999px;background:#fff;color:#000;font-weight:700}
+
+/* ---------- sound ---------- */
+.sound-wrap{position:relative}
+.sound-btn{display:flex;align-items:center;gap:9px;height:42px;padding:0 16px;border:1px solid rgba(255,255,255,.45);border-radius:999px;
+  background:rgba(255,255,255,.1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-size:14px}
+.sound-btn:hover{background:rgba(255,255,255,.2)}
+.eq{display:flex;align-items:flex-end;gap:2px;height:14px}
+.eq i{width:3px;height:4px;border-radius:2px;background:#fff;transition:height .3s}
+.music-on .eq i{animation:eq 1.1s ease-in-out infinite}
+.music-on .eq i:nth-child(2){animation-delay:-.4s}
+.music-on .eq i:nth-child(3){animation-delay:-.8s}
+.music-on .eq i:nth-child(4){animation-delay:-.2s}
+@keyframes eq{0%,100%{height:4px}50%{height:14px}}
+body:not(.sound-ready) .sound-btn:after{content:'';width:7px;height:7px;border-radius:50%;background:var(--pink-2);animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25;transform:scale(.7)}}
+.sound-panel{position:absolute;right:0;top:52px;width:250px;padding:16px 18px;border:1px solid rgba(255,255,255,.3);border-radius:22px;
+  background:rgba(24,12,18,.9);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);text-shadow:none;display:grid;gap:12px;font-size:14px}
+.sound-panel[hidden]{display:none}
+.sound-panel .sw{display:flex;align-items:center;justify-content:space-between}
+.sound-panel input[type=checkbox]{appearance:none;-webkit-appearance:none;width:38px;height:22px;border-radius:999px;background:rgba(255,255,255,.25);position:relative;margin:0;transition:background .25s}
+.sound-panel input[type=checkbox]:before{content:'';position:absolute;left:3px;top:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .25s cubic-bezier(.22,1,.36,1)}
+.sound-panel input[type=checkbox]:checked{background:var(--pink-2)}
+.sound-panel input[type=checkbox]:checked:before{transform:translateX(16px)}
+.sound-panel input:disabled{opacity:.35}
+.sound-panel .vol{display:grid;gap:8px}
+.sound-panel input[type=range]{width:100%;accent-color:var(--pink-2)}
+.sound-note{margin:0;font-size:11px;line-height:1.5;opacity:.6}
+@media(max-width:640px){.sound-btn{height:38px;padding:0 13px}.sound-text{display:none}}
+
+/* ---------- audio guide ---------- */
+.guide{right:var(--gutter);top:150px;width:min(360px,27vw);display:flex;align-items:flex-start;gap:14px;padding:16px 18px 18px;
+  border:1px solid rgba(255,255,255,.28);border-radius:26px;background:rgba(12,6,10,.45);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  text-shadow:none;opacity:0}
+.experience[data-view="map"] .guide{display:none}
+.content-revealing .guide{animation:fact-rise .8s cubic-bezier(.22,1,.36,1) .35s both}
+.guide-play{flex:none;position:relative;width:46px;height:46px;border:0;border-radius:50%;background:#fff;color:#000;display:grid;place-items:center;
+  box-shadow:0 0 0 0 rgba(255,143,177,.6);transition:transform .25s,background .25s}
+.guide-play:hover{transform:scale(1.06)}
+.guide-play .tri{width:0;height:0;margin-left:4px;border-style:solid;border-width:9px 0 9px 15px;border-color:transparent transparent transparent #000}
+.guide-play .bars{display:none;align-items:flex-end;gap:3px;height:16px}
+.guide-play .bars i{width:3px;height:5px;border-radius:2px;background:#000;animation:eq .9s ease-in-out infinite}
+.guide-play .bars i:nth-child(2){animation-delay:-.3s}.guide-play .bars i:nth-child(3){animation-delay:-.6s}
+.guide.is-playing .guide-play{background:var(--pink-2);animation:ring 1.6s ease-out infinite}
+.guide.is-playing .guide-play .tri{display:none}
+.guide.is-playing .guide-play .bars{display:flex}
+.guide.is-playing .guide-play .bars i{background:#fff}
+@keyframes ring{from{box-shadow:0 0 0 0 rgba(255,143,177,.6)}to{box-shadow:0 0 0 14px rgba(255,143,177,0)}}
+.guide.no-voice .guide-play{display:none}
+.guide-body{min-width:0}
+.guide-eyebrow{margin:2px 0 6px;font-size:12px;letter-spacing:.16em;opacity:.7}
+.guide-eyebrow b{letter-spacing:0;margin-left:4px;opacity:1;color:var(--pink)}
+.guide-text{margin:0;font-size:14.5px;line-height:1.65}
+.guide-text span{transition:opacity .3s,background-size .5s}
+.guide.is-playing .guide-text span{opacity:.55}
+.guide.is-playing .guide-text span.is-speaking{opacity:1;background:linear-gradient(transparent 62%,rgba(255,143,177,.5) 62%) no-repeat;background-size:100% 100%}
+@media(max-width:1100px){
+  .guide{left:var(--gutter);right:var(--gutter);top:76px;width:auto;padding:12px 14px;border-radius:22px;gap:12px}
+  .guide-play{width:40px;height:40px}
+  .guide-text{font-size:13.5px;line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .guide.is-open .guide-text,.guide.is-playing .guide-text{-webkit-line-clamp:unset;display:block}
+}
+@media(max-width:640px){
+  .guide{top:64px;left:12px;right:12px}
+  .guide-eyebrow{margin-bottom:3px}
+  .guide-text{font-size:13px}
+}
+
+/* ---------- side list ---------- */
+.planet-list{--b:19px;--ba:25px;--k:var(--fs,1);left:var(--gutter);top:clamp(92px,12vh,132px);display:flex;flex-direction:column;align-items:flex-start;
+  gap:calc(4px * var(--k));font-size:calc(var(--b) * var(--k));font-weight:700;letter-spacing:.02em}
+.planet-item{display:flex;align-items:center;min-height:calc(var(--b) * 1.32 * var(--k));padding:0 6px 0 0;border:0;background:none;text-align:left;
+  color:#ffd9e6;text-shadow:0 1px 3px rgba(60,0,20,.55),0 0 18px rgba(0,0,0,.35);transform-origin:0 50%;
+  transition:transform .45s cubic-bezier(.34,1.56,.64,1),color .25s ease,text-shadow .25s ease}
+.planet-item:hover,.planet-item:focus-visible{color:#fff;transform:translateX(10px) scale(1.32);
+  text-shadow:0 1px 3px rgba(60,0,20,.6),0 0 16px rgba(255,111,156,.95)}
+.planet-item:has(+ .planet-item:hover),.planet-item:hover + .planet-item{transform:translateX(5px) scale(1.12);color:#ffe8ef}
+.planet-item.active{font-size:calc(var(--ba) * var(--k));gap:10px;color:#ff8fb1;text-shadow:0 1px 3px rgba(60,0,20,.6),0 0 20px rgba(255,111,156,.7)}
+.planet-item.active:hover{color:#ffb3c9}
+.planet-item.active:before{content:'';flex:none;width:calc(14px * var(--k));height:calc(14px * var(--k));border-radius:50%;background:#ff8fb1;
+  box-shadow:0 0 0 3px rgba(255,255,255,.85),0 0 16px rgba(255,111,156,.9)}
+
+/* livelier buttons */
+.menu,.sound-btn,.booth-pill,.nav a,.btn,.shutter,.close-btn,.drawer-links button,.drawer-regions button,.guide-play,.upload-btn{
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1),background .25s ease,color .25s ease,box-shadow .25s ease}
+.menu:hover,.sound-btn:hover,.booth-pill:hover,.btn:hover,.shutter:hover,.close-btn:hover,.drawer-links button:hover,.guide-play:hover{transform:scale(1.07)}
+.nav a:hover{transform:scale(1.08)}
+.drawer-regions button:hover{transform:scale(1.04)}
+.upload-btn:hover{transform:translateX(3px)}
+.menu:active,.sound-btn:active,.booth-pill:active,.btn:active,.shutter:active,.close-btn:active,.drawer-links button:active,.drawer-regions button:active,.guide-play:active,.nav a:active,.planet-item:active{transform:scale(.94);transition-duration:.12s}
+
+/* ---------- map ---------- */
+.map-wrap{left:clamp(110px,11vw,190px);right:calc(var(--col) + 5vw);top:10vh;bottom:4vh;--col:min(460px,36vw)}
+.map-wrap svg{width:100%;height:100%;overflow:visible;display:block}
+.province{fill:rgba(255,214,228,.07);stroke:rgba(255,214,228,.62);stroke-width:.8;stroke-linejoin:round;vector-effect:non-scaling-stroke;
+  transition:fill .35s ease,stroke .35s ease,filter .35s ease;outline:none}
+.province:hover,.province:focus-visible,.province.is-hover{fill:rgba(255,143,177,.42);stroke:#fff;filter:drop-shadow(0 0 10px rgba(255,143,177,.75))}
+.map-label{fill:#fff;font-size:11px;font-weight:700;text-anchor:middle;dominant-baseline:middle;pointer-events:none;opacity:.86;
+  paint-order:stroke;stroke:rgba(20,6,12,.65);stroke-width:3px}
+.map-label.small{font-size:9px}
+.map-dot{fill:var(--pink-2);pointer-events:none}
+.experience[data-view="region"] .map-wrap,.experience[data-view="region"] .map-info{opacity:0;visibility:hidden;pointer-events:none}
+body:not(.intro-ready) .map-wrap,body:not(.intro-ready) .map-info{opacity:0}
+.intro-ready .map-wrap{animation:map-in 1.3s cubic-bezier(.16,1,.3,1) .25s backwards}
+.intro-ready .map-info{animation:fact-rise .9s cubic-bezier(.22,1,.36,1) .9s backwards}
+@keyframes map-in{from{opacity:0;filter:blur(14px);transform:scale(.94)}to{opacity:1;filter:blur(0);transform:scale(1)}}
+
+.map-info{--col:min(460px,36vw);--pw:min(250px,17vw,30vh);right:3vw;width:var(--col);top:calc(max(96px,11vh) + var(--pw)*1.094 + 46px);text-align:center}
+.map-info .mi-num{font-size:14px;opacity:.7}
+.map-info h2{margin:2px 0 4px;font:400 34px/1.1 var(--display);letter-spacing:.02em}
+.map-info p{margin:2px 0;font-size:15px;opacity:.9}
+.map-info .mi-hint{margin-top:8px;font-size:12px;letter-spacing:.14em;opacity:.6}
+
+/* ---------- portal ---------- */
+.portal-wrap{left:50%;top:50%;width:min(320px,31vw);transform:translate(-50%,-54%);perspective:none}
+.experience[data-view="map"] .portal-wrap{--col:min(460px,36vw);--pw:min(250px,17vw,30vh);left:auto;top:max(96px,11vh);width:var(--pw);
+  right:calc(3vw + (var(--col) - var(--pw)) / 2);transform:none}
+.portal-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;font-size:16px;opacity:0;white-space:nowrap}
+.portal-heading>span:last-child{display:flex;align-items:baseline;min-width:0}
+.portal-heading strong{font-size:18px;margin-left:8px;overflow:hidden;text-overflow:ellipsis;max-width:200px}
+.portal{position:relative;display:block;width:100%;aspect-ratio:320/350;padding:0;overflow:visible;border:0;
+  border-radius:90px;background:transparent;box-shadow:none;transform:none!important}
+.booth-pill{display:flex;align-items:center;justify-content:center;gap:8px;margin:16px auto 0;height:40px;padding:0 20px;border:1px solid rgba(255,255,255,.5);
+  border-radius:999px;background:rgba(255,214,228,.14);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-size:15px;opacity:0;transition:background .3s}
+.booth-pill:hover{background:rgba(255,143,177,.4)}
+.experience[data-view="map"] .booth-pill{display:none}
+
+/* ---------- content ---------- */
+.planet-content{pointer-events:none;left:clamp(28px,4vw,58px);right:clamp(28px,3vw,44px);bottom:clamp(24px,3vh,30px);
+  display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+.planet-content h1{font-family:var(--display);font-size:clamp(128px,21.8vw,314px);
+  font-weight:400;line-height:.86;margin:0 0 -.04em;letter-spacing:0;transform:translateX(-32px);opacity:0;white-space:nowrap;
+  text-shadow:0 10px 60px rgba(0,0,0,.25)}
+.planet-content dl{width:min(447px,34vw);margin:0;font-size:16px}
+.fact{display:grid;grid-template-columns:138px 1fr;gap:18px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.48);opacity:0}
+.fact:last-child{border-bottom:0}
+.fact dt{font-weight:700}
+.fact dd{margin:0}
+.experience[data-view="map"] .planet-content{--col:min(460px,36vw);left:auto;right:3vw;width:var(--col);display:block}
+.experience[data-view="map"] .planet-content h1{font-size:clamp(64px,7.2vw,124px);margin-bottom:12px;transform:none}
+.experience[data-view="map"] .planet-content dl{width:100%;font-size:15px}
+.experience[data-view="map"] .fact{grid-template-columns:110px 1fr}
+
+@media(max-height:820px){.planet-list{--b:16px;--ba:21px}}
+@media(max-height:720px){.experience[data-view="region"] .planet-list{display:none}}
+
+.loading{position:absolute;z-index:12;left:50%;bottom:30px;transform:translateX(-50%);opacity:0;
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;transition:opacity .2s;pointer-events:none}
+.experience.is-loading .loading{opacity:.8}
+
+/* ---------- entrance / switch ---------- */
+body:not(.intro-ready) .header,body:not(.intro-ready) .planet-list{opacity:0}
+body:not(.intro-ready) .chrome{pointer-events:none}
+.planet-list{opacity:0}
+.intro-ready .header{animation:reveal-down .9s cubic-bezier(.22,1,.36,1) .1s both}
+.intro-ready .planet-list{animation:reveal-side .9s cubic-bezier(.22,1,.36,1) .65s both}
+.content-revealing h1{animation:title-rise 1.05s cubic-bezier(.16,1,.3,1) both}
+.experience[data-view="map"].content-revealing h1{animation-name:title-rise-map}
+.content-revealing .fact{animation:fact-rise .72s cubic-bezier(.22,1,.36,1) both}
+.content-revealing .fact:nth-child(1){animation-delay:.52s}
+.content-revealing .fact:nth-child(2){animation-delay:.68s}
+.content-revealing .fact:nth-child(3){animation-delay:.84s}
+.content-revealing .fact:nth-child(4){animation-delay:1s}
+.mask-revealing .portal-heading,.mask-revealing .booth-pill{animation:portal-caption .85s cubic-bezier(.22,1,.36,1) both}
+.mask-revealing .booth-pill{animation-delay:.25s}
+.planet-list.is-switching .planet-item{animation:menu-row .58s cubic-bezier(.22,1,.36,1) backwards}
+.planet-list.is-switching .planet-item:nth-child(n){animation-delay:calc(var(--i) * .03s + .02s)}
+.planet-list.is-switching .planet-item.active:before{animation:active-dot .55s cubic-bezier(.22,1,.36,1) .18s both}
+@keyframes reveal-down{from{opacity:0;filter:blur(8px);transform:translateY(-18px)}to{opacity:1;filter:blur(0);transform:translateY(0)}}
+@keyframes reveal-side{from{opacity:0;filter:blur(8px);transform:translateX(-20px)}to{opacity:1;filter:blur(0);transform:translateX(0)}}
+@keyframes title-rise{from{opacity:0;filter:blur(12px);transform:translate(-32px,42px)}to{opacity:1;filter:blur(0);transform:translate(-32px,0)}}
+@keyframes title-rise-map{from{opacity:0;filter:blur(12px);transform:translate(0,42px)}to{opacity:1;filter:blur(0);transform:translate(0,0)}}
+@keyframes fact-rise{from{opacity:0;filter:blur(7px);transform:translateY(18px)}to{opacity:1;filter:blur(0);transform:translateY(0)}}
+@keyframes portal-caption{from{opacity:0;filter:blur(7px);transform:translateY(22px)}to{opacity:1;filter:blur(0);transform:translateY(0)}}
+@keyframes menu-row{from{opacity:.35;transform:translateX(-8px)}to{opacity:1;transform:translateX(0)}}
+@keyframes active-dot{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+
+/* ---------- overlays ---------- */
+.overlay{position:fixed;inset:0;z-index:40;background:rgba(10,5,8,.84);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  opacity:0;transition:opacity .35s ease;overflow:auto;overscroll-behavior:contain}
+.overlay.is-open{opacity:1}
+.overlay[hidden]{display:none}
+.close-btn{height:40px;padding:0 18px;border:1px solid rgba(255,255,255,.5);border-radius:999px;background:transparent}
+.close-btn:hover{background:rgba(255,255,255,.12)}
+.select{height:40px;padding:0 36px 0 16px;border:1px solid rgba(255,255,255,.45);border-radius:999px;color:#fff;font:inherit;
+  background:rgba(255,255,255,.1) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='white' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 14px center;
+  -webkit-appearance:none;appearance:none}
+.select option{color:#000}
+
+.gallery-inner{max-width:1240px;margin:0 auto;padding:clamp(18px,4vh,40px) clamp(16px,4vw,40px) 60px}
+.overlay-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.overlay-head h2{margin:0 auto 0 0;font:400 clamp(34px,5vw,56px)/1 var(--display)}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.g-item{position:relative;display:block;padding:0;border:0;border-radius:22px;overflow:hidden;background:#1a1014;text-align:left;aspect-ratio:4/3;
+  transform:translateY(16px);opacity:0;animation:fact-rise .6s cubic-bezier(.22,1,.36,1) both}
+.g-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.g-item:hover img{transform:scale(1.06)}
+.g-cap{position:absolute;inset:auto 0 0;padding:28px 14px 12px;background:linear-gradient(transparent,rgba(0,0,0,.78))}
+.g-cap b{display:block;font-size:15px}
+.g-cap span{display:block;font-size:11px;opacity:.75;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.g-near{position:absolute;left:12px;top:12px;padding:4px 10px;border-radius:999px;background:rgba(0,0,0,.55);font-size:11px}
+.gallery-note{margin-top:22px;font-size:12px;opacity:.6;line-height:1.6}
+.gallery-note a{color:inherit}
+
+.drawer{display:flex;justify-content:flex-end;background:rgba(10,5,8,.55)}
+.drawer-panel{width:min(380px,100%);min-height:100%;padding:28px;background:rgba(24,12,18,.92);transform:translateX(30px);transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.drawer.is-open .drawer-panel{transform:none}
+.drawer-panel h2{font:400 34px/1 var(--display);margin:8px 0 22px}
+.drawer-links{display:grid;gap:8px;margin-bottom:24px}
+.drawer-links button{height:46px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);font-weight:700}
+.drawer-links button.primary{background:#fff;color:#000;border-color:#fff}
+.drawer-regions{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.drawer-regions button{padding:10px 12px;border:0;border-radius:14px;background:rgba(255,255,255,.06);text-align:left}
+.drawer-regions button small{display:block;opacity:.6;font-size:11px;margin-top:2px}
+.drawer-regions button:hover{background:rgba(255,143,177,.3)}
+
+/* ---------- booth ---------- */
+.booth-inner{min-height:100%;display:grid;grid-template-columns:auto minmax(280px,360px);gap:clamp(20px,4vw,56px);align-items:center;justify-content:center;
+  padding:clamp(16px,4vh,40px) clamp(16px,4vw,48px)}
+.booth-stage{position:relative;height:min(86vh,calc((100vw - 480px)*4/3),880px);aspect-ratio:3/4;border-radius:30px;overflow:hidden;background:#1a1014;
+  box-shadow:0 30px 120px rgba(255,120,170,.18),0 0 0 1px rgba(255,255,255,.18)}
+.booth-stage canvas{width:100%;height:100%;display:block}
+.booth-count{position:absolute;inset:0;display:grid;place-items:center;font:400 clamp(110px,22vh,190px)/1 var(--display);pointer-events:none;
+  text-shadow:0 8px 40px rgba(0,0,0,.45)}
+.booth-count span{animation:count-pop .9s cubic-bezier(.16,1,.3,1) both}
+@keyframes count-pop{from{opacity:0;transform:scale(1.6)}30%{opacity:1}to{opacity:.0;transform:scale(.8)}}
+.booth-flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+.booth-flash.is-on{animation:flash .6s ease-out}
+@keyframes flash{from{opacity:.95}to{opacity:0}}
+.booth-status{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);max-width:88%;padding:9px 16px;border-radius:999px;background:rgba(0,0,0,.6);
+  font-size:13px;text-align:center;line-height:1.4;transition:opacity .3s}
+.booth-status:empty{opacity:0}
+.booth-panel .eyebrow{margin:0 0 6px;font-size:13px;letter-spacing:.2em;opacity:.7}
+.booth-panel h2{margin:0 0 20px;font:400 clamp(36px,4vw,52px)/1.02 var(--display)}
+.booth-panel label.field{display:block;font-size:13px;opacity:.95;margin-bottom:8px}
+.booth-panel .select{width:100%}
+.booth-select{margin-bottom:12px}
+.booth-bgs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px}
+.booth-bgs button{position:relative;padding:0;border:2px solid transparent;border-radius:14px;overflow:hidden;aspect-ratio:1;background:#222;transition:border-color .2s,transform .2s}
+.booth-bgs button img{width:100%;height:100%;object-fit:cover;display:block}
+.booth-bgs button.active{border-color:#fff;transform:scale(1.04)}
+.booth-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:16px}
+.shutter{display:flex;align-items:center;gap:10px;height:56px;padding:0 26px 0 10px;border:0;border-radius:999px;background:#fff;color:#000;font-weight:700;font-size:16px}
+.shutter i{width:38px;height:38px;border-radius:50%;background:var(--pink-2);box-shadow:inset 0 0 0 4px #fff,0 0 0 2px var(--pink-2)}
+.shutter:disabled{opacity:.5}
+.btn{height:46px;padding:0 20px;border:1px solid rgba(255,255,255,.5);border-radius:999px;background:rgba(255,255,255,.08);font-weight:700}
+.btn.primary{background:var(--pink-2);border-color:var(--pink-2);color:#fff}
+.btn[hidden],.shutter[hidden]{display:none}
+.booth-row{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;margin-bottom:10px}
+.toggle{display:inline-flex;align-items:center;gap:8px}
+.toggle input{accent-color:var(--pink-2);width:16px;height:16px}
+.upload-btn{font-size:13px;text-decoration:underline;opacity:.8;background:none;border:0;padding:0}
+.booth-note{font-size:12px;line-height:1.55;opacity:.6;margin:14px 0 18px}
+.booth-video,.booth-file{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+
+/* ---------- cursor ---------- */
+.custom-cursor{display:block;position:fixed;left:0;top:0;z-index:100;width:1px;height:1px;pointer-events:none;opacity:0;transition:opacity .2s ease}
+.custom-cursor.is-visible{opacity:1}
+.cursor-label{position:absolute;top:30px;left:22px;display:flex;align-items:center;gap:6px;padding:6px 12px 6px 8px;border-radius:999px;
+  background:rgba(255,111,156,.92);color:#fff;font:700 14px/1 'SF Pro','Noto Sans KR',Arial,sans-serif;white-space:nowrap;
+  box-shadow:0 6px 20px rgba(120,0,40,.3);opacity:0;transform:translateY(-6px) scale(.9);transform-origin:0 0;
+  transition:opacity .2s ease,transform .3s cubic-bezier(.22,1,.36,1)}
+.cursor-label:before{content:'✿';font-size:13px;display:inline-block;animation:logo-spin 4s linear infinite}
+.custom-cursor.is-enter .cursor-label{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media(max-width:900px){
+  .nav{display:none}
+  .brand small{display:none}
+  .portal-wrap{width:min(300px,48vw)}
+  .planet-content h1{font-size:clamp(105px,24vw,190px)}
+  .planet-content dl{width:43vw}
+  .fact{grid-template-columns:110px 1fr}
+  .planet-list{--b:16px;--ba:20px}
+  .experience[data-view="map"] .planet-list{display:none}
+  .map-wrap{left:3vw;--col:40vw}
+  .map-info,.experience[data-view="map"] .portal-wrap,.experience[data-view="map"] .planet-content{--col:40vw;--pw:min(220px,26vw,28vh)}
+  .experience[data-view="map"] .fact{grid-template-columns:84px 1fr}
+  .booth-inner{grid-template-columns:1fr;justify-items:center}
+  .booth-stage{height:auto;width:min(100%,460px,calc((100vh - 120px)*.75))}
+  .booth-panel{width:min(100%,460px)}
+}
+@media(max-width:640px){
+  .experience{min-height:600px}
+  .planet-list{display:none}
+  .portal-wrap{top:42%;width:min(230px,60vw)}
+  .planet-content{left:18px;right:18px;bottom:18px;display:block}
+  .planet-content h1{font-size:clamp(98px,30vw,160px);margin-bottom:14px}
+  .planet-content dl{width:100%;font-size:13px}
+  .fact{grid-template-columns:92px 1fr;padding:5px 0}
+  .portal-heading{font-size:14px}
+  .portal-heading strong{font-size:16px;max-width:150px}
+  .menu{height:38px}
+  .portal{border-radius:70px}
+  .booth-pill{height:36px;margin-top:10px;font-size:14px;padding:0 16px}
+  .map-wrap{left:12px;right:12px;top:72px;bottom:auto;height:calc(100% - 330px)}
+  .map-info,.experience[data-view="map"] .portal-wrap{display:none}
+  .experience[data-view="map"] .planet-content{left:18px;right:18px;width:auto}
+  .experience[data-view="map"] .planet-content h1{font-size:clamp(56px,16vw,90px);margin-bottom:6px}
+  .experience[data-view="map"] .fact:nth-child(n+4){display:none}
+  .map-label{font-size:13px}
+  .map-label.small{font-size:10px}
+  .brand{font-size:14px;padding-left:46px}
+  .booth-inner{gap:14px;padding:14px 16px 24px}
+  .booth-stage{width:min(100%,calc((100vh - 330px)*.75));min-width:220px;border-radius:22px}
+  .booth-panel .eyebrow,.booth-panel h2,.booth-panel label.field{display:none}
+  .booth-panel{display:flex;flex-direction:column}
+  .booth-panel .select{display:block}
+  .booth-bgs{order:1;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:10px}
+  .booth-row{order:2}
+  .booth-actions{order:3;justify-content:center;margin-bottom:8px}
+  .upload-btn{order:4;align-self:center}
+  .booth-note{order:5;margin:10px 0}
+  .booth-panel .close-btn{order:6;align-self:center}
+  .planet-content h1{transform:none}
+  .content-revealing h1{animation-name:title-rise-map}
+}
+/* mobile polish: notches, dynamic viewport, faster taps, subtitle-style guide */
+button,a,.province,select,label{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.header{top:calc(clamp(18px,3.1vh,28px) + env(safe-area-inset-top))}
+.floating-logo.is-docked{top:calc(clamp(18px,3.1vh,28px) + env(safe-area-inset-top))}
+.planet-content{bottom:calc(clamp(24px,3vh,30px) + env(safe-area-inset-bottom))}
+@media(max-width:1100px){
+  .guide.is-playing .guide-text span:not(.is-speaking){display:none}
+  .guide.is-playing .guide-text span.is-speaking{background:none}
+}
+@media(max-width:640px){
+  .guide{top:calc(70px + env(safe-area-inset-top))}
+  .planet-content{bottom:calc(18px + env(safe-area-inset-bottom))}
+  .map-wrap{top:calc(72px + env(safe-area-inset-top));height:calc(100dvh - 330px)}
+  .booth-stage{width:min(100%,calc((100dvh - 330px)*.75))}
+  .sound-panel{position:fixed;left:12px;right:12px;top:calc(64px + env(safe-area-inset-top));width:auto}
+}
+@media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}.portal{transform:none!important}.floating-logo .petals{animation:none}}
+</style>
+</head>
+<body>
+<main class="experience" data-view="map" data-region="gyeongnam">
+  <div class="backgrounds" aria-hidden="true">
+    <img id="bg-a" class="background is-visible" alt="" crossorigin="anonymous">
+    <img id="bg-b" class="background" alt="" crossorigin="anonymous">
+  </div>
+  <div class="map-dim" aria-hidden="true"></div>
+  <div class="preloader" id="preloader" aria-label="벚꽃 축제를 불러오는 중">
+    <img id="preloader-image" alt="" crossorigin="anonymous">
+    <div class="preloader-shade"></div>
+  </div>
+  <svg class="floating-logo" id="floating-logo" viewBox="0 0 60 60" role="img" aria-label="벚꽃 축제">
+    <g class="petals" fill="currentColor">
+      <path id="lp" d="M30 29C24.5 23 23 15 26.6 8.6L28.6 11.4 30 7.2 31.4 11.4 33.4 8.6C37 15 35.5 23 30 29Z"/>
+      <use href="#lp" transform="rotate(72 30 30)"/><use href="#lp" transform="rotate(144 30 30)"/>
+      <use href="#lp" transform="rotate(216 30 30)"/><use href="#lp" transform="rotate(288 30 30)"/>
+    </g>
+    <circle cx="30" cy="30" r="3.4" fill="#ff8fb1"/>
+  </svg>
+  <div class="preloader-caption" aria-hidden="true">대한민국 벚꽃 축제</div>
+  <button class="enter-gate" id="enter-gate" type="button" hidden>
+    <span class="eg-icon" aria-hidden="true">♪</span><span><b>입장하기</b><small>음악과 함께 벚꽃 여행을 시작해요</small></span>
+  </button>
+  <div class="preloader-count" id="preloader-count" aria-live="polite">
+    <span id="preloader-value">0</span><span class="percent">%</span>
+  </div>
+  <canvas id="scene-canvas" class="scene-canvas" aria-hidden="true"></canvas>
+  <div class="shade" aria-hidden="true"></div>
+
+  <header class="header chrome">
+    <a class="brand" href="#map" id="brand">벚꽃 축제<small>대한민국 벚꽃 지도</small></a>
+    <div class="header-actions">
+      <div class="sound-wrap">
+        <button class="sound-btn" id="sound-btn" type="button" aria-expanded="false" aria-controls="sound-panel" aria-label="사운드 설정">
+          <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="sound-text">사운드</span>
+        </button>
+        <div class="sound-panel" id="sound-panel" role="group" aria-label="사운드 설정" hidden>
+          <label class="sw">봄 음악 <input type="checkbox" id="snd-music"></label>
+          <label class="sw">효과음 <input type="checkbox" id="snd-fx"></label>
+          <label class="sw">가이드 자동 재생 <input type="checkbox" id="snd-voice"></label>
+          <label class="vol">볼륨 <input type="range" id="snd-vol" min="0" max="1" step="0.05"></label>
+          <p class="sound-note" id="snd-note"></p>
+        </div>
+      </div>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a class="active" href="#map" data-nav="map">지도</a><a href="#gallery" data-nav="gallery">갤러리</a><a href="#booth" data-nav="booth">포토부스</a>
+      </nav>
+      <button class="menu" type="button" id="menu-btn" aria-haspopup="dialog">메뉴</button>
+    </div>
+  </header>
+
+  <aside class="planet-list chrome" aria-label="지역"></aside>
+
+  <div class="map-wrap chrome">
+    <svg id="korea-map" role="group" aria-label="대한민국 시·도 지도" preserveAspectRatio="xMidYMid meet"></svg>
+  </div>
+  <div class="map-info chrome" aria-live="polite">
+    <div class="mi-num" id="mi-num"></div>
+    <h2 id="mi-name"></h2>
+    <p id="mi-spot"></p>
+    <p id="mi-bloom"></p>
+    <p class="mi-hint">지도를 눌러 벚꽃 여행을 시작하세요</p>
+  </div>
+
+  <canvas id="portal-canvas" class="portal-canvas" aria-hidden="true"></canvas>
+  <section class="portal-wrap chrome" aria-label="다음 목적지">
+    <div class="portal-heading">
+      <span id="next-label">다음:</span>
+      <span><span id="next-number">[16]</span> <strong id="next-name">경남</strong></span>
+    </div>
+    <button class="portal" id="portal" type="button" aria-label="이동: 경남"></button>
+    <button class="booth-pill" type="button" id="booth-pill">✿ 벚꽃 포토부스</button>
+  </section>
+
+  <section class="planet-content chrome" aria-live="polite">
+    <h1 id="planet-title">벚꽃 축제</h1>
+    <dl id="facts"></dl>
+  </section>
+
+  <aside class="guide chrome" id="guide" aria-label="오디오 가이드">
+    <button class="guide-play" id="guide-play" type="button" aria-label="가이드 듣기"><span class="tri"></span><span class="bars"><i></i><i></i><i></i></span></button>
+    <div class="guide-body">
+      <p class="guide-eyebrow">오디오 가이드<b id="guide-region"></b></p>
+      <p class="guide-text" id="guide-text" aria-live="off"></p>
+    </div>
+  </aside>
+
+  <canvas id="petal-canvas" class="petal-canvas" aria-hidden="true"></canvas>
+  <div class="loading" aria-hidden="true">벚꽃길을 여는 중…</div>
+
+  <!-- gallery -->
+  <div class="overlay gallery" id="gallery" role="dialog" aria-modal="true" aria-label="벚꽃 갤러리" hidden>
+    <div class="gallery-inner">
+      <div class="overlay-head">
+        <h2>벚꽃 갤러리</h2>
+        <select class="select" id="gallery-region" aria-label="지역 선택"></select>
+        <button class="close-btn" type="button" data-close>닫기</button>
+      </div>
+      <div class="gallery-grid" id="gallery-grid"></div>
+      <p class="gallery-note">사진을 누르면 해당 장면으로 이동합니다. ‘인근 지역’ 표시는 해당 시·도의 공개 사진이 부족해 가까운 지역의 사진을 함께 보여주는 경우입니다.</p>
+    </div>
+  </div>
+
+  <!-- drawer -->
+  <div class="overlay drawer" id="drawer" role="dialog" aria-modal="true" aria-label="메뉴" hidden>
+    <div class="drawer-panel">
+      <button class="close-btn" type="button" data-close>닫기</button>
+      <h2>메뉴</h2>
+      <div class="drawer-links">
+        <button type="button" class="primary" data-go="booth">✿ 벚꽃 포토부스</button>
+        <button type="button" data-go="map">전국 벚꽃 지도</button>
+        <button type="button" data-go="gallery">벚꽃 갤러리</button>
+      </div>
+      <div class="drawer-regions" id="drawer-regions"></div>
+    </div>
+  </div>
+
+  <!-- photo booth -->
+  <div class="overlay booth" id="booth" role="dialog" aria-modal="true" aria-label="벚꽃 포토부스" hidden>
+    <div class="booth-inner">
+      <div class="booth-stage">
+        <canvas id="booth-canvas" width="1080" height="1440" aria-label="포토부스 미리보기"></canvas>
+        <div class="booth-count" id="booth-count" aria-live="assertive"></div>
+        <div class="booth-flash" id="booth-flash"></div>
+        <div class="booth-status" id="booth-status" role="status"></div>
+      </div>
+      <div class="booth-panel">
+        <p class="eyebrow">벚꽃 포토부스</p>
+        <h2>벚꽃 아래에서<br>인생 사진 한 장</h2>
+        <label class="field" for="booth-region">배경 지역</label>
+        <select class="select booth-select" id="booth-region" aria-label="배경 지역"></select>
+        <div class="booth-bgs" id="booth-bgs" role="listbox" aria-label="배경 사진"></div>
+        <div class="booth-row">
+          <label class="toggle"><input type="checkbox" id="booth-mirror" checked> 거울 모드</label>
+          <label class="toggle"><input type="checkbox" id="booth-cutout" checked> 인물만 합성</label>
+        </div>
+        <div class="booth-actions">
+          <button class="shutter" type="button" id="booth-shoot"><i></i>촬영하기</button>
+          <button class="btn" type="button" id="booth-retake" hidden>다시 찍기</button>
+          <button class="btn primary" type="button" id="booth-save" hidden>사진 저장</button>
+        </div>
+        <button class="upload-btn" type="button" id="booth-upload">카메라 대신 사진 불러오기</button>
+        <p class="booth-note">카메라 영상과 사진은 이 기기 안에서만 처리되며 어디에도 전송되지 않습니다. 저장한 사진은 휴대폰에서는 ‘이미지 저장’으로 갤러리에, 컴퓨터에서는 다운로드 폴더에 저장됩니다.</p>
+        <button class="close-btn" type="button" data-close>닫기</button>
+      </div>
+    </div>
+    <video id="booth-video" class="booth-video" playsinline muted></video>
+    <input type="file" id="booth-file" class="booth-file" accept="image/*">
+  </div>
+
+  <div class="custom-cursor" aria-hidden="true">
+    <span class="cursor-label">입장</span>
+  </div>
+</main>
+
+<script>
+(() => {
+'use strict';
+/* =========================== DATA =========================== */
+const MAP = {"w":580,"h":615,"regions":{"39":{"d":"M218.1,568.4L219.5,571.0L219.1,572.4L217.4,572.0L216.8,570.8L218.1,568.4ZM202.6,563.9L204.3,565.0L206.8,564.6L207.1,566.1L209.4,568.3L210.7,567.7L213.4,568.3L214.6,571.0L213.6,572.6L214.3,574.2L216.4,574.1L216.8,575.4L215.5,576.4L213.9,581.6L213.8,583.2L212.4,583.6L210.8,585.3L210.4,587.4L208.3,589.5L208.7,590.4L207.5,592.2L205.1,593.0L202.4,592.4L199.5,595.6L198.3,595.5L194.7,596.6L191.8,596.4L190.3,597.0L188.3,599.6L186.4,600.2L185.3,599.3L181.9,600.1L179.5,599.7L178.5,600.9L176.7,600.9L175.0,601.7L173.3,599.8L171.6,600.6L169.9,599.3L167.4,600.7L161.7,600.0L159.7,601.7L159.3,603.4L157.4,604.8L155.4,602.7L153.9,600.4L151.0,599.1L149.5,597.7L147.4,594.0L148.0,593.3L147.6,590.6L148.1,588.1L150.1,586.1L152.2,584.8L153.0,583.2L154.3,582.6L156.4,580.3L156.4,578.4L160.4,576.5L160.6,574.9L163.1,574.9L167.5,572.3L168.3,572.9L175.9,570.1L177.1,568.8L179.0,569.4L181.2,567.8L182.0,568.9L184.9,568.2L186.3,567.1L189.5,567.0L190.4,565.0L191.7,565.5L197.0,565.0L197.7,564.5L200.4,564.8L202.6,563.9Z","cx":184.0,"cy":583.8},"38":{"d":"M331.9,444.9L334.4,445.5L335.5,448.4L332.4,448.0L330.7,446.6L331.9,444.9ZM326.5,438.3L328.5,438.8L328.8,440.5L327.1,440.5L326.5,438.3ZM353.8,426.8L354.7,430.5L356.0,432.2L354.5,433.2L352.7,432.8L352.8,431.2L351.7,429.9L353.8,426.8ZM331.9,424.1L334.3,426.5L332.7,428.5L329.8,427.8L328.6,426.0L330.1,424.3L331.9,424.1ZM328.2,421.9L329.6,422.8L328.2,425.3L327.0,425.6L325.7,423.9L326.0,422.7L328.2,421.9ZM313.8,415.4L314.2,417.7L316.8,420.8L316.2,423.5L316.5,425.2L313.1,423.5L312.9,424.3L309.7,424.6L308.1,423.8L307.4,420.9L308.9,419.8L310.5,416.5L311.5,415.4L313.8,415.4ZM301.6,412.5L303.6,413.2L304.7,416.0L304.0,417.6L301.8,420.6L304.1,425.2L305.8,425.6L306.8,428.0L310.0,424.9L313.7,425.2L316.2,426.2L316.3,428.6L315.4,429.1L315.9,434.5L313.2,437.4L312.1,436.9L309.6,438.3L307.0,438.5L306.1,435.9L306.3,431.0L304.6,431.2L302.3,432.3L303.1,435.5L300.8,437.1L299.1,436.7L298.0,434.7L296.3,434.0L297.7,431.9L296.2,428.2L294.2,424.7L293.7,422.3L295.5,420.4L295.8,417.9L297.6,417.3L297.9,414.7L299.4,412.9L301.6,412.5ZM371.2,402.2L372.5,403.3L374.1,403.1L375.0,404.6L373.2,405.9L372.6,408.9L375.4,412.4L374.7,413.6L375.1,416.0L374.5,417.6L372.7,418.7L374.3,420.3L376.1,418.6L376.9,421.1L373.2,424.1L376.6,429.4L373.8,429.1L373.8,427.2L372.3,427.7L370.7,427.1L370.1,429.3L370.7,430.1L367.5,432.6L368.8,434.8L370.2,434.5L371.6,435.4L366.2,436.0L367.1,437.5L365.0,439.4L362.4,437.8L364.4,436.6L364.6,435.6L362.1,435.0L360.9,432.3L359.1,431.3L358.6,429.8L362.3,429.2L362.8,428.3L362.9,425.0L362.2,422.7L359.2,424.8L356.7,427.7L355.4,424.9L353.6,424.1L352.8,420.1L354.9,417.0L356.6,416.5L357.7,415.0L359.5,416.7L362.6,416.0L364.0,417.5L365.2,417.4L363.9,413.6L362.8,412.5L365.9,410.7L368.3,410.7L368.6,408.9L366.0,408.1L366.9,405.6L368.3,404.6L368.8,408.0L370.1,405.9L371.2,402.2ZM343.8,339.5L344.7,340.0L349.2,338.2L350.5,336.5L353.9,336.9L355.7,336.5L356.1,332.6L357.6,331.7L358.6,335.1L358.5,338.2L360.4,339.1L362.8,342.3L364.7,342.9L369.3,341.0L372.2,341.4L373.3,343.1L375.2,342.9L378.4,344.3L380.7,344.5L382.0,342.1L384.9,341.0L386.7,341.1L388.3,338.5L391.8,336.6L394.1,337.0L398.0,339.9L399.9,338.5L401.5,339.1L402.0,340.7L401.4,342.5L399.2,344.2L397.1,345.1L399.2,348.5L401.7,349.0L409.1,352.3L409.4,354.0L412.1,357.3L413.9,358.8L415.4,359.2L417.1,358.4L419.2,361.7L417.7,364.0L416.8,367.0L415.1,368.0L412.8,366.6L410.9,368.7L409.6,372.7L407.5,373.3L406.2,374.8L405.0,374.2L404.1,375.9L400.8,376.6L399.4,380.9L392.9,382.9L389.4,383.2L388.1,384.5L389.1,386.6L387.8,388.3L385.7,389.3L381.4,389.3L382.1,391.0L384.7,392.4L385.6,394.9L383.9,395.8L382.1,396.8L380.0,395.3L376.0,396.5L373.3,395.1L372.0,390.2L369.7,392.3L367.2,390.2L365.4,390.7L363.6,387.7L362.9,383.6L361.0,386.3L364.2,392.0L364.4,395.2L366.2,396.7L367.4,399.2L364.5,400.6L362.1,400.9L360.6,399.0L360.7,397.5L358.3,394.3L356.9,396.0L354.2,394.9L352.4,395.9L351.8,398.8L350.0,398.7L348.8,400.6L347.4,399.8L344.6,401.3L345.4,402.8L350.4,400.9L350.6,398.9L353.7,399.5L352.7,402.1L355.5,405.0L353.4,407.4L352.0,408.0L349.9,407.3L349.9,410.7L349.2,411.3L349.4,414.1L348.2,418.2L349.2,420.1L350.9,415.9L352.5,418.9L351.4,420.1L351.0,423.4L348.4,424.9L350.1,425.6L350.1,428.2L349.5,430.8L348.6,432.3L347.0,432.7L345.4,429.7L344.3,429.1L344.5,426.9L341.0,425.4L342.7,424.2L344.2,425.7L344.4,422.9L345.8,421.6L344.1,419.6L343.1,420.9L339.4,419.3L337.4,417.3L338.2,416.6L342.4,416.6L341.6,414.0L340.5,412.7L337.5,413.6L337.5,416.2L336.0,417.1L334.4,416.2L334.8,413.9L332.3,412.8L328.3,413.5L329.0,415.0L328.3,416.2L328.8,418.2L326.6,418.1L321.7,417.1L317.7,415.0L315.8,414.4L313.5,411.4L315.4,409.0L314.3,406.5L315.3,404.8L313.2,402.9L311.6,404.0L312.4,405.7L312.2,407.5L309.9,407.8L309.3,409.0L307.4,407.9L306.2,409.2L304.8,407.4L304.4,405.2L302.2,409.9L302.3,411.2L299.7,412.4L296.4,412.1L291.8,413.2L290.0,409.6L291.1,407.9L292.0,404.7L290.6,403.4L290.3,401.1L287.8,399.8L287.6,398.0L285.9,397.6L283.7,395.3L283.8,392.4L277.3,386.0L277.0,380.6L276.2,377.9L275.0,377.2L273.3,372.7L274.7,372.4L277.2,370.1L277.4,368.9L276.3,366.5L278.9,362.2L280.8,360.9L281.3,357.4L279.3,357.2L278.5,355.9L278.6,354.1L280.0,353.3L277.7,349.0L277.5,348.0L274.6,345.8L274.2,344.6L276.3,342.4L276.4,340.0L277.8,338.8L277.1,336.1L277.9,333.9L278.8,333.1L279.3,330.0L280.8,328.7L280.8,323.3L284.3,320.0L286.0,319.1L288.3,314.1L290.6,314.5L292.0,313.1L293.9,312.9L295.8,311.1L296.7,311.5L297.7,309.0L300.9,306.2L300.6,308.6L301.4,309.3L303.4,308.7L304.7,310.2L304.9,312.7L306.5,312.1L308.3,313.2L309.6,312.5L310.6,314.7L311.9,315.6L313.7,314.9L315.4,315.6L317.1,314.3L321.9,316.3L321.7,318.4L322.3,320.0L324.4,320.3L325.4,322.9L327.5,323.8L328.8,327.3L328.8,331.5L326.8,332.7L325.4,332.7L325.4,334.9L327.3,334.4L328.7,335.9L331.8,336.3L332.5,334.6L334.0,336.1L335.6,335.1L338.0,334.7L342.4,336.1L343.8,339.5Z","cx":339.2,"cy":373.4},"37":{"d":"M439.6,335.2L436.3,333.7L431.1,332.0L426.5,335.4L422.8,334.8L422.2,333.5L423.0,330.7L422.2,329.6L420.4,329.4L418.0,327.4L413.9,328.1L412.6,327.1L411.7,328.5L407.5,329.5L405.8,331.9L405.7,334.2L406.2,336.4L403.8,335.2L399.9,338.5L398.0,339.9L394.1,337.0L391.8,336.6L388.3,338.5L386.7,341.1L384.9,341.0L382.0,342.1L380.7,344.5L378.4,344.3L375.2,342.9L373.3,343.1L372.2,341.4L369.3,341.0L364.7,342.9L362.8,342.3L360.4,339.1L358.5,338.2L358.6,335.1L357.6,331.7L359.1,327.7L362.4,325.5L365.6,325.7L365.0,327.0L366.2,329.4L367.5,329.1L369.8,327.5L371.5,327.4L372.3,326.2L372.6,323.4L371.4,319.9L374.5,318.2L373.8,315.9L377.6,312.5L378.6,309.6L378.0,306.2L376.4,304.7L377.0,303.0L376.4,301.7L377.1,300.1L375.8,298.5L375.3,296.3L372.2,295.2L365.7,296.1L363.2,299.2L360.2,300.1L357.7,299.5L358.3,303.5L357.3,305.9L354.6,308.2L353.1,308.4L352.4,307.1L353.1,303.9L350.0,304.0L348.0,305.5L346.7,309.0L345.1,311.6L345.5,313.3L348.4,313.2L351.7,314.3L353.3,315.8L352.5,317.9L348.2,317.8L347.0,319.2L345.2,322.8L345.7,324.8L349.3,327.0L349.3,329.4L348.0,330.5L342.8,329.0L342.0,329.5L342.4,331.9L344.7,334.7L346.6,336.2L345.1,339.4L343.8,339.5L342.4,336.1L338.0,334.7L335.6,335.1L334.0,336.1L332.5,334.6L331.8,336.3L328.7,335.9L327.3,334.4L325.4,334.9L325.4,332.7L326.8,332.7L328.8,331.5L328.8,327.3L327.5,323.8L325.4,322.9L324.4,320.3L322.3,320.0L321.7,318.4L321.9,316.3L317.1,314.3L315.4,315.6L313.7,314.9L311.9,315.6L310.6,314.7L309.6,312.5L308.3,313.2L306.5,312.1L304.9,312.7L304.7,310.2L303.4,308.7L301.4,309.3L300.6,308.6L300.9,306.2L300.4,304.8L302.7,303.3L301.5,298.5L299.8,297.2L299.9,294.4L302.3,292.6L303.4,290.9L305.2,291.3L307.4,289.3L307.1,286.4L307.9,283.9L309.7,282.7L310.5,280.1L308.7,276.2L309.6,274.9L312.1,273.9L314.3,275.6L315.5,274.8L315.3,273.2L313.5,270.5L315.0,268.7L311.8,267.0L309.3,267.9L308.0,269.3L306.3,268.7L304.7,266.3L301.3,264.8L300.2,266.7L297.7,266.6L296.8,262.9L297.7,260.6L300.3,259.0L301.2,257.6L299.6,252.3L300.4,250.6L299.6,248.8L300.4,246.3L300.3,244.1L302.6,241.1L302.0,239.3L299.6,237.8L299.6,235.9L298.6,234.5L295.2,234.2L292.9,231.9L295.2,229.6L297.5,229.6L297.4,227.3L298.7,227.2L299.7,224.9L301.0,227.8L304.8,229.0L305.4,225.4L304.9,223.9L300.9,221.0L304.8,220.8L304.8,219.3L306.3,218.0L307.4,216.0L309.7,218.1L311.1,218.2L312.8,217.2L315.1,219.1L317.2,219.2L317.0,217.6L313.7,214.8L315.8,209.8L316.1,207.3L318.3,208.6L320.3,208.4L320.8,207.0L323.3,205.3L325.5,206.9L330.3,207.4L329.8,203.7L331.6,203.8L332.3,201.1L336.0,202.8L337.2,205.3L339.4,207.4L340.5,207.2L343.4,209.0L344.8,207.5L348.2,207.8L350.7,203.7L350.6,202.0L348.5,200.7L350.0,197.9L350.1,195.0L351.7,194.3L352.0,192.9L356.5,189.7L356.5,188.5L359.2,187.9L361.6,185.3L361.0,183.6L362.7,182.3L366.8,182.8L368.8,179.9L372.0,181.3L373.0,182.6L376.1,182.7L377.6,184.0L378.5,183.2L377.6,180.8L378.8,180.1L380.6,177.5L382.7,178.6L384.3,178.5L386.0,181.4L388.6,182.2L390.4,182.2L392.8,177.0L394.7,176.7L396.1,178.6L398.1,177.8L405.4,179.7L406.4,176.9L408.2,176.1L412.1,178.1L417.0,182.6L420.3,182.2L419.7,179.0L421.8,176.6L423.3,175.9L423.8,174.3L425.8,174.5L426.6,173.0L429.8,171.2L432.0,171.0L433.5,173.9L433.3,176.1L435.6,178.6L437.6,180.1L436.5,181.3L436.1,184.5L436.9,186.4L436.0,189.3L436.9,192.5L437.1,198.4L436.5,199.3L437.8,203.8L440.3,207.4L440.8,210.4L442.2,212.6L441.2,213.7L442.0,216.4L441.6,217.4L441.9,220.2L440.9,221.6L438.5,223.3L436.2,228.5L436.1,231.6L437.2,234.4L438.8,236.3L439.3,241.6L438.2,243.8L438.5,246.0L438.4,249.8L437.4,252.3L434.8,256.7L433.3,260.3L433.6,261.4L432.9,265.2L433.5,266.7L432.8,268.9L433.8,270.5L433.8,273.5L432.7,274.1L433.1,276.0L434.5,277.1L435.1,278.8L435.0,282.0L438.8,285.8L436.8,287.1L437.0,288.4L433.5,290.2L433.1,291.4L433.7,293.6L436.7,295.5L437.8,297.2L439.8,297.8L441.7,295.4L444.3,294.0L444.4,292.8L447.0,290.5L448.2,287.5L450.2,288.4L451.4,294.7L451.1,296.0L449.0,297.9L448.9,300.4L447.1,303.8L445.7,304.8L446.5,307.2L445.8,310.8L446.5,311.8L444.9,316.2L445.3,317.1L443.3,320.3L443.8,321.9L442.8,326.6L441.6,329.4L441.9,331.3L439.6,335.2ZM568.9,126.8L569.1,129.1L570.0,130.7L569.5,134.2L565.1,136.6L562.3,136.0L559.5,134.0L559.8,131.9L558.7,130.8L563.6,128.3L567.7,127.7L568.9,126.8Z","cx":369.0,"cy":269.6},"36":{"d":"M215.9,517.8L216.3,519.7L214.7,519.8L214.0,518.3L215.9,517.8ZM248.1,509.4L248.8,515.0L247.1,512.6L247.1,510.8L248.1,509.4ZM52.9,505.6L54.4,505.9L55.2,507.9L57.5,510.6L56.5,511.2L54.8,510.7L54.5,509.5L52.9,508.8L52.9,505.6ZM182.1,496.6L183.3,497.7L185.2,497.7L184.6,500.5L181.9,502.5L179.9,503.1L178.1,501.3L179.1,497.7L181.2,496.3L182.1,496.6ZM192.0,495.0L193.8,496.0L192.7,498.5L193.7,501.1L192.1,504.1L189.6,502.2L189.0,500.4L190.8,497.9L189.5,496.6L191.0,494.3L192.0,495.0ZM212.5,492.6L215.4,497.2L214.6,499.4L211.7,499.8L208.5,497.2L210.7,493.3L212.5,492.6ZM183.7,490.6L186.2,491.4L187.9,492.6L188.8,494.1L187.4,494.8L188.0,496.5L185.4,497.4L183.0,496.7L181.9,495.6L183.5,492.3L183.7,490.6ZM244.9,488.8L245.4,491.4L244.9,493.2L242.2,492.5L242.8,490.4L244.9,488.8ZM188.1,488.9L188.9,490.1L185.9,490.6L186.9,489.0L188.1,488.9ZM136.9,481.4L138.2,482.9L140.4,482.5L141.7,485.9L139.9,485.4L138.1,486.3L137.5,485.3L135.8,485.2L135.1,483.1L136.9,481.4ZM220.8,479.0L223.4,479.9L222.3,481.9L219.6,483.3L218.2,482.0L218.3,480.2L220.8,479.0ZM207.8,477.6L208.6,478.4L210.5,477.9L211.4,479.3L213.0,479.9L211.8,482.3L210.3,481.7L208.3,483.6L207.1,480.8L205.1,480.6L204.2,481.4L202.5,480.4L203.2,478.2L204.5,479.7L206.0,478.1L207.8,477.6ZM225.2,475.1L226.9,476.8L230.2,477.0L230.7,479.6L229.4,479.4L226.5,480.3L222.7,477.0L223.0,475.0L225.2,475.1ZM194.1,472.2L195.6,472.6L198.3,475.1L198.0,476.6L199.7,481.1L201.7,482.0L200.8,484.3L198.3,484.9L197.0,483.8L194.9,484.2L193.4,481.8L190.9,479.8L190.0,474.4L190.8,473.2L194.1,472.2ZM217.2,471.1L217.7,472.2L216.2,475.7L214.8,477.3L210.0,475.4L210.7,473.0L211.9,472.0L213.6,472.2L215.9,473.5L217.2,471.1ZM243.9,470.9L245.3,472.1L246.2,474.6L244.3,474.0L244.5,472.1L243.9,470.9ZM207.4,467.8L208.4,469.3L210.2,473.5L207.5,474.3L203.5,474.6L201.9,477.5L201.2,476.8L202.1,474.5L200.3,473.9L201.1,471.8L203.3,468.8L204.4,469.0L207.4,467.8ZM226.3,466.2L227.9,466.8L228.8,469.2L228.0,472.0L225.3,469.8L224.9,467.0L226.3,466.2ZM293.6,465.8L294.1,467.4L293.8,470.7L291.8,470.5L292.9,466.7L293.6,465.8ZM263.2,464.6L266.7,465.6L267.0,464.9L269.8,467.2L269.6,469.2L265.8,471.2L265.7,468.8L263.4,468.0L262.4,466.4L263.2,464.6ZM241.9,462.2L242.9,464.2L241.0,468.9L238.8,469.1L237.0,468.6L235.0,469.2L233.2,469.0L230.8,465.2L233.2,462.6L234.2,464.4L236.0,463.8L238.8,462.1L239.8,462.8L241.9,462.2ZM138.5,461.8L139.7,463.5L136.9,466.2L136.7,463.6L138.5,461.8ZM234.2,459.5L233.7,460.9L230.7,460.5L232.2,459.1L234.2,459.5ZM262.8,456.5L264.6,457.5L263.0,460.3L265.7,460.6L266.6,462.0L264.8,463.3L262.2,463.8L261.5,461.8L262.8,461.2L261.8,459.6L260.6,459.4L262.8,456.5ZM287.9,455.7L289.3,455.7L289.8,457.6L291.4,459.4L292.8,462.2L290.6,462.9L290.2,461.9L286.5,459.7L285.4,457.2L287.9,455.7ZM280.5,452.1L282.5,453.9L280.6,455.7L278.9,453.2L280.5,452.1ZM155.6,451.7L160.3,453.7L160.6,455.7L163.3,456.4L167.2,461.0L166.3,465.2L165.1,466.3L165.7,467.7L163.2,470.7L161.2,471.9L159.3,471.5L158.6,473.0L156.9,472.7L156.6,474.8L154.9,474.8L151.2,477.0L148.7,477.6L145.2,476.9L145.2,475.3L143.5,474.5L143.0,473.0L141.2,470.4L142.3,467.9L146.2,464.1L148.6,463.2L149.1,461.3L150.9,460.6L153.3,457.6L155.9,457.4L156.5,456.2L154.7,453.9L155.6,451.7ZM270.5,448.4L272.2,449.0L270.8,450.9L269.2,450.1L270.5,448.4ZM120.5,447.2L121.0,450.0L119.3,450.8L117.9,450.4L117.4,448.9L120.5,447.2ZM139.4,446.6L140.7,449.0L142.4,449.9L143.2,451.7L141.8,453.4L142.4,455.4L140.9,455.5L140.4,457.0L137.6,458.3L137.4,454.3L139.0,454.7L140.4,452.9L138.9,449.5L137.5,449.6L137.7,447.3L139.4,446.6ZM137.6,444.0L137.8,446.0L136.6,448.9L138.3,450.2L139.1,452.3L138.2,454.1L135.0,454.5L134.3,449.9L134.2,447.1L135.8,446.6L135.8,445.4L137.6,444.0ZM146.4,442.4L149.7,443.7L150.2,447.0L147.7,448.7L144.7,448.3L142.9,445.4L143.7,443.4L146.4,442.4ZM140.7,441.2L141.0,442.9L140.3,445.7L138.9,444.5L139.0,441.2L140.7,441.2ZM150.7,438.9L150.7,441.3L149.4,442.5L147.6,441.7L147.4,440.2L150.7,438.9ZM83.8,439.5L85.8,440.2L84.3,441.7L84.0,443.6L82.5,444.1L82.7,445.7L81.3,446.3L81.2,448.0L79.4,447.4L78.6,445.8L79.8,442.0L81.2,439.7L83.8,439.5ZM63.3,438.3L63.4,440.0L62.5,441.7L60.1,442.6L62.3,439.0L63.3,438.3ZM288.5,435.8L291.9,437.6L292.3,439.3L291.0,441.6L292.7,443.8L293.1,447.2L292.4,449.3L293.6,451.6L291.8,452.1L288.7,451.3L285.1,448.0L286.4,446.4L286.3,444.4L288.5,442.8L289.4,440.7L289.4,438.2L288.5,435.8ZM130.5,436.2L131.2,437.2L134.6,438.4L134.0,441.2L132.2,441.9L131.6,443.5L130.3,444.3L125.8,442.0L125.8,438.4L128.1,438.0L129.8,435.4L130.5,436.2ZM140.5,430.9L141.9,431.7L144.3,431.2L145.6,433.1L147.8,433.1L150.5,436.0L150.7,437.4L148.6,439.5L146.2,441.0L143.9,441.4L143.0,440.0L139.9,438.6L139.3,437.7L139.8,434.4L140.4,433.7L139.3,431.6L140.5,430.9ZM162.2,430.0L161.7,433.0L160.5,432.4L160.6,430.8L162.2,430.0ZM133.0,428.0L133.2,432.9L131.3,433.8L128.1,433.7L128.9,435.8L128.2,437.2L126.1,437.9L123.9,436.6L123.4,432.4L125.2,431.1L127.6,431.2L130.4,429.5L131.0,428.2L133.0,428.0ZM162.5,426.8L163.2,428.6L161.1,429.2L161.4,427.2L162.5,426.8ZM148.4,428.2L148.8,432.7L145.3,432.7L144.2,430.8L142.1,431.0L142.2,429.4L145.1,428.6L147.2,426.0L148.4,428.2ZM278.3,423.2L276.6,422.2L278.3,420.8L279.5,422.2L278.3,423.2ZM143.5,419.4L145.5,420.3L146.7,423.6L143.4,425.7L144.0,428.3L142.2,428.9L141.5,427.3L138.5,423.1L140.6,422.0L142.4,422.9L143.5,419.4ZM285.8,417.7L288.3,418.6L288.3,420.6L285.8,421.1L283.5,419.2L285.8,417.7ZM159.6,415.2L160.9,416.6L163.1,416.6L163.7,418.2L162.2,418.6L162.1,421.8L164.9,421.5L166.3,423.3L165.0,426.9L162.7,426.5L163.4,424.3L163.0,423.2L157.8,422.4L155.9,424.1L153.5,423.1L154.8,422.1L156.7,422.0L158.3,421.1L160.1,418.3L158.2,416.4L159.6,415.2ZM153.7,413.4L155.9,414.2L154.1,416.5L152.8,414.9L153.7,413.4ZM138.8,413.7L141.4,415.0L142.5,417.5L141.8,420.3L140.9,421.6L137.7,422.7L133.0,421.4L132.3,420.1L134.5,416.1L136.1,416.5L136.9,415.5L138.4,415.4L138.8,413.7ZM287.5,412.4L287.6,414.1L290.0,414.1L291.8,415.9L291.7,419.1L289.6,418.3L289.5,416.9L284.6,416.2L286.4,412.3L287.5,412.4ZM289.5,410.9L290.3,413.9L288.2,413.8L287.8,411.9L289.5,410.9ZM152.3,408.1L153.8,408.8L152.2,413.6L150.6,416.0L150.0,412.5L151.1,409.1L152.3,408.1ZM155.4,405.9L156.5,406.0L157.3,409.2L155.4,408.8L155.4,405.9ZM145.2,403.6L147.0,403.7L148.6,405.0L149.9,408.1L148.8,412.5L147.3,413.4L144.3,412.0L145.3,410.2L145.1,406.4L143.6,407.1L142.0,406.5L143.5,404.5L145.2,403.6ZM146.3,400.2L148.3,400.4L151.1,402.4L150.7,403.9L146.5,402.9L145.1,400.9L146.3,400.2ZM147.7,390.8L146.2,391.5L144.7,393.8L144.0,396.0L143.8,399.9L141.3,400.9L139.7,400.0L137.6,399.9L137.0,397.2L137.6,395.3L140.8,394.3L143.8,390.9L147.7,390.8ZM273.3,372.7L275.0,377.2L276.2,377.9L277.0,380.6L277.3,386.0L283.8,392.4L283.7,395.3L285.9,397.6L287.6,398.0L287.8,399.8L290.3,401.1L290.6,403.4L292.0,404.7L291.1,407.9L290.0,409.0L289.6,410.3L286.7,411.7L284.3,414.2L283.4,415.9L278.9,419.1L276.9,415.8L274.5,415.5L276.6,418.4L274.4,420.3L276.3,423.1L279.2,425.2L280.8,423.7L281.6,424.5L284.1,422.0L287.2,422.5L289.7,421.4L290.9,422.0L290.4,427.2L289.2,430.2L288.2,431.2L289.1,432.5L288.6,435.6L284.6,437.3L282.6,435.1L280.5,433.4L278.8,437.9L277.5,439.4L277.4,440.9L278.9,445.5L277.2,446.2L274.4,444.8L272.7,445.7L271.0,443.6L271.0,440.7L272.4,436.4L273.5,435.9L274.5,433.2L273.5,432.7L271.5,427.8L268.6,427.5L269.9,425.1L268.5,423.1L267.7,420.0L266.7,420.4L264.0,423.6L257.7,425.8L259.4,427.3L257.1,428.9L256.4,430.9L257.7,432.1L257.3,433.3L255.2,435.0L256.8,438.3L262.2,440.1L262.0,442.7L264.5,442.6L264.2,444.5L265.3,444.8L267.0,451.4L265.3,452.9L262.6,452.3L261.5,453.1L258.6,451.6L257.1,452.6L258.3,454.8L260.6,455.7L259.6,458.1L257.7,461.0L255.7,461.2L255.5,463.0L251.4,464.4L252.1,467.5L250.6,467.9L247.6,464.0L245.8,463.4L247.2,461.8L244.9,459.4L240.7,459.2L239.3,457.9L237.1,459.0L234.1,458.9L233.0,458.3L232.0,456.3L232.1,455.0L234.9,452.3L237.3,451.0L237.4,447.5L239.8,445.2L240.5,447.3L242.3,445.7L242.7,441.7L244.3,438.4L246.8,437.4L247.5,439.7L246.9,442.5L250.0,443.3L250.3,441.5L251.7,438.6L250.8,433.8L249.0,434.1L248.1,436.2L246.1,435.1L245.3,436.0L243.2,432.1L240.7,435.4L239.7,438.9L238.1,440.4L234.6,440.2L233.4,439.3L231.6,442.1L228.2,443.6L226.9,445.9L221.6,448.9L222.9,449.9L221.5,451.2L220.5,453.8L221.0,457.1L219.6,456.8L218.4,458.1L219.7,459.7L218.7,461.3L220.0,462.9L218.0,464.8L216.5,467.2L215.5,466.7L211.1,466.2L212.1,469.3L208.8,467.3L206.0,467.1L203.4,465.1L203.6,462.7L203.1,460.1L203.6,458.0L203.7,453.8L201.8,450.2L201.3,454.5L201.5,455.5L200.7,458.6L200.6,462.2L199.1,462.8L199.7,464.6L197.9,467.5L195.2,468.1L193.8,469.6L191.2,470.1L188.1,472.2L188.4,477.0L186.9,478.3L186.9,480.8L185.3,481.3L182.8,481.1L181.6,483.1L179.2,483.6L178.8,481.3L180.1,479.7L179.4,476.7L176.0,477.0L176.0,474.5L177.2,473.6L176.8,472.1L179.2,470.9L178.4,469.5L176.7,468.6L175.6,469.5L174.0,467.0L174.8,465.6L173.7,464.0L175.1,460.7L174.1,458.0L171.7,456.6L171.5,455.4L168.9,456.6L167.0,454.6L165.5,454.8L162.9,453.5L161.2,454.2L160.4,451.5L158.1,450.9L158.6,447.2L157.3,446.8L156.6,443.9L155.9,443.5L156.2,440.2L157.6,438.2L157.6,436.4L158.7,433.1L159.9,432.7L163.1,435.3L164.4,439.2L163.5,440.1L163.7,442.4L166.0,446.1L166.7,448.5L171.9,451.6L171.3,449.0L166.5,445.7L165.1,442.1L163.8,441.0L166.0,439.7L167.8,436.1L165.8,435.3L167.1,433.7L167.0,432.2L173.2,430.4L172.5,428.6L168.9,430.4L166.0,430.6L165.4,429.5L166.1,427.1L167.7,424.5L169.4,422.8L168.3,420.9L168.9,419.7L167.9,418.7L169.2,416.3L168.1,415.4L167.7,412.4L168.3,410.8L166.9,409.8L165.8,414.5L163.8,416.0L162.6,415.4L161.8,412.8L159.5,410.4L160.5,408.1L162.9,409.8L165.2,408.1L163.8,406.3L167.8,403.8L167.1,401.4L164.5,402.3L163.8,398.9L162.4,396.9L160.0,401.4L159.1,400.1L156.4,400.8L157.6,402.5L156.0,405.2L153.4,404.0L154.2,401.7L153.1,400.3L149.8,400.3L147.6,399.3L148.1,395.2L150.2,394.2L153.9,395.8L155.1,394.5L156.1,391.0L157.4,390.6L162.1,391.9L163.9,390.0L163.9,393.9L163.0,396.5L166.0,398.8L168.5,398.2L169.4,399.6L168.7,403.0L172.5,400.5L173.4,398.6L172.4,397.3L174.1,396.5L172.9,395.0L170.5,394.8L169.1,391.7L165.5,388.3L163.5,385.5L160.5,387.0L159.7,381.6L160.9,378.7L162.1,378.9L162.0,375.0L165.1,374.8L166.8,373.0L166.9,370.5L168.6,366.1L169.3,361.7L170.7,359.6L173.0,359.4L175.8,360.0L176.7,361.5L176.0,364.3L179.5,368.2L179.3,370.8L180.4,372.9L182.2,372.2L185.8,373.1L184.9,371.0L186.9,369.8L188.7,371.3L190.5,371.5L192.5,368.0L195.4,368.2L195.8,366.5L197.2,366.6L198.2,365.3L198.1,363.3L200.0,360.2L199.7,357.2L201.1,355.5L205.5,355.2L206.6,353.2L208.8,355.5L210.4,356.0L213.6,358.2L213.0,359.1L214.0,360.9L215.9,362.1L216.1,363.2L218.8,363.3L220.0,362.3L219.4,359.7L223.2,356.3L225.2,355.5L225.4,358.8L226.4,359.3L225.8,362.8L224.8,363.8L226.2,365.2L227.1,364.4L228.3,366.4L227.9,369.7L226.7,369.3L226.2,371.7L227.6,371.8L232.3,373.7L235.1,372.0L237.0,370.1L239.9,371.9L241.1,371.9L241.8,369.6L245.2,372.4L247.7,372.1L249.2,373.3L253.7,371.3L256.2,373.3L260.4,367.1L263.9,366.4L266.6,367.2L269.2,369.6L273.3,372.7ZM213.8,378.2L212.3,379.5L210.9,379.1L207.8,381.3L204.8,382.6L200.4,380.9L201.1,378.7L198.7,379.0L197.2,381.7L197.0,383.3L195.7,383.8L194.3,383.0L193.5,385.3L191.9,385.5L192.9,388.0L191.4,388.5L191.1,393.4L193.5,395.0L194.3,394.3L199.0,394.9L200.9,396.6L202.4,400.8L203.9,399.9L206.0,400.8L209.3,398.0L210.7,398.4L215.2,396.7L216.1,398.4L217.8,398.6L219.1,396.8L221.0,396.3L222.9,392.9L222.8,389.6L223.9,388.2L222.2,386.0L219.9,386.1L216.1,380.2L215.9,379.0L213.8,378.2ZM170.8,435.2L168.6,435.2L167.8,437.3L173.5,438.8L173.3,440.9L175.1,444.0L175.8,441.7L177.2,443.3L181.5,444.5L181.2,441.5L180.2,438.7L177.6,435.7L175.1,435.3L174.1,436.3L171.9,436.1L170.8,435.2Z","cx":214.1,"cy":421.1},"35":{"d":"M160.3,338.4L161.1,339.2L160.3,341.1L158.9,341.6L156.6,343.9L155.3,342.2L157.3,341.9L157.8,340.3L159.2,340.2L160.3,338.4ZM278.7,289.3L280.2,290.7L280.6,292.5L282.9,290.1L283.9,290.7L284.7,293.2L287.0,293.3L292.0,295.3L293.2,293.9L297.8,292.6L299.9,294.4L299.8,297.2L301.5,298.5L302.7,303.3L300.4,304.8L300.9,306.2L297.7,309.0L296.7,311.5L295.8,311.1L293.9,312.9L292.0,313.1L290.6,314.5L288.3,314.1L286.0,319.1L284.3,320.0L280.8,323.3L280.8,328.7L279.3,330.0L278.8,333.1L277.9,333.9L277.1,336.1L277.8,338.8L276.4,340.0L276.3,342.4L274.2,344.6L274.6,345.8L277.5,348.0L277.7,349.0L280.0,353.3L278.6,354.1L278.5,355.9L279.3,357.2L281.3,357.4L280.8,360.9L278.9,362.2L276.3,366.5L277.4,368.9L277.2,370.1L274.7,372.4L273.3,372.7L269.2,369.6L266.6,367.2L263.9,366.4L260.4,367.1L256.2,373.3L253.7,371.3L249.2,373.3L247.7,372.1L245.2,372.4L241.8,369.6L241.1,371.9L239.9,371.9L237.0,370.1L235.1,372.0L232.3,373.7L227.6,371.8L226.2,371.7L226.7,369.3L227.9,369.7L228.3,366.4L227.1,364.4L226.2,365.2L224.8,363.8L225.8,362.8L226.4,359.3L225.4,358.8L225.2,355.5L223.2,356.3L219.4,359.7L220.0,362.3L218.8,363.3L216.1,363.2L215.9,362.1L214.0,360.9L213.0,359.1L213.6,358.2L210.4,356.0L208.8,355.5L206.6,353.2L205.5,355.2L201.1,355.5L199.7,357.2L200.0,360.2L198.1,363.3L198.2,365.3L197.2,366.6L195.8,366.5L195.4,368.2L192.5,368.0L190.5,371.5L188.7,371.3L186.9,369.8L184.9,371.0L185.8,373.1L182.2,372.2L180.4,372.9L179.3,370.8L179.5,368.2L176.0,364.3L176.7,361.5L175.8,360.0L173.0,359.4L171.4,358.5L172.5,356.8L176.2,349.6L179.4,348.0L181.4,348.7L183.2,347.2L186.8,347.0L188.0,345.5L188.1,344.1L190.8,344.1L192.3,345.7L192.9,342.9L189.8,341.5L188.1,342.4L184.4,341.8L181.3,342.1L180.2,343.0L176.9,342.3L174.8,340.3L174.6,337.0L176.3,334.6L177.7,334.5L180.6,331.2L183.1,329.9L183.9,330.3L186.7,327.6L188.9,324.5L188.6,320.0L190.4,319.1L195.4,318.9L197.9,319.4L201.6,321.3L202.3,318.6L198.4,316.8L195.4,314.4L194.7,313.1L198.2,311.5L203.2,311.7L204.2,310.7L204.4,308.5L202.9,307.6L201.7,309.0L198.7,308.8L197.7,309.4L195.4,308.5L193.3,308.4L192.6,309.6L187.9,309.4L187.5,306.0L187.9,303.1L186.1,302.6L180.2,303.4L179.6,300.0L183.8,299.5L190.4,299.2L192.5,298.6L193.7,296.9L197.7,297.4L198.5,296.8L199.8,294.3L202.1,293.4L205.2,293.1L207.0,291.7L210.0,290.2L211.0,286.8L210.8,284.5L212.5,281.4L215.3,281.6L218.3,279.7L221.2,280.9L222.4,280.5L224.2,281.9L226.5,281.2L227.5,286.6L229.3,288.3L233.9,289.2L234.3,287.3L237.1,287.6L238.0,286.5L239.8,287.4L240.3,285.8L243.9,286.4L244.4,284.5L246.3,285.0L248.2,284.5L249.3,283.0L252.1,282.5L253.6,285.0L254.0,287.0L254.1,291.0L255.3,293.1L257.7,296.0L259.9,293.9L261.5,296.1L262.6,298.6L263.6,298.2L265.4,299.3L267.0,299.0L269.5,297.7L270.0,295.6L269.8,293.2L274.6,294.1L275.4,295.5L277.0,296.0L278.1,292.4L277.0,292.3L277.5,289.5L278.7,289.3Z","cx":230.6,"cy":328.3},"34":{"d":"M171.7,254.5L174.0,257.9L168.5,256.5L167.5,255.1L171.7,254.5ZM165.3,229.6L167.5,230.3L168.7,232.9L168.0,236.4L168.5,239.9L171.2,246.1L171.9,250.9L170.5,252.4L169.4,251.4L167.1,251.0L166.2,251.8L163.3,248.7L162.3,245.5L162.9,242.9L161.8,235.6L160.8,234.4L160.8,232.6L163.5,230.1L165.3,229.6ZM214.0,197.5L221.7,194.2L224.9,195.0L227.5,193.7L228.6,193.9L232.1,190.1L233.6,190.9L234.9,190.2L239.0,192.3L240.0,192.4L241.6,194.8L243.7,196.2L246.1,196.6L247.8,198.8L249.4,199.7L249.2,202.1L251.9,203.1L251.7,205.7L253.7,205.9L255.9,207.5L257.7,209.6L257.1,210.8L258.6,212.1L258.7,213.7L257.3,214.9L256.5,213.5L251.9,214.2L252.3,216.5L250.9,216.5L249.5,217.7L249.4,219.5L247.4,221.0L244.1,220.6L240.2,217.3L236.6,216.3L234.0,219.3L234.8,221.0L236.4,220.9L236.7,222.4L235.8,223.9L236.1,227.1L235.9,230.3L238.2,231.5L239.2,233.1L239.3,234.9L237.4,238.0L238.2,239.5L237.2,240.7L240.3,246.4L240.0,248.3L242.1,250.5L245.0,252.0L247.1,251.4L247.0,255.7L246.1,257.2L246.7,258.6L245.1,260.9L245.1,264.3L244.2,265.7L247.0,267.7L247.2,271.0L250.1,272.6L250.8,274.6L252.3,276.1L253.4,273.6L254.5,272.7L254.1,267.9L255.2,267.0L256.6,267.8L256.4,269.3L257.6,271.3L258.3,273.5L261.4,275.6L263.7,273.3L263.6,272.3L265.8,270.7L268.1,270.4L269.2,269.5L270.8,270.6L273.5,271.3L275.2,273.0L274.7,275.4L275.5,279.1L274.5,282.2L276.9,285.3L277.0,286.6L278.7,289.3L277.5,289.5L277.0,292.3L278.1,292.4L277.0,296.0L275.4,295.5L274.6,294.1L269.8,293.2L270.0,295.6L269.5,297.7L267.0,299.0L265.4,299.3L263.6,298.2L262.6,298.6L261.5,296.1L259.9,293.9L257.7,296.0L255.3,293.1L254.1,291.0L254.0,287.0L253.6,285.0L252.1,282.5L249.3,283.0L248.2,284.5L246.3,285.0L244.4,284.5L243.9,286.4L240.3,285.8L239.8,287.4L238.0,286.5L237.1,287.6L234.3,287.3L233.9,289.2L229.3,288.3L227.5,286.6L226.5,281.2L224.2,281.9L222.4,280.5L221.2,280.9L218.3,279.7L215.3,281.6L212.5,281.4L210.8,284.5L211.0,286.8L210.0,290.2L207.0,291.7L205.2,293.1L202.1,293.4L199.8,294.3L198.5,296.8L191.9,295.7L192.5,293.4L190.5,290.7L189.4,290.7L189.5,286.6L187.1,284.9L184.5,281.7L183.0,282.6L181.0,280.6L178.8,280.2L179.8,276.5L181.5,275.2L180.3,272.5L180.4,270.6L181.8,267.9L180.1,264.3L179.2,263.9L177.9,261.2L182.3,258.7L178.5,255.1L175.9,254.8L176.6,251.6L177.4,250.0L176.1,247.2L175.3,241.6L176.3,240.2L174.3,237.7L173.0,232.6L173.4,231.4L175.6,230.4L175.4,229.1L173.8,228.1L174.8,225.1L174.2,223.9L172.5,223.6L172.7,226.1L170.9,231.0L169.8,230.7L168.3,229.0L165.6,228.1L165.3,223.4L163.5,223.5L164.1,226.7L164.9,228.1L161.7,231.4L159.3,232.8L158.3,231.5L158.6,229.0L159.6,227.8L158.6,224.0L156.7,222.9L156.5,220.4L157.5,219.4L157.3,217.2L155.8,218.1L153.6,220.8L152.1,220.9L150.8,222.8L148.6,222.4L144.9,223.5L144.8,221.3L146.3,221.5L146.3,219.6L148.5,218.0L151.7,219.3L152.9,217.6L151.3,217.1L149.7,214.2L147.9,213.7L146.4,214.5L146.8,216.7L145.3,218.0L144.1,217.1L145.1,215.6L142.3,212.0L144.8,211.8L145.9,210.3L147.3,206.2L146.2,204.7L147.8,203.9L148.8,205.1L150.5,203.6L150.0,201.6L151.8,198.0L155.4,196.8L154.8,199.3L152.9,200.2L154.8,202.0L155.7,200.3L157.2,199.9L158.5,197.7L159.3,194.8L158.5,191.0L160.7,190.0L161.1,192.1L160.2,193.2L160.1,195.7L161.7,197.5L161.7,198.9L159.4,204.3L161.4,204.8L158.2,207.1L159.7,208.1L163.3,207.1L161.8,204.9L162.1,202.8L163.7,203.7L165.5,203.5L166.3,202.0L165.6,200.6L168.4,198.8L169.6,197.3L167.1,193.2L162.9,191.5L163.3,189.8L162.2,187.8L166.6,185.8L171.1,185.5L173.3,186.4L175.7,190.5L176.5,189.0L173.6,184.3L177.5,179.9L179.4,180.6L180.3,182.3L186.4,185.3L190.1,187.3L195.8,187.2L197.1,187.9L202.6,189.7L202.6,190.7L204.5,195.4L205.4,195.3L205.8,198.4L206.7,199.5L207.1,202.3L208.6,200.6L211.5,199.4L214.3,199.1L214.0,197.5Z","cx":207.1,"cy":237.6},"33":{"d":"M368.8,179.9L366.8,182.8L362.7,182.3L361.0,183.6L361.6,185.3L359.2,187.9L356.5,188.5L356.5,189.7L352.0,192.9L351.7,194.3L350.1,195.0L350.0,197.9L348.5,200.7L350.6,202.0L350.7,203.7L348.2,207.8L344.8,207.5L343.4,209.0L340.5,207.2L339.4,207.4L337.2,205.3L336.0,202.8L332.3,201.1L331.6,203.8L329.8,203.7L330.3,207.4L325.5,206.9L323.3,205.3L320.8,207.0L320.3,208.4L318.3,208.6L316.1,207.3L315.8,209.8L313.7,214.8L317.0,217.6L317.2,219.2L315.1,219.1L312.8,217.2L311.1,218.2L309.7,218.1L307.4,216.0L306.3,218.0L304.8,219.3L304.8,220.8L300.9,221.0L304.9,223.9L305.4,225.4L304.8,229.0L301.0,227.8L299.7,224.9L298.7,227.2L297.4,227.3L297.5,229.6L295.2,229.6L292.9,231.9L295.2,234.2L298.6,234.5L299.6,235.9L299.6,237.8L302.0,239.3L302.6,241.1L300.3,244.1L300.4,246.3L299.6,248.8L300.4,250.6L299.6,252.3L301.2,257.6L300.3,259.0L297.7,260.6L296.8,262.9L297.7,266.6L300.2,266.7L301.3,264.8L304.7,266.3L306.3,268.7L308.0,269.3L309.3,267.9L311.8,267.0L315.0,268.7L313.5,270.5L315.3,273.2L315.5,274.8L314.3,275.6L312.1,273.9L309.6,274.9L308.7,276.2L310.5,280.1L309.7,282.7L307.9,283.9L307.1,286.4L307.4,289.3L305.2,291.3L303.4,290.9L302.3,292.6L299.9,294.4L297.8,292.6L293.2,293.9L292.0,295.3L287.0,293.3L284.7,293.2L283.9,290.7L282.9,290.1L280.6,292.5L280.2,290.7L278.7,289.3L277.0,286.6L276.9,285.3L274.5,282.2L275.5,279.1L274.7,275.4L275.2,273.0L273.5,271.3L270.8,270.6L269.2,269.5L268.1,270.4L265.8,270.7L265.2,268.4L266.2,265.4L266.6,260.3L268.9,256.3L268.7,254.4L271.4,253.1L270.2,250.7L267.9,250.5L266.7,252.1L265.5,249.4L266.7,247.5L264.6,246.6L262.3,247.5L260.8,246.7L257.8,246.8L258.0,243.8L257.2,242.9L258.2,242.5L258.4,239.4L257.8,237.5L256.1,237.4L255.2,235.4L252.0,235.0L250.9,233.1L249.4,232.8L248.8,229.3L246.9,227.1L247.6,225.1L248.7,224.6L249.4,222.0L247.4,221.0L249.4,219.5L249.5,217.7L250.9,216.5L252.3,216.5L251.9,214.2L256.5,213.5L257.3,214.9L258.7,213.7L258.6,212.1L257.1,210.8L257.7,209.6L255.9,207.5L253.7,205.9L251.7,205.7L251.9,203.1L249.2,202.1L249.4,199.7L247.8,198.8L249.5,194.9L252.6,193.2L253.1,192.3L255.7,192.4L257.8,190.6L256.3,188.8L257.1,187.3L260.2,186.9L262.7,184.8L262.7,182.3L265.3,181.1L266.4,181.9L267.9,180.7L271.2,182.2L272.4,181.9L272.3,180.2L275.4,177.7L278.1,176.5L278.7,171.6L283.0,172.3L285.8,166.9L286.6,167.0L287.5,164.1L288.5,163.3L288.1,164.0L289.0,167.8L290.2,169.8L292.1,171.2L294.4,171.0L298.6,169.9L299.5,169.1L302.2,170.4L303.9,169.0L305.3,166.4L303.9,162.3L306.2,160.0L309.5,158.8L312.6,160.3L312.6,161.5L314.3,163.5L313.5,164.9L314.4,166.4L317.9,165.8L320.8,164.3L322.0,162.8L324.6,163.4L326.2,163.1L326.3,161.6L328.7,159.8L330.5,160.7L331.1,162.1L333.3,162.1L334.7,164.3L338.9,162.6L340.5,163.4L339.8,165.5L335.4,168.2L334.4,169.5L335.1,170.9L336.9,171.9L340.2,170.6L340.8,169.8L346.5,171.0L346.1,173.0L348.5,174.8L352.7,175.0L354.1,173.9L356.4,174.6L356.6,175.8L358.6,177.2L360.8,177.2L363.4,178.5L366.6,178.9L368.8,179.9Z","cx":299.1,"cy":218.0},"32":{"d":"M432.0,171.0L429.8,171.2L426.6,173.0L425.8,174.5L423.8,174.3L423.3,175.9L421.8,176.6L419.7,179.0L420.3,182.2L417.0,182.6L412.1,178.1L408.2,176.1L406.4,176.9L405.4,179.7L398.1,177.8L396.1,178.6L394.7,176.7L392.8,177.0L390.4,182.2L388.6,182.2L386.0,181.4L384.3,178.5L382.7,178.6L380.6,177.5L378.8,180.1L377.6,180.8L378.5,183.2L377.6,184.0L376.1,182.7L373.0,182.6L372.0,181.3L368.8,179.9L366.6,178.9L363.4,178.5L360.8,177.2L358.6,177.2L356.6,175.8L356.4,174.6L354.1,173.9L352.7,175.0L348.5,174.8L346.1,173.0L346.5,171.0L340.8,169.8L340.2,170.6L336.9,171.9L335.1,170.9L334.4,169.5L335.4,168.2L339.8,165.5L340.5,163.4L338.9,162.6L334.7,164.3L333.3,162.1L331.1,162.1L330.5,160.7L328.7,159.8L326.3,161.6L326.2,163.1L324.6,163.4L322.0,162.8L320.8,164.3L317.9,165.8L314.4,166.4L313.5,164.9L314.3,163.5L312.6,161.5L312.6,160.3L309.5,158.8L306.2,160.0L303.9,162.3L305.3,166.4L303.9,169.0L302.2,170.4L299.5,169.1L298.6,169.9L294.4,171.0L292.1,171.2L290.2,169.8L289.0,167.8L288.1,164.0L288.5,163.3L288.6,159.9L289.4,158.8L289.1,154.4L290.3,153.3L289.5,150.9L289.5,146.8L291.1,146.4L291.2,144.4L292.6,140.5L293.5,140.0L292.8,136.3L290.8,133.1L290.8,131.6L293.7,128.4L296.9,127.9L297.5,126.4L294.3,125.1L292.5,122.9L290.1,123.1L289.0,122.1L284.9,122.7L283.9,121.2L280.1,118.8L277.8,116.6L275.6,115.6L273.5,117.6L271.7,118.1L269.8,116.5L271.2,114.5L270.9,111.9L272.0,108.0L270.1,108.2L267.1,106.9L270.4,103.7L268.4,100.3L269.6,98.3L268.7,96.7L269.4,94.7L272.0,93.2L274.0,91.0L275.4,91.1L276.9,87.6L276.6,84.0L275.6,82.3L270.4,80.9L270.7,79.7L270.0,77.3L266.6,77.4L264.0,76.7L262.7,75.6L261.5,70.9L261.8,69.6L261.2,65.5L260.3,64.7L258.7,66.1L257.9,65.0L256.1,64.8L250.6,66.9L249.7,64.6L247.2,64.6L246.6,62.3L247.6,60.6L247.8,57.9L246.1,57.4L244.8,59.4L241.9,61.2L238.9,59.7L238.0,57.1L236.9,55.5L237.1,53.9L236.5,51.9L235.3,50.7L233.6,51.8L231.9,50.8L232.2,48.2L231.8,45.3L234.3,43.4L234.8,41.2L236.2,40.7L238.2,42.5L239.5,42.4L243.7,40.2L245.1,40.9L248.2,41.4L249.7,42.6L252.1,40.9L253.0,41.2L256.5,40.0L259.8,40.7L262.0,42.5L264.3,42.4L265.3,44.0L267.2,44.0L270.2,41.7L274.3,40.0L276.0,40.0L278.8,41.2L283.4,40.8L284.2,39.7L286.9,40.3L288.4,39.1L291.1,38.5L293.3,41.7L297.0,41.2L300.6,39.6L304.2,40.3L308.9,42.2L316.5,42.9L324.2,38.8L330.0,35.4L332.4,33.2L333.0,32.1L335.9,29.6L337.6,25.5L338.9,15.4L338.5,12.4L339.4,10.5L342.0,10.0L346.1,15.1L346.9,17.9L348.4,20.0L348.4,21.8L349.9,24.9L352.4,27.8L351.4,28.3L351.5,30.2L352.8,32.3L356.7,36.6L357.6,40.2L359.8,42.9L361.4,47.8L363.2,50.8L362.9,52.1L363.9,55.6L365.0,57.2L365.0,60.8L367.3,64.6L370.1,67.3L371.1,70.1L373.2,72.8L375.4,74.7L376.2,76.8L379.5,82.3L381.1,83.4L381.0,84.5L385.0,88.5L384.6,90.0L388.8,95.0L388.9,96.0L398.6,105.9L400.9,109.3L404.7,112.9L404.7,114.6L403.6,116.5L404.5,118.9L410.1,123.9L410.5,125.9L409.7,127.9L410.5,129.9L413.9,134.8L416.3,137.1L417.2,141.5L419.3,143.5L421.9,145.3L422.0,147.2L423.4,149.4L423.6,151.7L426.5,153.8L426.4,154.9L428.9,156.3L428.7,157.9L431.3,161.3L430.0,162.3L430.5,163.8L429.8,165.8L430.0,167.6L432.0,171.0Z","cx":326.0,"cy":110.5},"31":{"d":"M187.3,153.2L185.1,154.7L183.9,156.4L186.3,158.3L187.3,158.2L188.6,161.1L191.0,162.4L190.7,164.0L187.6,163.1L186.8,164.3L185.2,162.9L183.8,164.7L181.6,164.5L181.4,162.4L183.1,160.5L183.3,159.0L182.0,156.4L183.7,156.2L184.7,154.6L187.3,153.2ZM288.5,163.3L287.5,164.1L286.6,167.0L285.8,166.9L283.0,172.3L278.7,171.6L278.1,176.5L275.4,177.7L272.3,180.2L272.4,181.9L271.2,182.2L267.9,180.7L266.4,181.9L265.3,181.1L262.7,182.3L262.7,184.8L260.2,186.9L257.1,187.3L256.3,188.8L257.8,190.6L255.7,192.4L253.1,192.3L252.6,193.2L249.5,194.9L247.8,198.8L246.1,196.6L243.7,196.2L241.6,194.8L240.0,192.4L239.0,192.3L234.9,190.2L233.6,190.9L232.1,190.1L228.6,193.9L227.5,193.7L224.9,195.0L221.7,194.2L214.0,197.5L213.6,195.2L212.0,194.1L210.0,194.5L209.9,192.7L208.4,191.6L206.6,188.5L206.5,187.5L204.1,186.2L203.3,183.9L200.0,183.9L199.7,181.7L200.9,179.6L201.7,175.8L200.7,175.0L201.5,173.1L203.9,172.9L204.7,170.5L203.5,167.9L202.4,169.0L199.6,168.9L197.9,171.9L194.4,174.4L193.0,172.0L193.9,170.8L191.9,169.3L192.4,164.2L193.4,162.6L192.3,161.1L194.3,158.3L198.5,159.6L200.5,159.1L203.4,160.3L203.4,157.8L206.6,155.4L204.7,154.6L201.9,155.3L197.7,153.9L197.5,152.7L194.8,150.5L194.4,148.8L195.5,148.1L198.7,143.7L200.2,140.7L201.6,140.2L202.4,137.6L201.5,135.3L199.2,133.7L199.4,130.7L200.8,130.4L201.5,126.3L201.8,126.9L206.3,127.8L206.8,129.3L205.6,133.0L206.3,134.9L207.8,134.9L210.3,132.9L213.4,139.5L215.5,137.9L216.7,139.3L218.8,138.7L222.4,135.8L223.1,137.1L225.3,137.0L225.2,138.7L226.7,140.1L227.9,140.0L230.8,136.7L232.5,136.4L235.1,134.8L236.4,132.2L234.5,131.3L236.6,127.3L238.0,127.1L238.2,125.5L237.5,123.5L231.1,125.6L231.1,123.0L232.6,120.7L231.7,116.4L230.3,115.8L230.5,111.5L229.3,110.7L226.5,111.6L223.5,110.2L222.8,112.0L221.5,112.7L220.3,115.2L220.7,117.2L219.9,117.8L217.4,114.8L214.3,116.4L213.3,119.9L213.4,121.8L211.1,123.5L208.8,123.9L206.1,122.3L204.8,120.8L203.8,123.3L199.3,122.0L197.7,122.1L195.3,119.3L191.6,117.1L189.8,118.2L189.0,120.5L187.3,120.8L184.1,122.6L182.5,120.2L182.1,118.3L180.3,115.4L180.8,114.0L179.7,112.9L180.1,109.9L179.3,108.9L180.0,106.1L180.2,105.0L179.0,102.9L180.9,102.4L182.6,102.7L183.6,104.1L187.4,104.5L190.0,101.7L192.1,100.4L193.1,95.9L191.9,95.0L194.7,91.9L192.9,89.8L193.4,88.6L192.4,86.0L193.0,82.2L194.6,83.5L196.7,83.9L199.4,82.6L199.0,80.3L201.0,79.0L202.6,79.2L204.0,78.0L206.9,78.1L206.4,76.0L207.1,73.6L209.1,73.9L210.8,75.3L211.5,73.1L212.6,71.7L212.6,69.2L210.3,68.5L208.8,66.9L206.8,68.7L206.2,67.7L204.0,68.3L203.0,66.5L199.7,63.3L201.6,60.4L206.6,55.6L210.8,52.9L212.8,54.9L215.5,55.0L217.9,54.2L219.0,55.6L220.7,54.1L219.9,51.7L221.3,51.4L224.4,49.1L228.3,47.6L231.8,45.3L232.2,48.2L231.9,50.8L233.6,51.8L235.3,50.7L236.5,51.9L237.1,53.9L236.9,55.5L238.0,57.1L238.9,59.7L241.9,61.2L244.8,59.4L246.1,57.4L247.8,57.9L247.6,60.6L246.6,62.3L247.2,64.6L249.7,64.6L250.6,66.9L256.1,64.8L257.9,65.0L258.7,66.1L260.3,64.7L261.2,65.5L261.8,69.6L261.5,70.9L262.7,75.6L264.0,76.7L266.6,77.4L270.0,77.3L270.7,79.7L270.4,80.9L275.6,82.3L276.6,84.0L276.9,87.6L275.4,91.1L274.0,91.0L272.0,93.2L269.4,94.7L268.7,96.7L269.6,98.3L268.4,100.3L270.4,103.7L267.1,106.9L270.1,108.2L272.0,108.0L270.9,111.9L271.2,114.5L269.8,116.5L271.7,118.1L273.5,117.6L275.6,115.6L277.8,116.6L280.1,118.8L283.9,121.2L284.9,122.7L289.0,122.1L290.1,123.1L292.5,122.9L294.3,125.1L297.5,126.4L296.9,127.9L293.7,128.4L290.8,131.6L290.8,133.1L292.8,136.3L293.5,140.0L292.6,140.5L291.2,144.4L291.1,146.4L289.5,146.8L289.5,150.9L290.3,153.3L289.1,154.4L289.4,158.8L288.6,159.9L288.5,163.3Z","cx":230.1,"cy":123.7},"29":{"d":"M247.4,221.0L249.4,222.0L248.7,224.6L247.6,225.1L246.9,227.1L248.8,229.3L249.4,232.8L250.9,233.1L252.0,235.0L255.2,235.4L256.1,237.4L257.8,237.5L258.4,239.4L258.2,242.5L257.2,242.9L255.9,242.0L254.0,243.6L254.1,245.2L253.4,247.7L251.1,250.5L248.2,250.5L247.1,251.4L245.0,252.0L242.1,250.5L240.0,248.3L240.3,246.4L237.2,240.7L238.2,239.5L237.4,238.0L239.3,234.9L239.2,233.1L238.2,231.5L235.9,230.3L236.1,227.1L235.8,223.9L236.7,222.4L236.4,220.9L234.8,221.0L234.0,219.3L236.6,216.3L240.2,217.3L244.1,220.6L247.4,221.0Z","cx":245.6,"cy":234.2},"26":{"d":"M439.6,335.2L438.8,337.4L440.7,340.3L440.9,342.3L439.9,343.8L440.4,345.3L439.2,349.3L438.7,353.3L433.8,354.4L430.7,357.4L432.0,358.1L431.9,361.5L430.3,365.3L431.5,367.6L428.3,368.6L426.7,370.4L424.5,369.1L424.8,366.8L423.2,364.2L419.0,365.0L417.7,364.0L419.2,361.7L417.1,358.4L415.4,359.2L413.9,358.8L412.1,357.3L409.4,354.0L409.1,352.3L401.7,349.0L399.2,348.5L397.1,345.1L399.2,344.2L401.4,342.5L402.0,340.7L401.5,339.1L399.9,338.5L403.8,335.2L406.2,336.4L405.7,334.2L405.8,331.9L407.5,329.5L411.7,328.5L412.6,327.1L413.9,328.1L418.0,327.4L420.4,329.4L422.2,329.6L423.0,330.7L422.2,333.5L422.8,334.8L426.5,335.4L431.1,332.0L436.3,333.7L439.6,335.2Z","cx":420.4,"cy":346.3},"25":{"d":"M265.8,270.7L263.6,272.3L263.7,273.3L261.4,275.6L258.3,273.5L257.6,271.3L256.4,269.3L256.6,267.8L255.2,267.0L254.1,267.9L254.5,272.7L253.4,273.6L252.3,276.1L250.8,274.6L250.1,272.6L247.2,271.0L247.0,267.7L244.2,265.7L245.1,264.3L245.1,260.9L246.7,258.6L246.1,257.2L247.0,255.7L247.1,251.4L248.2,250.5L251.1,250.5L253.4,247.7L254.1,245.2L254.0,243.6L255.9,242.0L257.2,242.9L258.0,243.8L257.8,246.8L260.8,246.7L262.3,247.5L264.6,246.6L266.7,247.5L265.5,249.4L266.7,252.1L267.9,250.5L270.2,250.7L271.4,253.1L268.7,254.4L268.9,256.3L266.6,260.3L266.2,265.4L265.2,268.4L265.8,270.7Z","cx":257.4,"cy":259.7},"24":{"d":"M213.8,378.2L215.9,379.0L216.1,380.2L219.9,386.1L222.2,386.0L223.9,388.2L222.8,389.6L222.9,392.9L221.0,396.3L219.1,396.8L217.8,398.6L216.1,398.4L215.2,396.7L210.7,398.4L209.3,398.0L206.0,400.8L203.9,399.9L202.4,400.8L200.9,396.6L199.0,394.9L194.3,394.3L193.5,395.0L191.1,393.4L191.4,388.5L192.9,388.0L191.9,385.5L193.5,385.3L194.3,383.0L195.7,383.8L197.0,383.3L197.2,381.7L198.7,379.0L201.1,378.7L200.4,380.9L204.8,382.6L207.8,381.3L210.9,379.1L212.3,379.5L213.8,378.2Z","cx":206.7,"cy":388.7},"23":{"d":"M140.4,175.2L141.2,176.7L139.9,177.9L138.6,176.6L140.4,175.2ZM158.8,157.2L161.4,158.3L160.3,159.3L158.3,158.1L158.8,157.2ZM142.8,157.1L143.8,158.8L146.1,160.9L147.5,161.3L145.9,163.6L143.7,164.1L143.3,162.7L141.4,161.9L141.2,160.0L142.8,157.1ZM175.1,155.5L176.7,156.0L177.8,158.8L176.1,159.7L174.0,162.3L171.6,161.4L172.2,157.2L175.1,155.5ZM169.8,142.0L172.4,144.8L171.9,146.4L170.0,146.9L168.8,143.1L169.8,142.0ZM184.7,132.1L185.2,133.4L183.6,134.4L181.4,134.6L178.3,136.0L177.3,137.9L172.5,140.9L170.5,140.8L170.2,139.6L168.4,138.1L166.3,138.0L164.9,135.8L166.4,135.3L171.7,131.8L174.5,132.3L176.2,131.8L177.5,128.7L180.0,129.2L183.5,130.6L184.7,132.1ZM174.3,127.3L175.4,128.1L174.8,131.0L171.6,129.4L174.3,127.3ZM160.7,125.6L165.3,128.9L162.4,129.2L162.5,127.7L160.7,125.6ZM203.8,123.3L201.5,126.3L200.8,130.4L199.4,130.7L199.2,133.7L201.5,135.3L202.4,137.6L201.6,140.2L200.2,140.7L198.7,143.7L198.0,144.6L192.0,149.4L188.1,149.5L187.6,146.1L186.4,144.9L186.4,140.1L186.0,136.2L186.9,132.6L186.8,129.2L187.1,126.3L186.0,125.7L184.1,122.6L187.3,120.8L189.0,120.5L189.8,118.2L191.6,117.1L195.3,119.3L197.7,122.1L199.3,122.0L203.8,123.3ZM154.0,115.1L155.8,115.3L155.1,117.9L153.3,115.9L154.0,115.1ZM108.1,112.5L107.6,114.0L105.1,115.4L105.2,112.3L108.1,112.5ZM150.6,111.5L152.0,113.9L151.5,115.1L149.0,113.6L150.6,111.5ZM162.5,104.8L161.8,108.5L164.0,110.4L166.3,110.8L166.7,113.8L163.7,116.5L162.1,116.7L162.3,114.4L161.5,112.3L158.6,110.7L157.3,109.4L158.6,108.3L158.9,105.4L162.5,104.8ZM156.9,97.6L159.3,98.8L162.4,98.8L163.1,99.4L161.4,102.1L159.2,103.2L157.4,102.6L155.3,103.1L153.4,104.5L151.7,102.8L153.0,100.3L153.1,98.7L154.3,97.5L156.9,97.6ZM180.0,106.1L179.3,108.9L180.1,109.9L179.7,112.9L180.8,114.0L180.3,115.4L180.4,117.0L181.9,120.7L179.8,121.6L179.1,123.5L177.7,122.3L175.9,123.1L175.3,121.5L172.0,122.1L169.1,121.9L166.8,120.2L166.3,117.6L169.2,115.7L167.6,111.3L164.6,109.6L163.8,108.0L163.6,105.0L164.8,103.9L164.3,100.2L166.3,98.7L168.3,96.5L172.1,95.9L174.6,98.8L178.4,101.1L178.8,103.3L180.0,106.1ZM18.5,94.2L19.8,94.2L19.7,97.5L18.9,98.5L16.4,98.7L16.0,96.9L18.5,94.2ZM16.6,79.4L18.4,79.1L20.5,79.7L20.6,82.4L18.6,83.5L17.5,86.6L12.3,85.7L10.0,81.7L10.3,79.9L12.4,80.7L16.6,79.4Z","cx":193.9,"cy":131.7},"22":{"d":"M357.6,331.7L356.1,332.6L355.7,336.5L353.9,336.9L350.5,336.5L349.2,338.2L344.7,340.0L343.8,339.5L345.1,339.4L346.6,336.2L344.7,334.7L342.4,331.9L342.0,329.5L342.8,329.0L348.0,330.5L349.3,329.4L349.3,327.0L345.7,324.8L345.2,322.8L347.0,319.2L348.2,317.8L352.5,317.9L353.3,315.8L351.7,314.3L348.4,313.2L345.5,313.3L345.1,311.6L346.7,309.0L348.0,305.5L350.0,304.0L353.1,303.9L352.4,307.1L353.1,308.4L354.6,308.2L357.3,305.9L358.3,303.5L357.7,299.5L360.2,300.1L363.2,299.2L365.7,296.1L372.2,295.2L375.3,296.3L375.8,298.5L377.1,300.1L376.4,301.7L377.0,303.0L376.4,304.7L378.0,306.2L378.6,309.6L377.6,312.5L373.8,315.9L374.5,318.2L371.4,319.9L372.6,323.4L372.3,326.2L371.5,327.4L369.8,327.5L367.5,329.1L366.2,329.4L365.0,327.0L365.6,325.7L362.4,325.5L359.1,327.7L357.6,331.7Z","cx":358.4,"cy":318.5},"21":{"d":"M426.7,370.4L423.2,371.6L422.8,375.7L421.2,377.6L422.1,379.5L420.4,383.1L419.6,386.2L417.3,387.0L416.9,388.9L411.8,389.7L410.4,391.9L411.0,394.5L410.5,395.6L408.0,395.7L405.6,394.8L405.4,393.1L404.1,393.0L403.3,394.7L405.7,396.1L406.7,398.8L408.2,400.0L407.0,401.1L402.7,397.3L401.6,399.8L399.8,401.3L398.1,401.4L396.7,403.0L395.3,398.0L392.6,397.1L391.8,397.9L385.0,397.8L386.3,400.9L386.3,402.9L385.1,405.2L382.4,404.3L383.0,402.2L381.6,400.7L383.7,399.9L384.6,398.6L383.9,395.8L385.6,394.9L384.7,392.4L382.1,391.0L381.4,389.3L385.7,389.3L387.8,388.3L389.1,386.6L388.1,384.5L389.4,383.2L392.9,382.9L399.4,380.9L400.8,376.6L404.1,375.9L405.0,374.2L406.2,374.8L407.5,373.3L409.6,372.7L410.9,368.7L412.8,366.6L415.1,368.0L416.8,367.0L417.7,364.0L419.0,365.0L423.2,364.2L424.8,366.8L424.5,369.1L426.7,370.4Z","cx":403.0,"cy":387.2},"11":{"d":"M201.5,126.3L203.8,123.3L204.8,120.8L206.1,122.3L208.8,123.9L211.1,123.5L213.4,121.8L213.3,119.9L214.3,116.4L217.4,114.8L219.9,117.8L220.7,117.2L220.3,115.2L221.5,112.7L222.8,112.0L223.5,110.2L226.5,111.6L229.3,110.7L230.5,111.5L230.3,115.8L231.7,116.4L232.6,120.7L231.1,123.0L231.1,125.6L237.5,123.5L238.2,125.5L238.0,127.1L236.6,127.3L234.5,131.3L236.4,132.2L235.1,134.8L232.5,136.4L230.8,136.7L227.9,140.0L226.7,140.1L225.2,138.7L225.3,137.0L223.1,137.1L222.4,135.8L218.8,138.7L216.7,139.3L215.5,137.9L213.4,139.5L210.3,132.9L207.8,134.9L206.3,134.9L205.6,133.0L206.8,129.3L206.3,127.8L201.8,126.9L201.5,126.3Z","cx":220.5,"cy":126.2}}};
+const PHOTOS = {"seoul":[{"t":"여의도 윤중로 벚꽃","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Cherry_Blossom_in_Yeouido_Park_-_panoramio_%282%29.jpg/1920px-Cherry_Blossom_in_Yeouido_Park_-_panoramio_%282%29.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Cherry_Blossom_in_Yeouido_Park_-_panoramio_%282%29.jpg/500px-Cherry_Blossom_in_Yeouido_Park_-_panoramio_%282%29.jpg","a":"Alexey Komarov","l":"CC BY 3.0","p":"https://commons.wikimedia.org/wiki/File:Cherry_Blossom_in_Yeouido_Park_-_panoramio_(2).jpg"},{"t":"창경궁의 봄","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Changgyeonggung_blossom.jpg/1920px-Changgyeonggung_blossom.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Changgyeonggung_blossom.jpg/500px-Changgyeonggung_blossom.jpg","a":"Wei-Te Wong","l":"CC BY-SA 2.0","p":"https://commons.wikimedia.org/wiki/File:Changgyeonggung_blossom.jpg"},{"t":"경복궁 벚꽃","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Cherry_flowers_during_the_cherry_blossom_at_the_Gyeongbokgung_Palace%2C_South_Korea.jpg/1920px-Cherry_flowers_during_the_cherry_blossom_at_the_Gyeongbokgung_Palace%2C_South_Korea.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Cherry_flowers_during_the_cherry_blossom_at_the_Gyeongbokgung_Palace%2C_South_Korea.jpg/500px-Cherry_flowers_during_the_cherry_blossom_at_the_Gyeongbokgung_Palace%2C_South_Korea.jpg","a":"WorldContributor","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/File:Cherry_flowers_during_the_cherry_blossom_at_the_Gyeongbokgung_Palace,_South_Korea.jpg"},{"t":"서울숲 벚꽃","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Cherry_blossoms_in_Seoul_Forest%2C_South_Korea.jpg/1920px-Cherry_blossoms_in_Seoul_Forest%2C_South_Korea.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Cherry_blossoms_in_Seoul_Forest%2C_South_Korea.jpg/500px-Cherry_blossoms_in_Seoul_Forest%2C_South_Korea.jpg","a":"WANGYIFAN2024","l":"CC0","p":"https://commons.wikimedia.org/wiki/File:Cherry_blossoms_in_Seoul_Forest,_South_Korea.jpg"},{"t":"경복궁 벚꽃길","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Cherry_trees_at_the_Gyeongbokgung_Palace_with_traditional_dressed_women_in_the_background%2C_Seoul%2C_South_Korea.jpg/1920px-Cherry_trees_at_the_Gyeongbokgung_Palace_with_traditional_dressed_women_in_the_background%2C_Seoul%2C_South_Korea.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Cherry_trees_at_the_Gyeongbokgung_Palace_with_traditional_dressed_women_in_the_background%2C_Seoul%2C_South_Korea.jpg/500px-Cherry_trees_at_the_Gyeongbokgung_Palace_with_traditional_dressed_women_in_the_background%2C_Seoul%2C_South_Korea.jpg","a":"WorldContributor","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/File:Cherry_trees_at_the_Gyeongbokgung_Palace_with_traditional_dressed_women_in_the_background,_Seoul,_South_Korea.jpg"},{"t":"북한산 대서문길","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bukhansan_National_Park_%28%EB%B6%81%ED%95%9C%EC%82%B0%EA%B5%AD%EB%A6%BD%EA%B3%B5%EC%9B%90%29_-_Cherry_blossom_panorama_near_Daeseomun-gil_%28%EB%8C%80%EC%84%9C%EB%AC%B8%EA%B8%B8%29.JPG/1920px-Bukhansan_National_Park_%28%EB%B6%81%ED%95%9C%EC%82%B0%EA%B5%AD%EB%A6%BD%EA%B3%B5%EC%9B%90%29_-_Cherry_blossom_panorama_near_Daeseomun-gil_%28%EB%8C%80%EC%84%9C%EB%AC%B8%EA%B8%B8%29.JPG","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bukhansan_National_Park_%28%EB%B6%81%ED%95%9C%EC%82%B0%EA%B5%AD%EB%A6%BD%EA%B3%B5%EC%9B%90%29_-_Cherry_blossom_panorama_near_Daeseomun-gil_%28%EB%8C%80%EC%84%9C%EB%AC%B8%EA%B8%B8%29.JPG/500px-Bukhansan_National_Park_%28%EB%B6%81%ED%95%9C%EC%82%B0%EA%B5%AD%EB%A6%BD%EA%B3%B5%EC%9B%90%29_-_Cherry_blossom_panorama_near_Daeseomun-gil_%28%EB%8C%80%EC%84%9C%EB%AC%B8%EA%B8%B8%29.JPG","a":"Tmv23","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/File:Bukhansan_National_Park_(%EB%B6%81%ED%95%9C%EC%82%B0%EA%B5%AD%EB%A6%BD%EA%B3%B5%EC%9B%90)_-_Cherry_blossom_panorama_near_Daeseomun-gil_(%EB%8C%80%EC%84%9C%EB%AC%B8%EA%B8%B8).JPG"}],"busan":[{"t":"부산시민공원 벚나무","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Busan_Citizens_Park_Cherry_Blossoms_Tree.jpg/1920px-Busan_Citizens_Park_Cherry_Blossoms_Tree.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Busan_Citizens_Park_Cherry_Blossoms_Tree.jpg/500px-Busan_Citizens_Park_Cherry_Blossoms_Tree.jpg","a":"Vichycombo","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/File:Busan_Citizens_Park_Cherry_Blossoms_Tree.jpg"},{"t":"부산시민공원 벚꽃","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Busan_Citizens_Park_Cherry_Blossoms_Close-Range_View.jpg/1920px-Busan_Citizens_Park_Cherry_Blossoms_Close-Range_View.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Busan_Citizens_Park_Cherry_Blossoms_Close-Range_View.jpg/500px-Busan_Citizens_Park_Cherry_Blossoms_Close-Range_View.jpg","a":"Vichycombo","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/File:Busan_Citizens_Park_Cherry_Blossoms_Close-Range_View.jpg"},{"t":"부산 벚꽃 가로수","src":"https://upload.wikimedia.org/wikipedia/commons/a/a5/Musim_semi_di_Busan.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Musim_semi_di_Busan.jpg/500px-Musim_semi_di_Busan.jpg","a":"Dianosaurus","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/File:Musim_semi_di_Busan.jpg"},{"t":"부산시민공원 원경","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Busan_Citizens_Park_Cherry_Blossoms_Tree_Distant_view.jpg/1920px-Busan_Citizens_Park_Cherry_Blossoms_Tree_Distant_view.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Busan_Citizens_Park_Cherry_Blossoms_Tree_Distant_view.jpg/500px-Busan_Citizens_Park_Cherry_Blossoms_Tree_Distant_view.jpg","a":"Vichycombo","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/File:Busan_Citizens_Park_Cherry_Blossoms_Tree_Distant_view.jpg"},{"t":"범어사의 봄","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Beomeosa_Temple_-_panoramio_%281%29.jpg/1920px-Beomeosa_Temple_-_panoramio_%281%29.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Beomeosa_Temple_-_panoramio_%281%29.jpg/500px-Beomeosa_Temple_-_panoramio_%281%29.jpg","a":"Alexey Komarov","l":"CC BY 3.0","p":"https://commons.wikimedia.org/wiki/File:Beomeosa_Temple_-_panoramio_(1).jpg"}],"daegu":[{"t":"두류공원 벚꽃","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Duryu_Park_Cherry_Blossoms.jpg/1920px-Duryu_Park_Cherry_Blossoms.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Duryu_Park_Cherry_Blossoms.jpg/500px-Duryu_Park_Cherry_Blossoms.jpg","a":"Ken Eckert","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/File:Duryu_Park_Cherry_Blossoms.jpg"},{"t":"경북대학교 벚꽃길","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/KNU_with_cherry_blossoms_in_full_bloom_on_April_2nd%2C_2016.jpg/1920px-KNU_with_cherry_blossoms_in_full_bloom_on_April_2nd%2C_2016.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/KNU_with_cherry_blossoms_in_full_bloom_on_April_2nd%2C_2016.jpg/500px-KNU_with_cherry_blossoms_in_full_bloom_on_April_2nd%2C_2016.jpg","a":"Choi2451","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/File:KNU_with_cherry_blossoms_in_full_bloom_on_April_2nd,_2016.jpg"},{"t":"경북대학교 벚꽃","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Cherry_Blossoms_in_Kyungpook_National_University.jpg/1920px-Cherry_Blossoms_in_Kyungpook_National_University.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Cherry_Blossoms_in_Kyungpook_National_University.jpg/500px-Cherry_Blossoms_in_Kyungpook_National_University.jpg","a":"Choi2451","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/File:Cherry_Blossoms_in_Kyungpook_National_University.jpg"},{"t":"경북대 벚꽃 야경","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Cherry_blossom_festival_in_KNU_on_April_5th%2C_2016.jpg/1920px-Cherry_blossom_festival_in_KNU_on_April_5th%2C_2016.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Cherry_blossom_festival_in_KNU_on_April_5th%2C_2016.jpg/500px-Cherry_blossom_festival_in_KNU_on_April_5th%2C_2016.jpg","a":"Choi2451","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/File:Cherry_blossom_festival_in_KNU_on_April_5th,_2016.jpg"}],"incheon":[{"t":"구월아시아드 근린공원 벚꽃길","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/%EA%B5%AC%EC%9B%94%EC%95%84%EC%8B%9C%EC%95%84%EB%93%9C%EA%B7%BC%EB%A6%B0%EA%B3%B5%EC%9B%90_%EB%B2%9A%EA%BD%83%EA%B8%B8_2024.jpg/1920px-%EA%B5%AC%EC%9B%94%EC%95%84%EC%8B%9C%EC%95%84%EB%93%9C%EA%B7%BC%EB%A6%B0%EA%B3%B5%EC%9B%90_%EB%B2%9A%EA%BD%83%EA%B8%B8_2024.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/%EA%B5%AC%EC%9B%94%EC%95%84%EC%8B%9C%EC%95%84%EB%93%9C%EA%B7%BC%EB%A6%B0%EA%B3%B5%EC%9B%90_%EB%B2%9A%EA%BD%83%EA%B8%B8_2024.jpg/500px-%EA%B5%AC%EC%9B%94%EC%95%84%EC%8B%9C%EC%95%84%EB%93%9C%EA%B7%BC%EB%A6%B0%EA%B3%B5%EC%9B%90_%EB%B2%9A%EA%BD%83%EA%B8%B8_2024.jpg","a":"Narubaru7","l":"CC BY 4.0","p":"https://commons.wikimedia.org/wiki/File:%EA%B5%AC%EC%9B%94%EC%95%84%EC%8B%9C%EC%95%84%EB%93%9C%EA%B7%BC%EB%A6%B0%EA%B3%B5%EC%9B%90_%EB%B2%9A%EA%BD%83%EA%B8%B8_2024.jpg"},{"t":"선수촌공원로 벚꽃길","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/%EC%84%A0%EC%88%98%EC%B4%8C%EA%B3%B5%EC%9B%90%EB%A1%9C_%EB%B2%9A%EA%BD%83%EA%B8%B8_2025.jpg/1920px-%EC%84%A0%EC%88%98%EC%B4%8C%EA%B3%B5%EC%9B%90%EB%A1%9C_%EB%B2%9A%EA%BD%83%EA%B8%B8_2025.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/%EC%84%A0%EC%88%98%EC%B4%8C%EA%B3%B5%EC%9B%90%EB%A1%9C_%EB%B2%9A%EA%BD%83%EA%B8%B8_2025.jpg/500px-%EC%84%A0%EC%88%98%EC%B4%8C%EA%B3%B5%EC%9B%90%EB%A1%9C_%EB%B2%9A%EA%BD%83%EA%B8%B8_2025.jpg","a":"Narubaru7","l":"CC BY 4.0","p":"https://commons.wikimedia.org/wiki/File:%EC%84%A0%EC%88%98%EC%B4%8C%EA%B3%B5%EC%9B%90%EB%A1%9C_%EB%B2%9A%EA%BD%83%EA%B8%B8_2025.jpg"},{"t":"구월아시아드 선수촌공원","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/%EA%B5%AC%EC%9B%94%EC%95%84%EC%8B%9C%EC%95%84%EB%93%9C%EC%84%A0%EC%88%98%EC%B4%8C%EA%B3%B5%EC%9B%90_%EB%B2%9A%EA%BD%83_2025.jpg/1920px-%EA%B5%AC%EC%9B%94%EC%95%84%EC%8B%9C%EC%95%84%EB%93%9C%EC%84%A0%EC%88%98%EC%B4%8C%EA%B3%B5%EC%9B%90_%EB%B2%9A%EA%BD%83_2025.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/%EA%B5%AC%EC%9B%94%EC%95%84%EC%8B%9C%EC%95%84%EB%93%9C%EC%84%A0%EC%88%98%EC%B4%8C%EA%B3%B5%EC%9B%90_%EB%B2%9A%EA%BD%83_2025.jpg/500px-%EA%B5%AC%EC%9B%94%EC%95%84%EC%8B%9C%EC%95%84%EB%93%9C%EC%84%A0%EC%88%98%EC%B4%8C%EA%B3%B5%EC%9B%90_%EB%B2%9A%EA%BD%83_2025.jpg","a":"Narubaru7","l":"CC BY 4.0","p":"https://commons.wikimedia.org/wiki/File:%EA%B5%AC%EC%9B%94%EC%95%84%EC%8B%9C%EC%95%84%EB%93%9C%EC%84%A0%EC%88%98%EC%B4%8C%EA%B3%B5%EC%9B%90_%EB%B2%9A%EA%BD%83_2025.jpg"},{"t":"장수천 벚꽃길","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/%EC%9E%A5%EC%88%98%EC%B2%9C_%EB%B2%9A%EA%BD%83%EA%B8%B8_2024.jpg/1920px-%EC%9E%A5%EC%88%98%EC%B2%9C_%EB%B2%9A%EA%BD%83%EA%B8%B8_2024.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/%EC%9E%A5%EC%88%98%EC%B2%9C_%EB%B2%9A%EA%BD%83%EA%B8%B8_2024.jpg/500px-%EC%9E%A5%EC%88%98%EC%B2%9C_%EB%B2%9A%EA%BD%83%EA%B8%B8_2024.jpg","a":"Narubaru7","l":"CC BY 4.0","p":"https://commons.wikimedia.org/wiki/File:%EC%9E%A5%EC%88%98%EC%B2%9C_%EB%B2%9A%EA%BD%83%EA%B8%B8_2024.jpg"},{"t":"구월 선수촌공원 벚꽃","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/%EA%B5%AC%EC%9B%94%EC%95%84%EC%8B%9C%EC%95%84%EB%93%9C%EC%84%A0%EC%88%98%EC%B4%8C%EA%B3%B5%EC%9B%90_%EB%B2%9A%EA%BD%832_2025.jpg/1920px-%EA%B5%AC%EC%9B%94%EC%95%84%EC%8B%9C%EC%95%84%EB%93%9C%EC%84%A0%EC%88%98%EC%B4%8C%EA%B3%B5%EC%9B%90_%EB%B2%9A%EA%BD%832_2025.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/%EA%B5%AC%EC%9B%94%EC%95%84%EC%8B%9C%EC%95%84%EB%93%9C%EC%84%A0%EC%88%98%EC%B4%8C%EA%B3%B5%EC%9B%90_%EB%B2%9A%EA%BD%832_2025.jpg/500px-%EA%B5%AC%EC%9B%94%EC%95%84%EC%8B%9C%EC%95%84%EB%93%9C%EC%84%A0%EC%88%98%EC%B4%8C%EA%B3%B5%EC%9B%90_%EB%B2%9A%EA%BD%832_2025.jpg","a":"Narubaru7","l":"CC BY 4.0","p":"https://commons.wikimedia.org/wiki/File:%EA%B5%AC%EC%9B%94%EC%95%84%EC%8B%9C%EC%95%84%EB%93%9C%EC%84%A0%EC%88%98%EC%B4%8C%EA%B3%B5%EC%9B%90_%EB%B2%9A%EA%BD%832_2025.jpg"}],"daejeon":[{"t":"충남대학교 벚꽃 가로수길","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/CNU-TreeLinedStreet.jpg/1920px-CNU-TreeLinedStreet.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/CNU-TreeLinedStreet.jpg/500px-CNU-TreeLinedStreet.jpg","a":"Matthew Van Wingerden, Vdubbs (talk)","l":"CC BY 3.0","p":"https://commons.wikimedia.org/wiki/File:CNU-TreeLinedStreet.jpg"},{"t":"충남대학교 벚꽃","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Cherry_Blossoms_Chungnam_University.jpg/1920px-Cherry_Blossoms_Chungnam_University.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Cherry_Blossoms_Chungnam_University.jpg/500px-Cherry_Blossoms_Chungnam_University.jpg","a":"Ricksinkorea","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/File:Cherry_Blossoms_Chungnam_University.jpg"}],"gyeonggi":[{"t":"렛츠런파크 서울 벚꽃축제 (과천)","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Seoul_Racecourse_Park_during_the_Cherry_Blossom_Festival.jpg/1920px-Seoul_Racecourse_Park_during_the_Cherry_Blossom_Festival.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Seoul_Racecourse_Park_during_the_Cherry_Blossom_Festival.jpg/500px-Seoul_Racecourse_Park_during_the_Cherry_Blossom_Festival.jpg","a":"Clément Chevallier","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/File:Seoul_Racecourse_Park_during_the_Cherry_Blossom_Festival.jpg"},{"t":"남한산성 가는 벚꽃길","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Way_to_Namhansanseong_Castle_with_cherry_blossom_-_panoramio.jpg/1920px-Way_to_Namhansanseong_Castle_with_cherry_blossom_-_panoramio.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Way_to_Namhansanseong_Castle_with_cherry_blossom_-_panoramio.jpg/500px-Way_to_Namhansanseong_Castle_with_cherry_blossom_-_panoramio.jpg","a":"Cho's","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/File:Way_to_Namhansanseong_Castle_with_cherry_blossom_-_panoramio.jpg"},{"t":"안산 수로의 벚꽃","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Canal_during_Cherry_Blossom_Season%2C_Ansan%2C_Korea.jpg/1920px-Canal_during_Cherry_Blossom_Season%2C_Ansan%2C_Korea.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Canal_during_Cherry_Blossom_Season%2C_Ansan%2C_Korea.jpg/500px-Canal_during_Cherry_Blossom_Season%2C_Ansan%2C_Korea.jpg","a":"Ken Eckert","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/File:Canal_during_Cherry_Blossom_Season,_Ansan,_Korea.jpg"},{"t":"안산 벚꽃","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Korean_Cherry_Blossoms_in_Ansan.jpg/1920px-Korean_Cherry_Blossoms_in_Ansan.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Korean_Cherry_Blossoms_in_Ansan.jpg/500px-Korean_Cherry_Blossoms_in_Ansan.jpg","a":"Ken Eckert","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/File:Korean_Cherry_Blossoms_in_Ansan.jpg"},{"t":"군포 산본 벚꽃 언덕","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Gunpo_City_Sanbon_Azalea_Hill_Cherry_Blossoms_20260411_%2803%29.jpg/1920px-Gunpo_City_Sanbon_Azalea_Hill_Cherry_Blossoms_20260411_%2803%29.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Gunpo_City_Sanbon_Azalea_Hill_Cherry_Blossoms_20260411_%2803%29.jpg/500px-Gunpo_City_Sanbon_Azalea_Hill_Cherry_Blossoms_20260411_%2803%29.jpg","a":"Treeinkr","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/File:Gunpo_City_Sanbon_Azalea_Hill_Cherry_Blossoms_20260411_(03).jpg"},{"t":"한양대 ERICA 벚꽃 야경","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Cherry_blossoms_at_night_at_Hanyang_University_ERICA_Campus%2C_South_Korea.jpg/1920px-Cherry_blossoms_at_night_at_Hanyang_University_ERICA_Campus%2C_South_Korea.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Cherry_blossoms_at_night_at_Hanyang_University_ERICA_Campus%2C_South_Korea.jpg/500px-Cherry_blossoms_at_night_at_Hanyang_University_ERICA_Campus%2C_South_Korea.jpg","a":"VN.NguyenDucDuy","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/File:Cherry_blossoms_at_night_at_Hanyang_University_ERICA_Campus,_South_Korea.jpg"}],"gangwon":[{"t":"경포대와 벚꽃","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Gyeongpodae_Pavilion_Gangneung.JPG/1920px-Gyeongpodae_Pavilion_Gangneung.JPG","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Gyeongpodae_Pavilion_Gangneung.JPG/500px-Gyeongpodae_Pavilion_Gangneung.JPG","a":"Scroozle","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/File:Gyeongpodae_Pavilion_Gangneung.JPG"},{"t":"경포호 벚꽃","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Gyeongpo_Lake_Cherry_Blossoms.JPG/1920px-Gyeongpo_Lake_Cherry_Blossoms.JPG","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Gyeongpo_Lake_Cherry_Blossoms.JPG/500px-Gyeongpo_Lake_Cherry_Blossoms.JPG","a":"Scroozle","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/File:Gyeongpo_Lake_Cherry_Blossoms.JPG"},{"t":"강릉 벚꽃","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Cherry_blossom%2C_Gangneung-do.jpg/1920px-Cherry_blossom%2C_Gangneung-do.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Cherry_blossom%2C_Gangneung-do.jpg/500px-Cherry_blossom%2C_Gangneung-do.jpg","a":"Maryna Dymovich","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/File:Cherry_blossom,_Gangneung-do.jpg"},{"t":"강릉 꽃비","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Cherry_blossom_snow%2C_Gangneung-do.jpg/1920px-Cherry_blossom_snow%2C_Gangneung-do.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Cherry_blossom_snow%2C_Gangneung-do.jpg/500px-Cherry_blossom_snow%2C_Gangneung-do.jpg","a":"Maryna Dymovich","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/File:Cherry_blossom_snow,_Gangneung-do.jpg"}],"chungbuk":[{"t":"충주 한국교통대 벚꽃길","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/4K1A8072.jpg/1920px-4K1A8072.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/4K1A8072.jpg/500px-4K1A8072.jpg","a":"Knutpr5105","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/File:4K1A8072.jpg"}],"jeonbuk":[{"t":"전주 벚꽃","src":"https://upload.wikimedia.org/wikipedia/commons/d/d1/Spring_time_in_Korea.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Spring_time_in_Korea.jpg/500px-Spring_time_in_Korea.jpg","a":"DRLEYA","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/File:Spring_time_in_Korea.jpg"},{"t":"정읍천 벚꽃","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/%EC%A0%95%EC%9D%8D%EC%B2%9C_%EB%B2%9A%EA%BD%83.jpg/1920px-%EC%A0%95%EC%9D%8D%EC%B2%9C_%EB%B2%9A%EA%BD%83.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/%EC%A0%95%EC%9D%8D%EC%B2%9C_%EB%B2%9A%EA%BD%83.jpg/500px-%EC%A0%95%EC%9D%8D%EC%B2%9C_%EB%B2%9A%EA%BD%83.jpg","a":"단이와풍이","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/File:%EC%A0%95%EC%9D%8D%EC%B2%9C_%EB%B2%9A%EA%BD%83.jpg"}],"jeonnam":[{"t":"구례 화엄사의 봄꽃","src":"https://upload.wikimedia.org/wikipedia/commons/6/65/%ED%99%94%EC%97%84%EC%82%AC_%EB%B2%97%EA%BD%83.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/%ED%99%94%EC%97%84%EC%82%AC_%EB%B2%97%EA%BD%83.jpg/500px-%ED%99%94%EC%97%84%EC%82%AC_%EB%B2%97%EA%BD%83.jpg","a":"Ryuch","l":"Public domain","p":"https://commons.wikimedia.org/wiki/File:%ED%99%94%EC%97%84%EC%82%AC_%EB%B2%97%EA%BD%83.jpg"}],"gyeongbuk":[{"t":"경주 불국사 근처 벚나무","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Korea-Gyeongju-Cherry_blossom_tree_near_Bulguksa-01.jpg/1920px-Korea-Gyeongju-Cherry_blossom_tree_near_Bulguksa-01.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Korea-Gyeongju-Cherry_blossom_tree_near_Bulguksa-01.jpg/500px-Korea-Gyeongju-Cherry_blossom_tree_near_Bulguksa-01.jpg","a":"myllissa from Seoul, S. Korea","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/File:Korea-Gyeongju-Cherry_blossom_tree_near_Bulguksa-01.jpg"}],"gyeongnam":[{"t":"진해 벚꽃 터널","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Cherry_Blossom_in_Jinhae-2016-04-02-3.jpg/1920px-Cherry_Blossom_in_Jinhae-2016-04-02-3.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Cherry_Blossom_in_Jinhae-2016-04-02-3.jpg/500px-Cherry_Blossom_in_Jinhae-2016-04-02-3.jpg","a":"Alexey Komarov","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/File:Cherry_Blossom_in_Jinhae-2016-04-02-3.jpg"},{"t":"진해 여좌천","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Cherry_Blossom_in_Jinhae-2016-04-02-5.jpg/1920px-Cherry_Blossom_in_Jinhae-2016-04-02-5.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Cherry_Blossom_in_Jinhae-2016-04-02-5.jpg/500px-Cherry_Blossom_in_Jinhae-2016-04-02-5.jpg","a":"Alexey Komarov","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/File:Cherry_Blossom_in_Jinhae-2016-04-02-5.jpg"},{"t":"진해 벚꽃길","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Cherry_Blossom_in_Jinhae-2016-04-02-1.jpg/1920px-Cherry_Blossom_in_Jinhae-2016-04-02-1.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Cherry_Blossom_in_Jinhae-2016-04-02-1.jpg/500px-Cherry_Blossom_in_Jinhae-2016-04-02-1.jpg","a":"Alexey Komarov","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/File:Cherry_Blossom_in_Jinhae-2016-04-02-1.jpg"},{"t":"진해 시가지 벚꽃","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Cherry_Blossom_in_Jinhae_-_panoramio.jpg/1920px-Cherry_Blossom_in_Jinhae_-_panoramio.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Cherry_Blossom_in_Jinhae_-_panoramio.jpg/500px-Cherry_Blossom_in_Jinhae_-_panoramio.jpg","a":"Alexey Komarov","l":"CC BY 3.0","p":"https://commons.wikimedia.org/wiki/File:Cherry_Blossom_in_Jinhae_-_panoramio.jpg"},{"t":"진해군항제 인파","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Cherry_Blossom_in_Jinhae-2016-04-02-2.jpg/1920px-Cherry_Blossom_in_Jinhae-2016-04-02-2.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Cherry_Blossom_in_Jinhae-2016-04-02-2.jpg/500px-Cherry_Blossom_in_Jinhae-2016-04-02-2.jpg","a":"Alexey Komarov","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/File:Cherry_Blossom_in_Jinhae-2016-04-02-2.jpg"},{"t":"하동 화개 십리벚꽃길","src":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Hwagae_Cherry_Blossoms_Festival_020.JPG/1920px-Hwagae_Cherry_Blossoms_Festival_020.JPG","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Hwagae_Cherry_Blossoms_Festival_020.JPG/500px-Hwagae_Cherry_Blossoms_Festival_020.JPG","a":"myself (User:Piotrus)","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/File:Hwagae_Cherry_Blossoms_Festival_020.JPG"}],"jeju":[{"t":"제주 왕벚꽃길","src":"https://upload.wikimedia.org/wikipedia/commons/d/d9/Jeju_King_Cherry_Blossom_Spring_Festival.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Jeju_King_Cherry_Blossom_Spring_Festival.jpg/500px-Jeju_King_Cherry_Blossom_Spring_Festival.jpg","a":"Korea.net / Korean Culture and Information Service","l":"CC BY-SA 2.0","p":"https://commons.wikimedia.org/wiki/File:Jeju_King_Cherry_Blossom_Spring_Festival.jpg"},{"t":"제주왕벚꽃축제","src":"https://upload.wikimedia.org/wikipedia/commons/1/1f/Jeju_King_Cherry_Blossom_Spring_Festival_%284402805241%29.jpg","th":"https://upload.wikimedia.org/wikipedia/commons/1/1f/Jeju_King_Cherry_Blossom_Spring_Festival_%284402805241%29.jpg","a":"Korea.net / Korean Culture and Information Service","l":"CC BY-SA 2.0","p":"https://commons.wikimedia.org/wiki/File:Jeju_King_Cherry_Blossom_Spring_Festival_(4402805241).jpg"},{"t":"제주 벚꽃 가로수","src":"https://upload.wikimedia.org/wikipedia/commons/d/d3/Korea-Jejudo-Cherry_blossom-01.jpg","th":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Korea-Jejudo-Cherry_blossom-01.jpg/500px-Korea-Jejudo-Cherry_blossom-01.jpg","a":"Channy Yun from South Korea","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/File:Korea-Jejudo-Cherry_blossom-01.jpg"},{"t":"제주 유채꽃과 벚꽃","src":"https://upload.wikimedia.org/wikipedia/commons/5/53/Jeju_King_Cherry_Blossom_Spring_Festival_-_4403570832.jpg","th":"https://upload.wikimedia.org/wikipedia/commons/5/53/Jeju_King_Cherry_Blossom_Spring_Festival_-_4403570832.jpg","a":"Korea.net / Korean Culture and Information Service","l":"CC BY-SA 2.0","p":"https://commons.wikimedia.org/wiki/File:Jeju_King_Cherry_Blossom_Spring_Festival_-_4403570832.jpg"}]};
+
+const REGIONS = [
+  {key:'seoul',guide:'서울의 봄은 여의도 윤중로에서 시작돼요. 국회의사당 뒤편 여의서로를 따라 늘어선 왕벚나무가 하얀 꽃 터널을 만들고, 석촌호수와 경복궁에서는 호수와 고궁이 어우러진 벚꽃을 만날 수 있어요. 보통 4월 초에 절정을 맞으니 해 질 무렵 한강 바람을 맞으며 걸어 보세요.',code:'11',short:'서울',full:'서울특별시',spot:'여의도 윤중로 · 석촌호수 · 경복궁',bloom:'4월 초 – 4월 중순',
+   facts:[['명소:','여의도 윤중로, 석촌호수, 경복궁과 창경궁 같은 고궁.'],['축제:','영등포 여의도 봄꽃축제, 송파 석촌호수 벚꽃축제.'],['개화 시기:','보통 4월 초에 피어 일주일 남짓 절정을 이룹니다.'],['특징:','한강과 고궁, 도심 빌딩이 벚꽃과 어우러지는 풍경.']]},
+  {key:'busan',guide:'부산은 바다와 벚꽃을 함께 즐길 수 있는 도시예요. 해운대 달맞이길에서는 바다를 내려다보며 벚꽃길을 걷고, 강서구 대저생태공원 일대에서는 낙동강을 따라 30리 벚꽃길이 펼쳐져요. 남쪽이라 3월 말이면 일찍 꽃 소식이 들려와요.',code:'21',short:'부산',full:'부산광역시',spot:'온천천 · 달맞이길 · 부산시민공원',bloom:'3월 말 – 4월 초',
+   facts:[['명소:','온천천 시민공원, 해운대 달맞이길, 부산시민공원.'],['축제:','강서 낙동강 30리 벚꽃축제.'],['개화 시기:','3월 말이면 남쪽 바닷바람을 타고 일찍 핍니다.'],['특징:','바다와 벚꽃을 한 번에 즐길 수 있는 항구 도시.']]},
+  {key:'daegu',guide:'대구는 분지 지형 덕분에 봄이 빨리 찾아와요. 두류공원과 경북대학교 캠퍼스에는 벚꽃 터널이 이어지고, 팔공산 순환도로는 꽃길 드라이브 코스로 사랑받아요. 3월 말부터 4월 초까지가 가장 아름다워요.',code:'22',short:'대구',full:'대구광역시',spot:'두류공원 · 팔공산 벚꽃길 · 경북대학교',bloom:'3월 말 – 4월 초',
+   facts:[['명소:','두류공원, 팔공산 순환도로, 경북대학교 캠퍼스.'],['즐길거리:','두류공원 벚꽃길 산책과 이월드의 봄 축제.'],['개화 시기:','분지 지형 덕분에 3월 말부터 빠르게 핍니다.'],['특징:','도심 공원과 캠퍼스 곳곳에 이어지는 벚꽃 터널.']]},
+  {key:'incheon',guide:'인천에서는 생활 가까이에 있는 벚꽃길을 만날 수 있어요. 인천대공원에는 길게 이어진 벚꽃 산책로가 있고, 남동구 장수천과 구월아시아드선수촌공원은 주민들이 즐겨 찾는 꽃길이에요. 4월 초 주말에 가벼운 피크닉을 즐겨 보세요.',code:'23',short:'인천',full:'인천광역시',spot:'인천대공원 · 구월아시아드선수촌공원 · 장수천',bloom:'4월 초 – 4월 중순',
+   facts:[['명소:','인천대공원, 구월아시아드선수촌공원, 장수천.'],['즐길거리:','하천을 따라 걷는 벚꽃길과 공원 피크닉.'],['개화 시기:','서울과 비슷한 4월 초에 절정을 맞습니다.'],['특징:','아파트 숲 사이로 길게 이어지는 생활 속 벚꽃길.']]},
+  {key:'gwangju',guide:'광주의 대표 벚꽃 명소는 북구 중외공원이에요. 시립미술관과 국립광주박물관이 가까이 있어 꽃구경과 문화 나들이를 함께 할 수 있어요. 광주호 호수생태원과 운천저수지도 봄 산책길로 좋아요.',code:'24',short:'광주',full:'광주광역시',spot:'중외공원 · 광주호 호수생태원 · 운천저수지',bloom:'3월 말 – 4월 초',near:['jeonnam','jeonbuk'],
+   facts:[['명소:','중외공원, 광주호 호수생태원, 운천저수지.'],['즐길거리:','미술관이 모인 중외공원의 벚꽃 산책.'],['개화 시기:','3월 말에서 4월 초 사이에 핍니다.'],['특징:','예술과 호수가 어우러진 호남의 봄.']]},
+  {key:'daejeon',guide:'대전의 봄은 대청호에서 가장 빛나요. 호숫가를 따라 벚꽃이 피면 대덕구에서 대청호 벚꽃축제가 열리고, 충남대학교 캠퍼스의 벚꽃 가로수길도 인기가 많아요. 4월 초에 절정을 맞아요.',code:'25',short:'대전',full:'대전광역시',spot:'대청호 · 충남대학교 · 유성 온천로',bloom:'4월 초',near:['chungbuk'],
+   facts:[['명소:','대청호 오백리길, 충남대학교, 유성 온천로.'],['축제:','대덕구 대청호 벚꽃축제.'],['개화 시기:','4월 초에 절정을 이룹니다.'],['특징:','넓은 호수와 캠퍼스 가로수길이 대표 풍경.']]},
+  {key:'ulsan',guide:'울산 울주군의 작천정 벚꽃길은 계곡을 따라 늘어선 오래된 벚나무가 터널을 이루는 곳이에요. 해마다 작천정 벚꽃축제가 열리고, 도심에서는 태화강과 무거천 벚꽃길을 걸을 수 있어요. 3월 말부터 4월 초가 가장 좋아요.',code:'26',short:'울산',full:'울산광역시',spot:'작천정 벚꽃길 · 태화강 · 무거천',bloom:'3월 말 – 4월 초',near:['busan','gyeongbuk'],
+   facts:[['명소:','울주 작천정 벚꽃길, 태화강, 무거천.'],['축제:','작천정 벚꽃축제.'],['개화 시기:','3월 말부터 4월 초까지.'],['특징:','계곡을 따라 이어지는 오래된 벚나무 터널.']]},
+  {key:'sejong',guide:'세종시는 넓은 호수공원이 자랑인 새로운 도시예요. 세종호수공원 둘레길과 고복저수지 주변에 벚꽃이 피고, 조치원 일대에도 정겨운 벚꽃길이 있어요. 4월 초 저녁에 호숫가를 천천히 걸어 보세요.',code:'29',short:'세종',full:'세종특별자치시',spot:'세종호수공원 · 고복저수지 · 조치원',bloom:'4월 초',near:['daejeon','chungbuk'],
+   facts:[['명소:','세종호수공원, 고복저수지, 조치원 일대.'],['즐길거리:','호수공원 둘레길 야간 산책.'],['개화 시기:','4월 초에 핍니다.'],['특징:','새로운 행정도시의 호수와 어우러진 벚꽃.']]},
+  {key:'gyeonggi',guide:'경기도에는 서른한 개 시와 군 곳곳에 벚꽃 명소가 숨어 있어요. 과천 렛츠런파크에서는 해마다 벚꽃축제가 열리고, 남한산성으로 오르는 길과 안산 호수공원도 꽃길로 유명해요. 4월 초부터 중순까지 지역마다 차례로 꽃이 피어요.',code:'31',short:'경기',full:'경기도',spot:'과천 렛츠런파크 · 남한산성 · 안산',bloom:'4월 초 – 4월 중순',
+   facts:[['명소:','과천 렛츠런파크, 남한산성 가는 길, 안산 호수공원.'],['축제:','렛츠런파크 서울 벚꽃축제 등 시·군별 축제.'],['개화 시기:','4월 초부터 중순까지 차례로 핍니다.'],['특징:','31개 시·군 곳곳에 숨은 벚꽃 명소.']]},
+  {key:'gangwon',guide:'강원도 강릉의 경포호는 호수와 바다, 정자가 어우러진 벚꽃 명소예요. 경포대 주변 호숫가를 따라 경포벚꽃축제가 열리고, 밤에는 조명이 켜져 더욱 낭만적이에요. 동해안은 4월 초에, 산간 지역은 조금 늦게 꽃이 피어요.',code:'32',short:'강원',full:'강원특별자치도',spot:'강릉 경포호 · 경포대 · 춘천',bloom:'3월 말 – 4월 초',
+   facts:[['명소:','강릉 경포호와 경포대, 춘천 소양강변.'],['축제:','강릉 경포벚꽃축제.'],['개화 시기:','동해안은 4월 초, 산간은 4월 중순.'],['특징:','호수와 바다, 정자가 벚꽃과 어우러지는 풍경.']]},
+  {key:'chungbuk',guide:'충청북도 청주에서는 무심천을 따라 벚꽃 둑길이 길게 이어져요. 충주의 한국교통대학교 캠퍼스도 벚꽃길로 잘 알려져 있어요. 4월 초에 하천을 따라 걸으며 꽃비를 맞아 보세요.',code:'33',short:'충북',full:'충청북도',spot:'청주 무심천 · 충주 한국교통대',bloom:'4월 초',near:['daejeon'],
+   facts:[['명소:','청주 무심천, 충주 한국교통대학교 벚꽃길.'],['즐길거리:','무심천 둑길을 따라 걷는 벚꽃 산책.'],['개화 시기:','4월 초에 절정을 맞습니다.'],['특징:','하천과 캠퍼스를 따라 길게 이어지는 꽃길.']]},
+  {key:'chungnam',guide:'충청남도 공주의 계룡산 동학사 가는 길은 오래전부터 이름난 벚꽃 명소예요. 매년 봄 계룡산 동학사 벚꽃축제가 열리고, 아산 현충사와 곡교천 주변도 봄꽃으로 가득해요. 4월 초에 찾아가면 가장 좋아요.',code:'34',short:'충남',full:'충청남도',spot:'공주 동학사 · 아산 곡교천 · 현충사',bloom:'4월 초',near:['daejeon','sejong'],
+   facts:[['명소:','계룡산 동학사, 아산 곡교천, 현충사.'],['축제:','계룡산 동학사 벚꽃축제.'],['개화 시기:','4월 초에 핍니다.'],['특징:','산사와 계곡을 따라 피어나는 고즈넉한 벚꽃.']]},
+  {key:'jeonbuk',guide:'전라북도의 전주와 군산을 잇는 번영로는 전군가도라고 불리는 긴 벚꽃길이에요. 정읍천에도 벚꽃이 흐드러지게 피고, 진안 마이산은 산속이라 4월 중순까지 늦은 벚꽃을 볼 수 있어요. 봄 드라이브 여행으로 추천해요.',code:'35',short:'전북',full:'전북특별자치도',spot:'전군가도 · 정읍천 · 마이산',bloom:'4월 초 – 4월 중순',near:['jeonnam','gyeongnam'],
+   facts:[['명소:','전주–군산 번영로(전군가도), 정읍천, 진안 마이산.'],['즐길거리:','100리 벚꽃길 드라이브.'],['개화 시기:','4월 초, 마이산은 4월 중순까지.'],['특징:','국내에서 손꼽히는 긴 벚꽃 가로수길.']]},
+  {key:'jeonnam',guide:'전라남도 영암에서는 월출산 아래로 100리 벚꽃길이 이어지고, 봄마다 왕인문화축제가 열려요. 구례에서는 섬진강을 따라 꽃길이 펼쳐지고, 화엄사 주변도 봄꽃으로 물들어요. 3월 말에서 4월 초 사이에 찾아가 보세요.',code:'36',short:'전남',full:'전라남도',spot:'영암 100리 벚꽃길 · 구례 섬진강 · 화엄사',bloom:'3월 말 – 4월 초',near:['gyeongnam','jeonbuk'],
+   facts:[['명소:','영암 월출산 100리 벚꽃길, 구례 섬진강, 화엄사.'],['축제:','영암 왕인문화축제.'],['개화 시기:','3월 말에서 4월 초 사이.'],['특징:','섬진강과 월출산을 배경으로 한 남도의 봄.']]},
+  {key:'gyeongbuk',guide:'경상북도 경주는 천년 고도의 유적과 벚꽃이 함께하는 곳이에요. 보문호 둘레를 따라 벚꽃이 피고, 대릉원 돌담길과 불국사 주변도 꽃길로 아름다워요. 봄에는 벚꽃 아래를 달리는 경주벚꽃마라톤대회도 열려요.',code:'37',short:'경북',full:'경상북도',spot:'경주 보문호 · 대릉원 돌담길 · 불국사',bloom:'3월 말 – 4월 초',near:['daegu'],
+   facts:[['명소:','경주 보문호, 대릉원 돌담길, 불국사.'],['축제:','경주벚꽃마라톤대회와 보문관광단지의 봄.'],['개화 시기:','3월 말부터 4월 초까지.'],['특징:','천년 고도의 유적과 벚꽃이 함께하는 풍경.']]},
+  {key:'gyeongnam',guide:'경상남도 창원 진해는 대한민국 벚꽃의 수도라고 불려요. 여좌천과 경화역의 벚꽃 터널 아래에서 국내 최대 규모의 벚꽃축제인 진해군항제가 열려요. 하동에서는 화개장터에서 쌍계사까지 이어지는 십리벚꽃길도 꼭 걸어 보세요.',code:'38',short:'경남',full:'경상남도',spot:'진해 여좌천 · 경화역 · 하동 십리벚꽃길',bloom:'3월 말 – 4월 초',
+   facts:[['명소:','창원 진해 여좌천과 경화역, 하동 십리벚꽃길.'],['축제:','진해군항제 — 국내 최대 규모의 벚꽃축제.'],['개화 시기:','3월 말에서 4월 초.'],['특징:','도시 전체가 벚꽃으로 뒤덮이는 벚꽃의 수도.']]},
+  {key:'jeju',guide:'제주는 우리나라에서 가장 먼저 벚꽃이 피는 곳이에요. 제주시 전농로와 제주대학교 입구 벚꽃길에서 제주왕벚꽃축제가 열리고, 노란 유채꽃과 함께 핀 벚꽃이 섬의 봄을 알려요. 한라산은 왕벚나무 자생지로도 알려져 있어요.',code:'39',short:'제주',full:'제주특별자치도',spot:'전농로 · 제주대학교 입구 · 장전리',bloom:'3월 하순',
+   facts:[['명소:','제주시 전농로, 제주대학교 입구, 애월 장전리.'],['축제:','제주왕벚꽃축제.'],['개화 시기:','3월 하순, 전국에서 가장 먼저 핍니다.'],['특징:','왕벚나무 자생지와 유채꽃이 어우러진 섬의 봄.']]}
+];
+REGIONS.forEach((r, i) => { r.num = '[' + String(i + 1).padStart(2, '0') + ']'; });
+const byKey = Object.fromEntries(REGIONS.map(r => [r.key, r]));
+const LABEL_OFFSET = {seoul:[0,-2],incheon:[-14,8],gyeonggi:[18,-30],daejeon:[0,0],sejong:[-8,-8],chungnam:[-30,6],ulsan:[6,0],busan:[4,2],gwangju:[0,0],daegu:[0,0]};
+const SMALL = new Set(['seoul','incheon','daejeon','sejong','ulsan','busan','gwangju','daegu']);
+const FEATURED = 'gyeongnam';
+const MAP_BG = PHOTOS.seoul[0].src;
+const INTRO_FACTS = [
+  ['개화 순서:','제주 3월 하순 → 남부 3월 말 → 서울 4월 초 → 강원 산간 4월 중순.'],
+  ['둘러보기:','지도에서 17개 시·도를 골라 벚꽃 명소 사진을 감상하세요.'],
+  ['포토부스:','카메라로 찍은 내 모습을 벚꽃 명소 사진 위에 합성해 저장할 수 있어요.']
+];
+
+function photosFor(key) {
+  const r = byKey[key];
+  const list = (PHOTOS[key] || []).map(p => ({...p, region:key}));
+  for (const n of (r.near || [])) {
+    if (list.length >= 4) break;
+    for (const p of (PHOTOS[n] || [])) {
+      if (list.length >= 4) break;
+      if (!list.some(x => x.src === p.src)) list.push({...p, region:key, near:n});
+    }
+  }
+  return list;
+}
+const photoTitle = p => p.near ? `${p.t} (인근 지역 · ${byKey[p.near].short})` : p.t;
+
+/* =========================== DOM =========================== */
+const $ = s => document.querySelector(s);
+const exp = $('.experience');
+const portal = $('#portal');
+const portalCanvas = $('#portal-canvas'), pctx = portalCanvas.getContext('2d');
+const sceneCanvas = $('#scene-canvas'), sctx = sceneCanvas.getContext('2d');
+const petalCanvas = $('#petal-canvas'), tctx = petalCanvas.getContext('2d');
+const listEl = $('.planet-list');
+const titleEl = $('#planet-title'), factsEl = $('#facts');
+const mapSvg = $('#korea-map');
+const NS = 'http://www.w3.org/2000/svg';
+
+/* =========================== HELPERS =========================== */
+const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+const wait = ms => new Promise(r => setTimeout(r, ms));
+const nextFrame = () => new Promise(r => requestAnimationFrame(r));
+function animateValue(setter, duration) {
+  return new Promise(resolve => {
+    const t0 = performance.now();
+    const step = now => {
+      const t = Math.min(1, (now - t0) / duration);
+      setter(ease(t));
+      t < 1 ? requestAnimationFrame(step) : resolve();
+    };
+    requestAnimationFrame(step);
+  });
+}
+function retrigger(el, cls) { el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); }
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+const imageCache = new Map();
+function loadImage(url) {
+  if (!imageCache.has(url)) {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.decoding = 'async';
+    const p = new Promise((res, rej) => {
+      img.onload = () => res(img);
+      img.onerror = () => { imageCache.delete(url); rej(new Error('이미지를 불러오지 못했습니다: ' + url)); };
+    });
+    p.catch(() => {});
+    img.src = url;
+    imageCache.set(url, {img, p});
+  }
+  return imageCache.get(url).p;
+}
+function readyImage(url) {
+  const c = url && imageCache.get(url);
+  return c && c.img.complete && c.img.naturalWidth ? c.img : null;
+}
+const withTimeout = (p, ms) => Promise.race([p, wait(ms)]);
+
+/* =========================== STATE =========================== */
+const state = {view:'map', region:FEATURED, hover:null, idx:0};
+let busy = false, firstRender = true;
+let rotX = 0, rotY = 0, targetX = 0, targetY = 0;
+let expansion = 0, maskScale = 0, canvasOpacity = 1;
+let transitionActive = false, transitionImg = null, transitionFrom = null, frozen = false;
+let portalUrl = null, prevPortalUrl = null, portalFade = 1, portalRadius = 90;
+
+function portalTarget() {
+  if (state.view === 'map') {
+    const key = state.hover || FEATURED;
+    return {key, idx:0, photo:photosFor(key)[0]};
+  }
+  const list = photosFor(state.region);
+  const idx = (state.idx + 1) % list.length;
+  return {key:state.region, idx, photo:list[idx]};
+}
+function setPortalUrl(url) {
+  if (!url || url === portalUrl) return;
+  prevPortalUrl = readyImage(portalUrl) ? portalUrl : prevPortalUrl;
+  portalUrl = url;
+  portalFade = 0;
+  loadImage(url);
+}
+
+/* =========================== SOUND =========================== */
+// Everything is synthesized with the Web Audio API — no audio files.
+const Sound = (() => {
+  const prefs = {music:true, fx:true, voice:true, volume:.7};
+  try { Object.assign(prefs, JSON.parse(localStorage.getItem('bf-sound') || '{}')); } catch (e) { /* storage blocked */ }
+  const savePrefs = () => { try { localStorage.setItem('bf-sound', JSON.stringify(prefs)); } catch (e) { /* ignore */ } };
+
+  let ctx = null, master, musicBus, fxBus, reverb, noiseBuf;
+  let unlocked = false, playing = false, timer = 0, step = 0, nextTime = 0, melIdx = 7;
+  const PENTA = [0, 2, 4, 7, 9];
+  const midi = n => 440 * Math.pow(2, (n - 69) / 12);
+  const scaleNote = (i, base) => base + Math.floor(i / 5) * 12 + PENTA[((i % 5) + 5) % 5];
+  const now = () => ctx.currentTime + .01;
+
+  function impulse(seconds, decay) {
+    const len = Math.floor(ctx.sampleRate * seconds);
+    const buf = ctx.createBuffer(2, len, ctx.sampleRate);
+    for (let c = 0; c < 2; c++) {
+      const d = buf.getChannelData(c);
+      for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, decay);
+    }
+    return buf;
+  }
+  function init() {
+    if (ctx) return true;
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return false;
+    try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch (e) { /* unsupported */ }
+    ctx = new AC();
+    master = ctx.createGain();
+    master.gain.value = prefs.volume;
+    const comp = ctx.createDynamicsCompressor();
+    comp.threshold.value = -16; comp.ratio.value = 3;
+    master.connect(comp).connect(ctx.destination);
+    reverb = ctx.createConvolver();
+    reverb.buffer = impulse(3, 2.4);
+    const wet = ctx.createGain(); wet.gain.value = .35;
+    reverb.connect(wet).connect(master);
+    musicBus = ctx.createGain(); musicBus.gain.value = 0;
+    musicBus.connect(master); musicBus.connect(reverb);
+    fxBus = ctx.createGain(); fxBus.gain.value = prefs.fx ? 1 : 0;
+    const fxSend = ctx.createGain(); fxSend.gain.value = .45;
+    fxBus.connect(master); fxBus.connect(fxSend).connect(reverb);
+    noiseBuf = ctx.createBuffer(1, ctx.sampleRate, ctx.sampleRate);
+    const nd = noiseBuf.getChannelData(0);
+    for (let i = 0; i < nd.length; i++) nd[i] = Math.random() * 2 - 1;
+    return true;
+  }
+
+  /* ---- instruments ---- */
+  function env(g, t, attack, peak, decay) {
+    g.gain.setValueAtTime(.0001, t);
+    g.gain.exponentialRampToValueAtTime(peak, t + attack);
+    g.gain.exponentialRampToValueAtTime(.0001, t + attack + decay);
+  }
+  // plucked string, somewhere between a gayageum and a music box
+  function pluck(freq, t, vol = .1, decay = 1.6, dest = fxBus, bright = 1) {
+    const o1 = ctx.createOscillator(), o2 = ctx.createOscillator();
+    o1.type = 'triangle'; o1.frequency.value = freq;
+    o2.type = 'sine'; o2.frequency.value = freq * 2.01;
+    const f = ctx.createBiquadFilter();
+    f.type = 'lowpass';
+    f.frequency.setValueAtTime(Math.min(16000, freq * 7 * bright), t);
+    f.frequency.exponentialRampToValueAtTime(Math.max(200, freq * 1.4), t + decay);
+    const g = ctx.createGain(), g2 = ctx.createGain();
+    g2.gain.setValueAtTime(.4, t);
+    g2.gain.exponentialRampToValueAtTime(.001, t + .35);
+    o1.connect(f); o2.connect(g2).connect(f); f.connect(g).connect(dest);
+    env(g, t, .005, vol, decay);
+    o1.start(t); o2.start(t);
+    o1.stop(t + decay + .1); o2.stop(t + decay + .1);
+  }
+  function bell(freq, t, vol = .05, decay = 3, dest = fxBus) {
+    [[1, 1], [2.76, .35], [5.4, .12]].forEach(([m, a]) => {
+      const o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = 'sine'; o.frequency.value = freq * m;
+      env(g, t, .004, vol * a, decay / m);
+      o.connect(g).connect(dest);
+      o.start(t); o.stop(t + decay + .1);
+    });
+  }
+  function tone(freq, t, dur, vol, type = 'sine', toFreq) {
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = type;
+    o.frequency.setValueAtTime(freq, t);
+    if (toFreq) o.frequency.exponentialRampToValueAtTime(toFreq, t + dur);
+    env(g, t, .006, vol, dur);
+    o.connect(g).connect(fxBus);
+    o.start(t); o.stop(t + dur + .05);
+  }
+  function noise(t, dur, {type = 'bandpass', f0 = 800, f1 = 3000, q = .8, vol = .15, attack = .02} = {}) {
+    const s = ctx.createBufferSource();
+    s.buffer = noiseBuf; s.loop = true;
+    const f = ctx.createBiquadFilter();
+    f.type = type; f.Q.value = q;
+    f.frequency.setValueAtTime(f0, t);
+    f.frequency.exponentialRampToValueAtTime(f1, t + dur);
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(.0001, t);
+    g.gain.exponentialRampToValueAtTime(vol, t + attack);
+    g.gain.exponentialRampToValueAtTime(.0001, t + dur);
+    s.connect(f).connect(g).connect(fxBus);
+    s.start(t, Math.random() * .5);
+    s.stop(t + dur + .05);
+  }
+  function pad(chord, t, dur) {
+    for (const n of chord) {
+      for (const det of [-7, 7]) {
+        const o = ctx.createOscillator(), g = ctx.createGain(), f = ctx.createBiquadFilter();
+        o.type = 'triangle'; o.frequency.value = midi(n); o.detune.value = det;
+        f.type = 'lowpass'; f.frequency.value = 1100;
+        g.gain.setValueAtTime(.0001, t);
+        g.gain.linearRampToValueAtTime(.018, t + 1.6);
+        g.gain.setValueAtTime(.018, t + dur - .4);
+        g.gain.linearRampToValueAtTime(.0001, t + dur + 1.2);
+        o.connect(f).connect(g).connect(musicBus);
+        o.start(t); o.stop(t + dur + 1.3);
+      }
+    }
+  }
+
+  /* ---- generative spring music: C major pentatonic, 76 bpm ---- */
+  const STEP = 60 / 76 / 2;
+  const CHORDS = [[48, 55, 64, 71], [45, 52, 60, 67], [41, 48, 57, 64], [43, 50, 59, 62]];
+  function playStep(s, t) {
+    const bar = Math.floor(s / 8), beat = s % 8, chord = CHORDS[bar % 4];
+    if (beat === 0) {
+      pad(chord, t, STEP * 8);
+      pluck(midi(chord[0] - 12), t, .07, 2.6, musicBus, .5);
+    }
+    if (beat === 0 || beat === 3 || beat === 6) pluck(midi(chord[1 + beat / 3] + 12), t, .035, 2.2, musicBus, .6);
+    const resting = Math.floor(bar / 2) % 4 === 3 && beat > 2;
+    if (!resting && Math.random() < (beat % 2 === 0 ? .55 : .2)) {
+      melIdx += [-2, -1, -1, 0, 1, 1, 2][Math.random() * 7 | 0];
+      melIdx = Math.max(4, Math.min(13, melIdx));
+      pluck(midi(scaleNote(melIdx, 60)), t + (Math.random() - .5) * .02, .075, 1.9, musicBus, 1);
+    }
+    if (beat === 4 && Math.random() < .2) bell(midi(scaleNote(10 + (Math.random() * 5 | 0), 72)), t, .022, 4, musicBus);
+  }
+  function schedule() {
+    if (!ctx) return;
+    while (nextTime < ctx.currentTime + .4) {
+      playStep(step, nextTime);
+      nextTime += STEP;
+      step++;
+    }
+  }
+  function startMusic() {
+    if (!ctx || playing || !prefs.music) return;
+    playing = true;
+    step = 0;
+    nextTime = ctx.currentTime + .15;
+    const g = musicBus.gain, t = ctx.currentTime;
+    g.cancelScheduledValues(t);
+    g.setValueAtTime(g.value, t);
+    g.linearRampToValueAtTime(.6, t + 4);
+    timer = setInterval(schedule, 100);
+    schedule();
+    document.body.classList.add('music-on');
+  }
+  function stopMusic() {
+    if (!ctx || !playing) return;
+    playing = false;
+    const g = musicBus.gain, t = ctx.currentTime;
+    g.cancelScheduledValues(t);
+    g.setValueAtTime(g.value, t);
+    g.linearRampToValueAtTime(0, t + 1.2);
+    setTimeout(() => { if (!playing) clearInterval(timer); }, 1300);
+    document.body.classList.remove('music-on');
+  }
+  function duck(on) {
+    if (!ctx || !playing) return;
+    const g = musicBus.gain, t = ctx.currentTime;
+    g.cancelScheduledValues(t);
+    g.setValueAtTime(g.value, t);
+    g.linearRampToValueAtTime(on ? .22 : .6, t + .3);
+  }
+
+  /* ---- Korean audio guide: pre-recorded narration (female voice) ---- */
+  const bufCache = new Map();
+  function loadBuffer(url) {
+    if (!bufCache.has(url)) {
+      const p = fetch(url)
+        .then(r => { if (!r.ok) throw new Error('audio ' + url); return r.arrayBuffer(); })
+        .then(ab => new Promise((res, rej) => ctx.decodeAudioData(ab, res, rej)));
+      p.catch(() => bufCache.delete(url));
+      bufCache.set(url, p);
+    }
+    return bufCache.get(url);
+  }
+  function preload(urls) { if (init()) urls.forEach(u => loadBuffer(u).catch(() => {})); }
+  let speakToken = 0, voiceSrc = null, voiceBus = null;
+  function stopSpeech() {
+    speakToken++;
+    if (voiceSrc) { try { voiceSrc.stop(); } catch (e) { /* already stopped */ } voiceSrc = null; }
+    duck(false);
+  }
+  // plays the sentence files in order; onSentence(i) fires as each one starts
+  async function speak(urls, {onSentence, onDone} = {}) {
+    stopSpeech();
+    if (!init()) { onDone && onDone(); return false; }
+    unlock();
+    const token = speakToken;
+    if (!voiceBus) { voiceBus = ctx.createGain(); voiceBus.gain.value = 1.3; voiceBus.connect(master); }
+    try {
+      for (let i = 0; i < urls.length; i++) {
+        const buf = await loadBuffer(urls[i]);
+        if (token !== speakToken) return true;
+        const src = ctx.createBufferSource();
+        src.buffer = buf;
+        src.connect(voiceBus);
+        voiceSrc = src;
+        duck(true);
+        onSentence && onSentence(i);
+        await new Promise(r => { src.onended = r; src.start(); });
+        if (token !== speakToken) return true;
+        await new Promise(r => setTimeout(r, 300));
+        if (token !== speakToken) return true;
+      }
+      voiceSrc = null;
+      duck(false);
+      onDone && onDone();
+    } catch (err) {
+      console.warn(err);
+      if (token === speakToken) { duck(false); onDone && onDone(); }
+    }
+    return true;
+  }
+
+  /* ---- sound effects ---- */
+  const last = {};
+  const ok = (name, gap) => {
+    if (!ctx || !unlocked || !prefs.fx || ctx.state !== 'running') return false;
+    const t = performance.now();
+    if (gap && last[name] && t - last[name] < gap) return false;
+    last[name] = t;
+    return true;
+  };
+  const fx = {
+    hover(i) { if (ok('hover', 50)) pluck(midi(scaleNote(5 + i % 10, 72)), now(), .06, .9, fxBus, .9); },
+    tick() { if (ok('tick', 45)) tone(2600, now(), .035, .018); },
+    click() { if (ok('click', 60)) tone(900, now(), .07, .07, 'sine', 480); },
+    select(i = 0) { if (ok('select', 50)) { const t = now(); pluck(midi(scaleNote(8 + i % 5, 72)), t, .06, .8); tone(2400, t, .03, .015); } },
+    whoosh() {
+      if (!ok('whoosh')) return;
+      const t = now();
+      noise(t, 1.15, {f0: 280, f1: 4200, q: .6, vol: .13, attack: .55});
+      [0, 2, 4].forEach((n, i) => bell(midi(scaleNote(10 + n, 72)), t + .45 + i * .11, .025, 2.4));
+    },
+    whooshBack() {
+      if (!ok('whoosh')) return;
+      const t = now();
+      noise(t, .7, {f0: 3600, f1: 320, q: .6, vol: .1, attack: .12});
+      pluck(midi(67), t + .25, .06, 1.6);
+    },
+    arrive() {
+      if (!ok('arrive')) return;
+      const t = now();
+      [72, 76, 79, 84, 88].forEach((n, i) => pluck(midi(n), t + i * .075, .07 - i * .006, 2.4, fxBus, 1.1));
+    },
+    flip() {
+      if (!ok('flip', 120)) return;
+      const t = now();
+      noise(t, .2, {type: 'highpass', f0: 1400, f1: 5200, q: .4, vol: .13, attack: .012});
+      noise(t + .08, .18, {type: 'bandpass', f0: 3400, f1: 900, q: 1.1, vol: .09, attack: .01});
+      pluck(midi(79), t + .14, .045, 1.4);
+    },
+    open() { if (!ok('open', 150)) return; const t = now(); noise(t, .45, {f0: 600, f1: 2600, vol: .06, attack: .16}); pluck(midi(84), t + .12, .045, 1.4); },
+    close() { if (!ok('close', 150)) return; noise(now(), .32, {f0: 2600, f1: 500, vol: .05, attack: .04}); },
+    beep(n) { if (ok('beep')) tone(n === 1 ? 988 : 784, now(), .16, .12); },
+    shutter() {
+      if (!ok('shutter')) return;
+      const t = now();
+      noise(t, .045, {type: 'highpass', f0: 1800, f1: 6000, q: .5, vol: .38, attack: .002});
+      tone(140, t, .09, .25, 'sine', 55);
+      noise(t + .075, .06, {type: 'highpass', f0: 2600, f1: 7000, q: .5, vol: .26, attack: .002});
+    },
+    cameraOn() { if (!ok('cam')) return; const t = now(); tone(659, t, .12, .06); tone(988, t + .1, .2, .06); },
+    saved() { if (!ok('saved')) return; const t = now(); [72, 76, 79, 84].forEach((n, i) => bell(midi(n), t + i * .09, .05, 2.2)); },
+    error() { if (!ok('error', 500)) return; const t = now(); tone(523, t, .16, .07, 'triangle'); tone(392, t + .15, .24, .07, 'triangle'); }
+  };
+
+  /* ---- unlock / lifecycle ---- */
+  function unlock() {
+    if (!init()) return;
+    if (ctx.state === 'suspended') ctx.resume();
+    if (!unlocked) {
+      unlocked = true;
+      document.body.classList.add('sound-ready');
+      startMusic();
+      updateUI();
+    }
+  }
+  ['pointerdown', 'keydown', 'touchend'].forEach(ev => addEventListener(ev, unlock, {capture: true, passive: true}));
+  document.addEventListener('visibilitychange', () => {
+    if (!ctx || !unlocked) return;
+    if (document.hidden) { ctx.suspend(); stopGuide(); }
+    else ctx.resume();
+  });
+
+  /* ---- settings panel ---- */
+  const btn = document.getElementById('sound-btn'), panel = document.getElementById('sound-panel');
+  const inMusic = document.getElementById('snd-music'), inFx = document.getElementById('snd-fx');
+  const inVoice = document.getElementById('snd-voice'), inVol = document.getElementById('snd-vol');
+  const note = document.getElementById('snd-note');
+  function updateUI() {
+    if (!inMusic) return;
+    inMusic.checked = prefs.music; inFx.checked = prefs.fx; inVoice.checked = prefs.voice;
+    inVol.value = prefs.volume;
+    note.textContent = unlocked
+      ? '음악과 효과음은 브라우저에서 실시간으로 만들어지고, 가이드는 한국어 여성 음성으로 녹음되어 있어요.'
+      : '화면을 한 번 누르면 소리가 시작됩니다.';
+    btn.setAttribute('aria-label', `사운드 설정 (음악 ${prefs.music ? '켜짐' : '꺼짐'})`);
+  }
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    const open = panel.hidden;
+    panel.hidden = !open;
+    btn.setAttribute('aria-expanded', open);
+    open ? fx.open() : fx.close();
+  });
+  panel.addEventListener('click', e => e.stopPropagation());
+  document.addEventListener('click', () => { if (!panel.hidden) { panel.hidden = true; btn.setAttribute('aria-expanded', 'false'); } });
+  inMusic.addEventListener('change', () => { prefs.music = inMusic.checked; savePrefs(); prefs.music ? startMusic() : stopMusic(); });
+  inFx.addEventListener('change', () => { prefs.fx = inFx.checked; savePrefs(); if (fxBus) fxBus.gain.value = prefs.fx ? 1 : 0; fx.select(); });
+  inVoice.addEventListener('change', () => { prefs.voice = inVoice.checked; savePrefs(); if (!prefs.voice) stopGuide(); });
+  inVol.addEventListener('input', () => { prefs.volume = +inVol.value; if (master) master.gain.setTargetAtTime(prefs.volume, ctx.currentTime, .05); });
+  inVol.addEventListener('change', () => { savePrefs(); fx.select(3); });
+  updateUI();
+
+  // try to start the music right away; browsers that block autoplay will wait for the first tap
+  function autoStart() {
+    if (!init()) return;
+    const go = () => { if (ctx.state === 'running') unlock(); };
+    go();
+    if (ctx.state !== 'running') ctx.resume().then(go).catch(() => {});
+  }
+
+  return {
+    fx, speak, stopSpeech, preload, autoStart, unlock,
+    running: () => !!ctx && ctx.state === 'running',
+    ready: () => unlocked,
+    hasVoice: () => !!(window.AudioContext || window.webkitAudioContext),
+    autoGuide: () => prefs.voice
+  };
+})();
+const sfx = Sound.fx;
+
+// hover ticks and click pops for every control on the site
+let lastHoverEl = null;
+document.addEventListener('pointerover', e => {
+  const el = e.target.closest('button, a, select, .toggle, .g-item');
+  if (el === lastHoverEl) return;
+  lastHoverEl = el;
+  if (!el || el.id === 'portal' || (el.classList.contains('planet-item') && state.view === 'map')) return;
+  sfx.tick();
+});
+document.addEventListener('click', e => {
+  const el = e.target.closest('button, a');
+  if (!el || el.id === 'portal' || el.id === 'booth-shoot' || el.id === 'sound-btn' || el.closest('#booth-bgs')) return;
+  sfx.click();
+});
+portal.addEventListener('pointerenter', () => sfx.hover(state.view === 'map' ? 9 : 7));
+
+/* =========================== MAP =========================== */
+function buildMap() {
+  mapSvg.setAttribute('viewBox', `0 0 ${MAP.w} ${MAP.h}`);
+  const gPaths = document.createElementNS(NS, 'g');
+  const gLabels = document.createElementNS(NS, 'g');
+  for (const r of REGIONS) {
+    const g = MAP.regions[r.code];
+    const path = document.createElementNS(NS, 'path');
+    path.setAttribute('d', g.d);
+    path.setAttribute('class', 'province');
+    path.setAttribute('tabindex', '0');
+    path.setAttribute('role', 'button');
+    path.setAttribute('aria-label', `${r.full} 벚꽃 보기`);
+    path.dataset.key = r.key;
+    gPaths.appendChild(path);
+    const [dx, dy] = LABEL_OFFSET[r.key] || [0, 0];
+    const t = document.createElementNS(NS, 'text');
+    t.setAttribute('x', g.cx + dx);
+    t.setAttribute('y', g.cy + dy);
+    t.setAttribute('class', 'map-label' + (SMALL.has(r.key) ? ' small' : ''));
+    t.textContent = r.short;
+    gLabels.appendChild(t);
+  }
+  mapSvg.append(gPaths, gLabels);
+  mapSvg.addEventListener('pointerover', e => {
+    const p = e.target.closest('.province');
+    if (p) setHover(p.dataset.key);
+  });
+  mapSvg.addEventListener('focusin', e => {
+    const p = e.target.closest('.province');
+    if (p) setHover(p.dataset.key);
+  });
+  mapSvg.addEventListener('click', e => {
+    const p = e.target.closest('.province');
+    if (p) travel(p.dataset.key, 0, p.getBoundingClientRect());
+  });
+  mapSvg.addEventListener('keydown', e => {
+    const p = e.target.closest('.province');
+    if (p && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); travel(p.dataset.key, 0, p.getBoundingClientRect()); }
+  });
+}
+
+function setHover(key) {
+  if (state.view !== 'map' || busy || key === state.hover) return;
+  state.hover = key;
+  sfx.hover(REGIONS.findIndex(r => r.key === key));
+  updateHoverUI();
+  setPortalUrl(portalTarget().photo.src);
+}
+function updateHoverUI() {
+  const key = state.hover || FEATURED;
+  const activeKey = state.view === 'map' ? key : state.region;
+  const r = byKey[key];
+  $('#mi-num').textContent = r.num;
+  $('#mi-name').textContent = r.full;
+  $('#mi-spot').textContent = r.spot;
+  $('#mi-bloom').textContent = '개화 ' + r.bloom;
+  mapSvg.querySelectorAll('.province').forEach(p => p.classList.toggle('is-hover', p.dataset.key === key));
+  listEl.querySelectorAll('.planet-item').forEach(b => b.classList.toggle('active', b.dataset.key === activeKey));
+  updatePortalHeading();
+}
+function updatePortalHeading() {
+  const t = portalTarget();
+  if (!t.photo) return;
+  if (state.view === 'map') {
+    $('#next-label').textContent = '다음:';
+    $('#next-number').textContent = byKey[t.key].num;
+    $('#next-name').textContent = byKey[t.key].short;
+    portal.setAttribute('aria-label', `이동: ${byKey[t.key].full}`);
+  } else {
+    const n = photosFor(state.region).length;
+    $('#next-label').textContent = '다음 사진:';
+    $('#next-number').textContent = `[${String(t.idx + 1).padStart(2, '0')}/${String(n).padStart(2, '0')}]`;
+    $('#next-name').textContent = photoTitle(t.photo);
+    portal.setAttribute('aria-label', `다음 사진 보기: ${photoTitle(t.photo)}`);
+  }
+}
+
+/* =========================== RENDER =========================== */
+/* audio guide */
+const guideEl = $('#guide'), guideText = $('#guide-text'), guidePlay = $('#guide-play');
+let guideRegion = null;
+function renderGuide() {
+  if (state.view === 'map') { guideRegion = null; return; }
+  if (guideRegion === state.region) return;
+  guideRegion = state.region;
+  stopGuide();
+  const r = byKey[state.region];
+  const sentences = r.guide.match(/[^.!?]+[.!?]?/g).map(x => x.trim()).filter(Boolean);
+  guideText.innerHTML = sentences.map((x, i) => `<span data-i="${i}">${esc(x)}</span>`).join(' ');
+  $('#guide-region').textContent = r.full;
+  guideEl.classList.toggle('no-voice', !Sound.hasVoice());
+  guideEl.classList.remove('is-open');
+  Sound.preload(guideUrls(state.region));
+}
+const guideUrls = key => [0, 1, 2].map(i => `audio/guide/${key}-${i}.m4a`);
+function resetGuideUI() {
+  guideEl.classList.remove('is-playing');
+  guidePlay.setAttribute('aria-label', '가이드 듣기');
+  guideText.querySelectorAll('.is-speaking').forEach(x => x.classList.remove('is-speaking'));
+}
+function stopGuide() {
+  Sound.stopSpeech();
+  resetGuideUI();
+}
+function playGuide() {
+  const spans = [...guideText.children];
+  if (!spans.length) return;
+  guideEl.classList.add('is-playing');
+  guidePlay.setAttribute('aria-label', '가이드 멈추기');
+  const started = Sound.speak(guideUrls(guideRegion), {
+    onSentence: i => spans.forEach((x, j) => x.classList.toggle('is-speaking', i === j)),
+    onDone: resetGuideUI
+  });
+  if (!started) resetGuideUI();
+}
+guidePlay.addEventListener('click', () => guideEl.classList.contains('is-playing') ? stopGuide() : playGuide());
+guideText.addEventListener('click', () => guideEl.classList.toggle('is-open'));
+
+// keeps the region list clear of the big title by scaling it down when space is short
+function fitList() {
+  listEl.style.removeProperty('--fs');
+  if (getComputedStyle(listEl).display === 'none') return;
+  const top = listEl.getBoundingClientRect().top;
+  let limit = innerHeight - 16;
+  // Hangul glyphs of the display font rise a little above the tight line box
+  if (state.view === 'region') limit = $('.planet-content').getBoundingClientRect().top + titleEl.offsetTop - 14 - parseFloat(getComputedStyle(titleEl).fontSize) * .1;
+  const h = listEl.scrollHeight;
+  if (top + h > limit) listEl.style.setProperty('--fs', Math.max(.5, (limit - top) / h).toFixed(3));
+}
+
+function render() {
+  exp.dataset.view = state.view;
+  exp.dataset.region = state.region;
+  const isMap = state.view === 'map';
+  const r = byKey[state.region];
+  titleEl.textContent = isMap ? '벚꽃 축제' : r.short;
+  const facts = isMap ? INTRO_FACTS : r.facts;
+  factsEl.innerHTML = facts.map(([k, v]) => `<div class="fact"><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('');
+  const activeKey = isMap ? (state.hover || FEATURED) : state.region;
+  listEl.innerHTML = REGIONS.map((x, i) =>
+    `<button type="button" class="planet-item${x.key === activeKey ? ' active' : ''}" data-key="${x.key}" style="--i:${i}">${x.short}</button>`).join('');
+  fitList();
+  if (!firstRender) retrigger(listEl, 'is-switching');
+  firstRender = false;
+  document.querySelectorAll('.nav a').forEach(a => a.classList.toggle('active', a.dataset.nav === 'map' && isMap));
+  updateHoverUI();
+  setPortalUrl(portalTarget().photo.src);
+  renderGuide();
+  document.title = isMap ? '벚꽃 축제 · 대한민국 벚꽃 지도' : `${r.full} 벚꽃 · 벚꽃 축제`;
+}
+
+const bgLayers = [$('#bg-a'), $('#bg-b')];
+async function setBackground(url) {
+  const cur = bgLayers.find(l => l.classList.contains('is-visible'));
+  if (cur && cur.dataset.src === url) return;
+  const next = bgLayers.find(l => l !== cur);
+  next.dataset.src = url;
+  next.src = url;
+  try { await withTimeout(next.decode(), 5000); } catch (e) { /* show anyway */ }
+  next.classList.add('is-visible');
+  cur && cur.classList.remove('is-visible');
+}
+
+/* =========================== CANVAS =========================== */
+function resizeCanvas() {
+  const d = Math.min(devicePixelRatio || 1, 2);
+  const W = innerWidth, H = innerHeight;
+  const list = [[portalCanvas, pctx], [petalCanvas, tctx]];
+  if (!frozen) list.push([sceneCanvas, sctx]);
+  for (const [c, ctx] of list) {
+    c.width = W * d; c.height = H * d;
+    c.style.width = W + 'px'; c.style.height = H + 'px';
+    ctx.setTransform(d, 0, 0, d, 0, 0);
+  }
+  portalRadius = parseFloat(getComputedStyle(portal).borderTopLeftRadius) || 90;
+  initPetals();
+}
+function drawCover(ctx, media, zoom = 1, W = innerWidth, H = innerHeight) {
+  const mw = media.videoWidth || media.naturalWidth || media.width;
+  const mh = media.videoHeight || media.naturalHeight || media.height;
+  if (!mw || !mh) return;
+  const scale = Math.max(W / mw, H / mh) * zoom;
+  const w = mw * scale, h = mh * scale;
+  ctx.drawImage(media, (W - w) / 2, (H - h) / 2, w, h);
+}
+function drawShade(ctx) {
+  const H = innerHeight, W = innerWidth;
+  const g = ctx.createLinearGradient(0, H * .52, 0, H);
+  g.addColorStop(0, 'rgba(0,0,0,0)');
+  g.addColorStop(1, 'rgba(0,0,0,.88)');
+  ctx.fillStyle = g;
+  ctx.fillRect(0, H * .52, W, H * .48);
+}
+function roundedRectPoints(w, h, r) {
+  r = Math.min(r, w / 2, h / 2);
+  const P = Math.PI, pts = [];
+  const corners = [
+    [w / 2 - r, -h / 2 + r, -P / 2, 0], [w / 2 - r, h / 2 - r, 0, P / 2],
+    [-w / 2 + r, h / 2 - r, P / 2, P], [-w / 2 + r, -h / 2 + r, P, P * 1.5]
+  ];
+  for (const [cx, cy, a0, a1] of corners) {
+    for (let i = 0; i <= 10; i++) {
+      const a = a0 + (a1 - a0) * i / 10;
+      pts.push([cx + Math.cos(a) * r, cy + Math.sin(a) * r]);
+    }
+  }
+  return pts;
+}
+function project([x, y], cx, cy, rx, ry) {
+  const ax = rx * Math.PI / 180, ay = ry * Math.PI / 180;
+  const xx = x * Math.cos(ay), yy = y * Math.cos(ax);
+  const z = x * Math.sin(ay) - y * Math.sin(ax);
+  const p = 850 / (850 + z);
+  return [cx + xx * p, cy + yy * p];
+}
+
+let lastT = 0;
+function draw(now) {
+  const dt = Math.min(40, lastT ? now - lastT : 16);
+  lastT = now;
+  const k = Math.min(1, dt * .009);
+  rotX += (targetX - rotX) * k;
+  rotY += (targetY - rotY) * k;
+  const W = innerWidth, H = innerHeight;
+  pctx.clearRect(0, 0, W, H);
+  if (frozen) { pctx.drawImage(sceneCanvas, 0, 0, W, H); drawShade(pctx); }
+
+  const rect = transitionFrom || portal.getBoundingClientRect();
+  const e = expansion;
+  if (rect.width > 0 && rect.height > 0) {
+    const rcx = rect.left + rect.width / 2, rcy = rect.top + rect.height / 2;
+    const cx = rcx + (W / 2 - rcx) * e;
+    const cy = rcy + (H / 2 - rcy) * e;
+    const baseW = rect.width + (W - rect.width) * e;
+    const baseH = rect.height + (H - rect.height) * e;
+    const scale = e ? 1 : maskScale;
+    const w = baseW * scale, h = baseH * scale;
+    const radius = (transitionFrom ? Math.min(portalRadius, rect.width / 2, rect.height / 2) : portalRadius) * (1 - e) * scale;
+    const rx = rotX * (1 - e), ry = rotY * (1 - e);
+    if (w > 1 && h > 1) {
+      const path = new Path2D();
+      roundedRectPoints(w, h, radius).forEach((pt, i) => {
+        const [x, y] = project(pt, cx, cy, rx, ry);
+        i ? path.lineTo(x, y) : path.moveTo(x, y);
+      });
+      path.closePath();
+      pctx.save();
+      pctx.globalAlpha = canvasOpacity;
+      pctx.clip(path);
+      pctx.fillStyle = '#030303';
+      pctx.fillRect(0, 0, W, H);
+      if (transitionActive && transitionImg) {
+        drawCover(pctx, transitionImg, 1 + .1 * Math.sin(Math.PI * e));
+        drawShade(pctx);
+      } else {
+        const cur = readyImage(portalUrl), prev = readyImage(prevPortalUrl);
+        if (cur) portalFade = Math.min(1, portalFade + dt / 420);
+        if (prev && portalFade < 1) drawCover(pctx, prev);
+        if (cur) { pctx.globalAlpha = canvasOpacity * ease(portalFade); drawCover(pctx, cur); }
+      }
+      pctx.restore();
+      if (e < 1) {
+        pctx.save();
+        pctx.globalAlpha = (1 - e) * Math.min(1, maskScale) * .8;
+        pctx.strokeStyle = '#ffe3ec';
+        pctx.lineWidth = 1.5;
+        pctx.stroke(path);
+        pctx.restore();
+      }
+    }
+  }
+  drawPetals(dt);
+  requestAnimationFrame(draw);
+}
+
+/* =========================== PETALS =========================== */
+let petals = [];
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function makePetal(W, H, anywhere) {
+  return {
+    x: Math.random() * W, y: anywhere ? Math.random() * H : -20 - Math.random() * 80,
+    s: 5 + Math.random() * 8, vx: .15 + Math.random() * .5, vy: .35 + Math.random() * .7,
+    rot: Math.random() * 6.28, vr: (Math.random() - .5) * .03,
+    flip: Math.random() * 6.28, vf: .02 + Math.random() * .04,
+    sway: .4 + Math.random() * 1.2, ph: Math.random() * 6.28,
+    tint: Math.random(), a: .55 + Math.random() * .4
+  };
+}
+function initPetals() {
+  const W = innerWidth, H = innerHeight;
+  const n = Math.round(Math.min(reduced ? 14 : 64, W * H / 24000));
+  petals = Array.from({length:n}, () => makePetal(W, H, true));
+}
+function petalPath(ctx, s) {
+  ctx.beginPath();
+  ctx.moveTo(0, s);
+  ctx.bezierCurveTo(s * .95, s * .35, s * .8, -s * .75, s * .22, -s);
+  ctx.lineTo(0, -s * .72);
+  ctx.lineTo(-s * .22, -s);
+  ctx.bezierCurveTo(-s * .8, -s * .75, -s * .95, s * .35, 0, s);
+  ctx.closePath();
+}
+function paintPetal(ctx, p) {
+  ctx.save();
+  ctx.translate(p.x, p.y);
+  ctx.rotate(p.rot);
+  ctx.scale(1, Math.max(.12, Math.abs(Math.cos(p.flip))));
+  petalPath(ctx, p.s);
+  const g = ctx.createLinearGradient(0, -p.s, 0, p.s);
+  g.addColorStop(0, `rgba(255,${200 + p.tint * 30 | 0},${222 + p.tint * 20 | 0},${p.a})`);
+  g.addColorStop(1, `rgba(255,${150 + p.tint * 40 | 0},${185 + p.tint * 20 | 0},${p.a})`);
+  ctx.fillStyle = g;
+  ctx.fill();
+  ctx.restore();
+}
+let windX = 0;
+function stepPetal(p, dt, W, H, wind) {
+  const f = dt / 16.7;
+  p.ph += .02 * f;
+  p.x += (p.vx + Math.sin(p.ph) * p.sway + wind) * f;
+  p.y += p.vy * f;
+  p.rot += p.vr * f;
+  p.flip += p.vf * f;
+  if (p.y > H + 30 || p.x > W + 40 || p.x < -60) Object.assign(p, makePetal(W, H, false), {x: Math.random() * W * 1.1 - W * .1});
+}
+function drawPetals(dt) {
+  const W = innerWidth, H = innerHeight;
+  tctx.clearRect(0, 0, W, H);
+  windX += ((rotY / 18.7) * .9 - windX) * .02;
+  for (const p of petals) { if (!reduced) stepPetal(p, dt, W, H, windX); paintPetal(tctx, p); }
+}
+
+/* =========================== TRANSITIONS =========================== */
+function revealMask() {
+  retrigger(exp, 'mask-revealing');
+  maskScale = 0;
+  return animateValue(v => maskScale = v, 1050);
+}
+function revealPlanetContent() { retrigger(exp, 'content-revealing'); }
+
+async function travel(key, idx = 0, fromRect = null) {
+  if (busy) return;
+  const list = photosFor(key);
+  if (!list.length) return;
+  if (state.view === 'region' && key === state.region && idx === state.idx) return;
+  const sameRegion = state.view === 'region' && key === state.region;
+  busy = true;
+  targetX = targetY = 0;
+  const photo = list[idx % list.length];
+  exp.classList.add('is-loading');
+  try {
+    let img;
+    try { img = await Promise.race([loadImage(photo.src), wait(6000).then(() => { throw new Error('timeout'); })]); }
+    catch (err) { img = await loadImage(photo.th); }
+    exp.classList.remove('is-loading', 'content-revealing', 'mask-revealing');
+    exp.classList.add('is-transitioning');
+    if (!sameRegion) stopGuide();
+    sameRegion ? sfx.flip() : sfx.whoosh();
+    transitionFrom = fromRect ? {left:fromRect.left, top:fromRect.top, width:fromRect.width, height:fromRect.height} : null;
+    if (transitionFrom) maskScale = 1;
+    transitionImg = img;
+    canvasOpacity = 1;
+    transitionActive = true;
+    await animateValue(v => expansion = v, 1100);
+    await wait(160);
+    sctx.clearRect(0, 0, innerWidth, innerHeight);
+    drawCover(sctx, img);
+    frozen = true;
+    state.view = 'region';
+    state.region = key;
+    state.idx = idx % list.length;
+    state.hover = null;
+    exp.classList.add('is-committing');
+    render();
+    await setBackground(photo.src);
+    await nextFrame(); await nextFrame();
+    transitionActive = false; expansion = 0; maskScale = 0; canvasOpacity = 1; transitionFrom = null; frozen = false;
+    exp.classList.remove('is-transitioning', 'is-committing');
+    const maskReveal = revealMask();
+    if (!sameRegion) {
+      sfx.arrive();
+      if (Sound.autoGuide()) setTimeout(() => { if (state.view === 'region' && state.region === key && !openEl) playGuide(); }, 1100);
+    }
+    setTimeout(revealPlanetContent, 100);
+    await maskReveal;
+    await wait(450);
+    transitionImg = null;
+    busy = false;
+    prefetchRegion(key);
+  } catch (err) {
+    console.warn(err);
+    transitionActive = false; expansion = 0; maskScale = 1; canvasOpacity = 1; transitionFrom = null; frozen = false;
+    exp.classList.remove('is-loading', 'is-transitioning', 'is-committing');
+    busy = false;
+  }
+}
+
+async function goMap() {
+  if (busy || state.view === 'map') return;
+  busy = true;
+  targetX = targetY = 0;
+  exp.classList.remove('content-revealing', 'mask-revealing');
+  exp.classList.add('is-transitioning');
+  sfx.whooshBack();
+  stopGuide();
+  await animateValue(v => maskScale = 1 - v, 420);
+  state.view = 'map';
+  state.hover = null;
+  render();
+  await setBackground(MAP_BG);
+  await wait(250);
+  exp.classList.remove('is-transitioning');
+  const m = revealMask();
+  setTimeout(revealPlanetContent, 100);
+  await m;
+  busy = false;
+}
+
+function prefetchRegion(key) {
+  photosFor(key).forEach(p => loadImage(p.src));
+}
+
+/* =========================== POINTER / CURSOR =========================== */
+const cursor = $('.custom-cursor'), cursorLabel = $('.cursor-label');
+let px = innerWidth / 2, py = innerHeight / 2, ox = px, oy = py;
+addEventListener('pointermove', e => {
+  px = e.clientX; py = e.clientY;
+  if (e.pointerType === 'mouse') cursor.classList.add('is-visible');
+  if (!busy && e.pointerType === 'mouse') {
+    targetY = (e.clientX / innerWidth - .5) * 37.4;
+    targetX = (e.clientY / innerHeight - .5) * -33;
+  }
+}, {passive:true});
+document.addEventListener('mouseleave', () => { cursor.classList.remove('is-visible'); targetX = targetY = 0; });
+document.documentElement.addEventListener('pointerleave', () => { targetX = targetY = 0; });
+function setCursorLabel(text) {
+  if (text) { cursorLabel.textContent = text; cursor.classList.add('is-enter'); }
+  else cursor.classList.remove('is-enter');
+}
+portal.addEventListener('pointerenter', () => setCursorLabel(state.view === 'map' ? '입장' : '다음'));
+portal.addEventListener('pointerleave', () => setCursorLabel(null));
+mapSvg.addEventListener('pointerover', e => {
+  const p = e.target.closest('.province');
+  setCursorLabel(p ? byKey[p.dataset.key].short : null);
+});
+mapSvg.addEventListener('pointerleave', () => setCursorLabel(null));
+function cursorLoop() {
+  ox += (px - ox) * .35; oy += (py - oy) * .35;
+  cursor.style.transform = `translate3d(${ox}px,${oy}px,0)`;
+  requestAnimationFrame(cursorLoop);
+}
+
+/* =========================== UI EVENTS =========================== */
+portal.addEventListener('click', () => {
+  const t = portalTarget();
+  if (state.view === 'map') travel(t.key, 0, null);
+  else travel(state.region, t.idx, null);
+});
+listEl.addEventListener('click', e => {
+  const b = e.target.closest('.planet-item');
+  if (!b) return;
+  const key = b.dataset.key;
+  if (state.view === 'map') {
+    const path = mapSvg.querySelector(`.province[data-key="${key}"]`);
+    travel(key, 0, path ? path.getBoundingClientRect() : b.getBoundingClientRect());
+  } else if (key !== state.region) travel(key, 0, b.getBoundingClientRect());
+});
+listEl.addEventListener('pointerover', e => {
+  const b = e.target.closest('.planet-item');
+  if (b && state.view === 'map') setHover(b.dataset.key);
+});
+$('#brand').addEventListener('click', e => { e.preventDefault(); closeOverlays(); goMap(); });
+document.querySelectorAll('.nav a').forEach(a => a.addEventListener('click', e => { e.preventDefault(); go(a.dataset.nav); }));
+$('#menu-btn').addEventListener('click', () => openOverlay($('#drawer')));
+$('#booth-pill').addEventListener('click', () => openBooth());
+function go(where) {
+  closeOverlays(true);
+  if (where === 'map') goMap();
+  else if (where === 'gallery') openGallery();
+  else if (where === 'booth') openBooth();
+}
+
+/* overlays */
+let openEl = null;
+function openOverlay(el) {
+  if (openEl !== el) sfx.open();
+  if (openEl && openEl !== el) closeOverlays(true);
+  el.hidden = false;
+  openEl = el;
+  requestAnimationFrame(() => el.classList.add('is-open'));
+  const f = el.querySelector('[data-close]');
+  f && f.focus({preventScroll:true});
+}
+function closeOverlays(instant) {
+  if (!openEl) return;
+  const el = openEl;
+  openEl = null;
+  sfx.close();
+  el.classList.remove('is-open');
+  if (el.id === 'booth') stopBooth();
+  instant ? (el.hidden = true) : setTimeout(() => { if (!el.classList.contains('is-open')) el.hidden = true; }, 350);
+}
+document.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => closeOverlays()));
+document.querySelectorAll('.overlay').forEach(o => o.addEventListener('click', e => { if (e.target === o) closeOverlays(); }));
+addEventListener('keydown', e => { if (e.key === 'Escape') closeOverlays(); });
+
+/* drawer */
+$('#drawer-regions').innerHTML = REGIONS.map(r => `<button type="button" data-key="${r.key}">${r.short}<small>${esc(r.spot.split(' · ')[0])}</small></button>`).join('');
+$('#drawer-regions').addEventListener('click', e => {
+  const b = e.target.closest('button');
+  if (!b) return;
+  closeOverlays(true);
+  travel(b.dataset.key, 0, b.getBoundingClientRect());
+});
+document.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => go(b.dataset.go)));
+
+/* gallery */
+const regionOptions = REGIONS.map(r => `<option value="${r.key}">${r.num} ${r.full}</option>`).join('');
+const gallerySelect = $('#gallery-region');
+gallerySelect.innerHTML = regionOptions;
+function openGallery(key) {
+  key = key || (state.view === 'region' ? state.region : (state.hover || FEATURED));
+  gallerySelect.value = key;
+  renderGallery(key);
+  openOverlay($('#gallery'));
+}
+function renderGallery(key) {
+  const list = photosFor(key);
+  $('#gallery-grid').innerHTML = list.map((p, i) => `
+    <button type="button" class="g-item" data-i="${i}" style="animation-delay:${i * .06}s">
+      <img src="${p.th}" alt="${esc(photoTitle(p))}" loading="lazy" crossorigin="anonymous">
+      ${p.near ? `<span class="g-near">인근 지역 · ${byKey[p.near].short}</span>` : ''}
+      <span class="g-cap"><b>${esc(p.t)}</b></span>
+    </button>`).join('');
+}
+gallerySelect.addEventListener('change', () => { sfx.flip(); renderGallery(gallerySelect.value); });
+$('#gallery-grid').addEventListener('click', e => {
+  const b = e.target.closest('.g-item');
+  if (!b) return;
+  const rect = b.getBoundingClientRect();
+  const key = gallerySelect.value;
+  closeOverlays(true);
+  travel(key, +b.dataset.i, rect);
+});
+
+/* =========================== PHOTO BOOTH =========================== */
+const SEG_BASE = 'https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation@0.1.1675465747/';
+const BW = 1080, BH = 1440;
+const boothEl = $('#booth');
+const boothCanvas = $('#booth-canvas'), bctx = boothCanvas.getContext('2d');
+const personCanvas = document.createElement('canvas'); personCanvas.width = BW; personCanvas.height = BH;
+const personCtx = personCanvas.getContext('2d');
+const boothVideo = $('#booth-video');
+const boothStatus = $('#booth-status');
+const shootBtn = $('#booth-shoot'), retakeBtn = $('#booth-retake'), saveBtn = $('#booth-save');
+const mirrorInput = $('#booth-mirror'), cutoutInput = $('#booth-cutout');
+const boothRegionSel = $('#booth-region');
+boothRegionSel.innerHTML = regionOptions;
+const hasCanvasFilter = 'filter' in bctx;
+
+let seg = null, segReady = false, segLoading = null, segBusy = false;
+let boothOpen = false, boothStream = null, boothSource = null, uploadedImg = null;
+let captured = false, counting = false;
+let boothRegion = FEATURED, boothIdx = 0, boothBg = null;
+let boothPetals = [];
+let statusTimer = 0;
+
+function setStatus(msg, ms) {
+  clearTimeout(statusTimer);
+  boothStatus.textContent = msg || '';
+  if (msg && ms) statusTimer = setTimeout(() => { boothStatus.textContent = ''; }, ms);
+}
+function loadSeg() {
+  if (segLoading) return segLoading;
+  segLoading = new Promise((res, rej) => {
+    const s = document.createElement('script');
+    s.src = SEG_BASE + 'selfie_segmentation.js';
+    s.crossOrigin = 'anonymous';
+    s.onload = res;
+    s.onerror = () => rej(new Error('segmentation script'));
+    document.head.appendChild(s);
+  }).then(async () => {
+    seg = new window.SelfieSegmentation({locateFile: f => SEG_BASE + f});
+    seg.setOptions({modelSelection: 1, selfieMode: false});
+    seg.onResults(onSegResults);
+    await seg.initialize();
+    segReady = true;
+    if (boothOpen && /모델/.test(boothStatus.textContent)) setStatus('인물 인식 준비 완료 ✿', 2200);
+  }).catch(err => {
+    console.warn(err);
+    segReady = false;
+    if (boothOpen) setStatus('인물 분리 기능을 불러오지 못해 프레임 모드로 촬영합니다.', 5000);
+  });
+  return segLoading;
+}
+
+async function startCamera() {
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    setStatus(window.isSecureContext ? '이 브라우저에서는 카메라를 사용할 수 없어요. 사진을 불러와 주세요.' : '카메라는 https 주소에서만 사용할 수 있어요. 사진을 불러와 주세요.');
+    return;
+  }
+  setStatus('카메라를 준비하는 중…');
+  try {
+    boothStream = await navigator.mediaDevices.getUserMedia({video:{facingMode:'user', width:{ideal:1280}, height:{ideal:960}}, audio:false});
+    if (!boothOpen) { stopCamera(); return; }
+    boothVideo.srcObject = boothStream;
+    await boothVideo.play();
+    boothSource = boothVideo;
+    uploadedImg = null;
+    mirrorInput.checked = true;
+    sfx.cameraOn();
+    setStatus(segReady ? '' : '인물 인식 모델을 불러오는 중…');
+  } catch (err) {
+    console.warn(err);
+    sfx.error();
+    setStatus(err && err.name === 'NotAllowedError'
+      ? '카메라 권한이 거부되었어요. 브라우저 설정에서 허용하거나 사진을 불러와 주세요.'
+      : '카메라를 찾을 수 없어요. ‘사진 불러오기’를 이용해 주세요.');
+  }
+}
+function stopCamera() {
+  if (boothStream) boothStream.getTracks().forEach(t => t.stop());
+  boothStream = null;
+  boothVideo.srcObject = null;
+  if (boothSource === boothVideo) boothSource = null;
+}
+
+function openBooth(key) {
+  boothRegion = key || (state.view === 'region' ? state.region : (state.hover || FEATURED));
+  boothIdx = state.view === 'region' && boothRegion === state.region ? state.idx : 0;
+  boothRegionSel.value = boothRegion;
+  renderBoothBgs();
+  setBoothBg(boothIdx);
+  captured = false;
+  updateBoothButtons();
+  openOverlay(boothEl);
+  boothOpen = true;
+  if (document.fonts) document.fonts.load("96px 'Black Han Sans'").catch(() => {});
+  initBoothPetals();
+  stopGuide();
+  startCamera();
+  loadSeg();
+  requestAnimationFrame(boothTick);
+}
+function stopBooth() {
+  boothOpen = false;
+  counting = false;
+  stopCamera();
+  $('#booth-count').innerHTML = '';
+}
+function renderBoothBgs() {
+  const list = photosFor(boothRegion);
+  $('#booth-bgs').innerHTML = list.map((p, i) =>
+    `<button type="button" role="option" data-i="${i}" title="${esc(photoTitle(p))}" aria-label="${esc(photoTitle(p))}"><img src="${p.th}" alt="" crossorigin="anonymous"></button>`).join('');
+}
+function setBoothBg(i) {
+  const list = photosFor(boothRegion);
+  boothIdx = Math.min(i, list.length - 1);
+  const p = list[boothIdx];
+  boothBg = p;
+  loadImage(p.src).catch(() => loadImage(p.th));
+  loadImage(p.th);
+  document.querySelectorAll('#booth-bgs button').forEach((b, j) => {
+    b.classList.toggle('active', j === boothIdx);
+    b.setAttribute('aria-selected', j === boothIdx);
+  });
+  if (captured) { captured = false; updateBoothButtons(); }
+}
+boothRegionSel.addEventListener('change', () => { sfx.flip(); boothRegion = boothRegionSel.value; renderBoothBgs(); setBoothBg(0); });
+$('#booth-bgs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { sfx.select(+b.dataset.i); setBoothBg(+b.dataset.i); } });
+$('#booth-upload').addEventListener('click', () => $('#booth-file').click());
+$('#booth-file').addEventListener('change', e => {
+  const file = e.target.files && e.target.files[0];
+  if (!file) return;
+  const img = new Image();
+  img.onload = () => {
+    stopCamera();
+    uploadedImg = img;
+    boothSource = img;
+    mirrorInput.checked = false;
+    captured = false;
+    updateBoothButtons();
+    setStatus(segReady ? '' : '인물 인식 모델을 불러오는 중…');
+  };
+  img.src = URL.createObjectURL(file);
+  e.target.value = '';
+});
+
+function sourceSize(src) {
+  if (!src) return [0, 0];
+  return [src.videoWidth || src.naturalWidth || src.width || 0, src.videoHeight || src.naturalHeight || src.height || 0];
+}
+function coverRect(sw, sh, W, H) {
+  const s = Math.max(W / sw, H / sh);
+  return [(W - sw * s) / 2, (H - sh * s) / 2, sw * s, sh * s];
+}
+async function boothTick() {
+  if (!boothOpen) return;
+  requestAnimationFrame(boothTick);
+  if (captured) return;
+  const src = boothSource;
+  const [sw] = sourceSize(src);
+  if (src && sw && segReady && cutoutInput.checked) {
+    if (segBusy) return;
+    segBusy = true;
+    try { await seg.send({image: src}); }
+    catch (err) { console.warn(err); segReady = false; setStatus('인물 분리 중 오류가 생겨 프레임 모드로 전환합니다.', 4000); }
+    segBusy = false;
+  } else {
+    composeBooth(sw ? src : null, null);
+  }
+}
+function onSegResults(results) {
+  if (!boothOpen || captured) return;
+  composeBooth(results.image, results.segmentationMask);
+}
+
+function initBoothPetals() {
+  boothPetals = Array.from({length: 26}, () => {
+    const p = makePetal(BW, BH, true);
+    p.s *= 2.6; p.vy *= 1.6; p.vx *= 1.6;
+    return p;
+  });
+}
+function composeBooth(src, mask) {
+  const ctx = bctx;
+  ctx.save();
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.globalCompositeOperation = 'source-over';
+  const bgImg = boothBg && (readyImage(boothBg.src) || readyImage(boothBg.th));
+  if (bgImg) drawCover(ctx, bgImg, 1, BW, BH);
+  else {
+    const g = ctx.createLinearGradient(0, 0, 0, BH);
+    g.addColorStop(0, '#ffd6e4'); g.addColorStop(1, '#ff8fb1');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, BW, BH);
+  }
+  const mirror = mirrorInput.checked;
+  const [sw, sh] = sourceSize(src);
+  if (src && sw && sh) {
+    if (mask) {
+      const [x, y, w, h] = coverRect(sw, sh, BW, BH);
+      personCtx.save();
+      personCtx.clearRect(0, 0, BW, BH);
+      if (mirror) { personCtx.translate(BW, 0); personCtx.scale(-1, 1); }
+      if (hasCanvasFilter) personCtx.filter = 'blur(3px)';
+      personCtx.drawImage(mask, x, y, w, h);
+      if (hasCanvasFilter) personCtx.filter = 'none';
+      personCtx.globalCompositeOperation = 'source-in';
+      personCtx.drawImage(src, x, y, w, h);
+      personCtx.restore();
+      ctx.save();
+      ctx.shadowColor = 'rgba(255,150,190,.45)';
+      ctx.shadowBlur = 46;
+      ctx.drawImage(personCanvas, 0, 0);
+      ctx.restore();
+      ctx.save();
+      ctx.globalCompositeOperation = 'soft-light';
+      ctx.globalAlpha = .28;
+      ctx.fillStyle = '#ffc2d6';
+      ctx.fillRect(0, 0, BW, BH);
+      ctx.restore();
+    } else {
+      // frame mode: camera inside an arch window
+      const aw = BW * .74, ah = BH * .64, ax = (BW - aw) / 2, ay = BH * .14;
+      const arch = new Path2D();
+      arch.moveTo(ax, ay + aw / 2);
+      arch.arc(ax + aw / 2, ay + aw / 2, aw / 2, Math.PI, 0);
+      arch.lineTo(ax + aw, ay + ah - 40);
+      arch.quadraticCurveTo(ax + aw, ay + ah, ax + aw - 40, ay + ah);
+      arch.lineTo(ax + 40, ay + ah);
+      arch.quadraticCurveTo(ax, ay + ah, ax, ay + ah - 40);
+      arch.closePath();
+      ctx.save();
+      ctx.shadowColor = 'rgba(0,0,0,.35)'; ctx.shadowBlur = 50;
+      ctx.fillStyle = '#fff'; ctx.fill(arch);
+      ctx.restore();
+      ctx.save();
+      ctx.clip(arch);
+      const [x, y, w, h] = coverRect(sw, sh, aw, ah);
+      ctx.translate(ax, ay);
+      if (mirror) { ctx.translate(aw, 0); ctx.scale(-1, 1); }
+      ctx.drawImage(src, x, y, w, h);
+      ctx.restore();
+      ctx.save();
+      ctx.lineWidth = 12; ctx.strokeStyle = 'rgba(255,255,255,.92)'; ctx.stroke(arch);
+      ctx.restore();
+    }
+  }
+  // petals
+  for (const p of boothPetals) { if (!reduced) stepPetal(p, 16.7, BW, BH, .4); paintPetal(ctx, p); }
+  // bottom gradient + watermark
+  const g2 = ctx.createLinearGradient(0, BH * .7, 0, BH);
+  g2.addColorStop(0, 'rgba(0,0,0,0)'); g2.addColorStop(1, 'rgba(0,0,0,.6)');
+  ctx.fillStyle = g2; ctx.fillRect(0, BH * .7, BW, BH * .3);
+  const r = byKey[boothRegion];
+  ctx.fillStyle = '#fff';
+  ctx.textBaseline = 'alphabetic';
+  ctx.font = `96px 'Black Han Sans','Noto Sans KR',sans-serif`;
+  ctx.fillText('벚꽃 축제', 56, BH - 92);
+  ctx.font = `700 34px 'Noto Sans KR','SF Pro',sans-serif`;
+  ctx.fillText(`${r.full} · ${boothBg ? boothBg.t : ''}`, 60, BH - 40);
+  // logo blossom
+  ctx.translate(BW - 96, BH - 110);
+  for (let i = 0; i < 5; i++) {
+    ctx.save(); ctx.rotate(i * Math.PI * 2 / 5); ctx.translate(0, -22);
+    ctx.fillStyle = 'rgba(255,255,255,.92)'; petalPath(ctx, 20); ctx.fill(); ctx.restore();
+  }
+  ctx.beginPath(); ctx.arc(0, 0, 7, 0, Math.PI * 2); ctx.fillStyle = '#ff8fb1'; ctx.fill();
+  ctx.restore();
+}
+
+function updateBoothButtons() {
+  shootBtn.hidden = captured;
+  retakeBtn.hidden = !captured;
+  saveBtn.hidden = !captured;
+  shootBtn.disabled = counting;
+}
+shootBtn.addEventListener('click', async () => {
+  if (counting || captured) return;
+  if (!boothSource) { sfx.error(); setStatus('먼저 카메라를 허용하거나 사진을 불러와 주세요.', 3500); return; }
+  counting = true; updateBoothButtons();
+  const countEl = $('#booth-count');
+  for (const n of [3, 2, 1]) {
+    if (!boothOpen) { counting = false; return; }
+    countEl.innerHTML = `<span>${n}</span>`;
+    sfx.beep(n);
+    await wait(900);
+  }
+  countEl.innerHTML = '';
+  await nextFrame(); await nextFrame();
+  captured = true;
+  counting = false;
+  sfx.shutter();
+  retrigger($('#booth-flash'), 'is-on');
+  updateBoothButtons();
+  setStatus('마음에 들면 ‘사진 저장’을 눌러주세요 ✿', 3500);
+});
+retakeBtn.addEventListener('click', () => { captured = false; updateBoothButtons(); setStatus(''); });
+saveBtn.addEventListener('click', async () => {
+  const r = byKey[boothRegion];
+  const d = new Date();
+  const stamp = `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, '0')}${String(d.getDate()).padStart(2, '0')}_${String(d.getHours()).padStart(2, '0')}${String(d.getMinutes()).padStart(2, '0')}${String(d.getSeconds()).padStart(2, '0')}`;
+  const name = `벚꽃축제_${r.short}_${stamp}.jpg`;
+  let blob;
+  try { blob = await new Promise((res, rej) => boothCanvas.toBlob(b => b ? res(b) : rej(new Error('blob')), 'image/jpeg', .92)); }
+  catch (err) { console.warn(err); setStatus('사진을 만들지 못했어요. 다른 배경으로 다시 시도해 주세요.', 4000); return; }
+  const file = new File([blob], name, {type:'image/jpeg'});
+  const touch = matchMedia('(hover: none)').matches;
+  if (touch && navigator.canShare && navigator.canShare({files:[file]})) {
+    try { await navigator.share({files:[file], title:'벚꽃 축제'}); sfx.saved(); setStatus('공유 메뉴에서 ‘이미지 저장’을 누르면 갤러리에 저장돼요.', 4000); return; }
+    catch (err) { if (err && err.name === 'AbortError') return; }
+  }
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 4000);
+  sfx.saved();
+  setStatus('사진을 저장했어요 ✿', 3000);
+});
+
+/* =========================== PRELOADER =========================== */
+function runPreloader() {
+  const pre = $('#preloader'), img = $('#preloader-image');
+  const valueEl = $('#preloader-value'), countEl = $('#preloader-count'), logo = $('#floating-logo');
+  const urls = [MAP_BG, photosFor(FEATURED)[0].src, ...REGIONS.map(r => photosFor(r.key)[0].th)];
+  let loaded = 0, done = false;
+  urls.forEach(u => loadImage(u).catch(() => {}).finally(() => { loaded++; }));
+  let t0 = 0;
+  const begin = () => {
+    if (t0) return;
+    t0 = performance.now();
+    pre.classList.add('is-playing');
+    requestAnimationFrame(tick);
+  };
+  img.onload = begin;
+  img.onerror = begin;
+  img.src = MAP_BG;
+  setTimeout(begin, 2500);
+  setTimeout(() => finish(), 10000);
+  Sound.autoStart();
+  function tick(now) {
+    if (done) return;
+    const timeP = Math.min(1, (now - t0) / 3000);
+    const loadP = now - t0 > 6000 ? 1 : loaded / urls.length;
+    const p = Math.min(timeP, loadP);
+    valueEl.textContent = Math.floor(p * 100);
+    if (p >= 1) finish(); else requestAnimationFrame(tick);
+  }
+  function finish() {
+    if (done) return;
+    done = true;
+    valueEl.textContent = '100';
+    countEl.classList.add('is-leaving');
+    if (Sound.running() || Sound.ready()) { proceed(); return; }
+    // the browser blocked autoplay: one tap starts the music and the site together
+    const gate = $('#enter-gate');
+    gate.hidden = false;
+    document.body.classList.add('gate-open');
+    requestAnimationFrame(() => gate.classList.add('is-visible'));
+    gate.addEventListener('click', () => {
+      Sound.unlock();
+      document.body.classList.remove('gate-open');
+      gate.classList.remove('is-visible');
+      setTimeout(() => gate.remove(), 500);
+      proceed();
+    }, {once: true});
+    setTimeout(() => gate.focus({preventScroll: true}), 400);
+  }
+  function proceed() {
+    logo.classList.add('is-docked');
+    pre.classList.add('is-background');
+    document.body.classList.add('preload-complete');
+    startExperience();
+    setTimeout(() => countEl.isConnected && countEl.remove(), 750);
+    setTimeout(() => logo.classList.add('is-settled'), 2000);
+    setTimeout(() => pre.classList.add('is-done'), 1600);
+    setTimeout(() => { pre.remove(); document.querySelector('.preloader-caption')?.remove(); }, 3200);
+  }
+}
+async function startExperience() {
+  await setBackground(MAP_BG);
+  await withTimeout(loadImage(portalTarget().photo.src), 4000).catch(() => {});
+  await revealMask();
+  document.body.classList.add('intro-ready');
+  setTimeout(revealPlanetContent, 850);
+  REGIONS.forEach(r => loadImage(photosFor(r.key)[0].src));
+}
+
+/* =========================== BOOT =========================== */
+let resizeTimer = 0;
+addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { resizeCanvas(); fitList(); }, 60); });
+if (document.fonts) document.fonts.ready.then(fitList);
+buildMap();
+resizeCanvas();
+render();
+requestAnimationFrame(draw);
+requestAnimationFrame(cursorLoop);
+runPreloader();
+})();
+</script>
+</body>
+</html>
