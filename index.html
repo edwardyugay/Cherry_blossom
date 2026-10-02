@@ -432,6 +432,72 @@ button,a,.province,select,label{touch-action:manipulation;-webkit-tap-highlight-
   .booth-stage{width:min(100%,calc((100dvh - 330px)*.75))}
   .sound-panel{position:fixed;left:12px;right:12px;top:calc(64px + env(safe-area-inset-top));width:auto}
 }
+
+/* ================= compact (phones, portrait & landscape): scrollable column layout ================= */
+@media (max-width:760px), (max-height:560px){
+  html,body{height:auto;min-height:100%;overflow-x:hidden;overflow-y:auto}
+  .experience{height:auto;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;overflow:visible;
+    padding:0 16px calc(28px + env(safe-area-inset-bottom))}
+  .backgrounds,.map-dim,.shade,.preloader,.loading{position:fixed}
+  .experience[data-view] > .chrome{position:relative;left:auto;right:auto;top:auto;bottom:auto;transform:none;width:auto}
+  /* header: brand + sound + menu on top, navigation as a second row */
+  .experience[data-view] > .header{position:sticky;top:0;z-index:6;order:0;flex-wrap:wrap;row-gap:10px;
+    margin:0 -16px;padding:calc(13px + env(safe-area-inset-top)) 16px 12px;
+    background:linear-gradient(rgba(10,5,8,.88) 70%,rgba(10,5,8,0))}
+  .header-actions{display:contents}
+  .brand{order:0;flex:1;padding-left:46px}
+  .brand small{display:none}
+  .sound-wrap{order:1;margin-right:8px}
+  .menu{order:2;height:38px}
+  .nav{display:flex;order:3;flex-basis:100%;height:40px;justify-content:space-between}
+  .nav a{flex:1;text-align:center;padding:9px 6px}
+  .floating-logo.is-docked{left:16px;top:calc(14px + env(safe-area-inset-top))}
+  .floating-logo.is-settled{z-index:7}
+  .sound-panel{position:fixed;left:12px;right:12px;top:calc(118px + env(safe-area-inset-top));width:auto}
+  /* regions as a horizontal chip strip */
+  .experience[data-view] > .planet-list{display:flex;order:1;flex-direction:row;align-items:center;gap:8px;overflow-x:auto;overflow-y:hidden;
+    margin:2px -16px 14px;padding:6px 16px 8px;scroll-snap-type:x proximity;scrollbar-width:none;font-size:15px}
+  .planet-list::-webkit-scrollbar{display:none}
+  .experience[data-view] .planet-item,.experience[data-view] .planet-item:hover{transform:none!important;flex:none;scroll-snap-align:center;
+    min-height:36px;padding:0 15px;border:1px solid rgba(255,255,255,.35);border-radius:999px;background:rgba(20,8,14,.45);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:15px;color:#ffe3ec}
+  .experience[data-view] .planet-item.active{font-size:15px;background:#ff8fb1;border-color:#ff8fb1;color:#fff;gap:0}
+  .experience[data-view] .planet-item.active:before{display:none}
+  .experience[data-view] .planet-item:active{transform:scale(.94)!important}
+  /* map view */
+  .experience[data-view] > .map-wrap{order:2;width:min(100%,calc(72vh * 580 / 615));width:min(100%,calc(72dvh * 580 / 615));
+    height:auto;aspect-ratio:580/615;margin:0 auto}
+  .experience[data-view] > .map-info,.experience[data-view="map"] > .portal-wrap,.experience[data-view="region"] > .map-wrap{display:none}
+  .map-label{font-size:13px}
+  .map-label.small{font-size:10px}
+  /* region view */
+  .experience[data-view] > .guide{order:4;margin:0 0 16px;padding:12px 14px;border-radius:22px}
+  .guide-text{-webkit-line-clamp:3}
+  .experience[data-view] > .portal-wrap{order:5;width:min(300px,72vw);margin:0 auto}
+  .experience[data-view] > .planet-content{order:6;display:block;margin-top:22px;pointer-events:auto}
+  .experience[data-view] .planet-content h1{font-size:clamp(84px,27vw,150px);margin-bottom:14px;transform:none}
+  .experience[data-view="map"] .planet-content h1{font-size:clamp(56px,16vw,96px)}
+  .content-revealing h1,.experience[data-view="map"].content-revealing h1{animation-name:title-rise-map}
+  .experience[data-view] .planet-content dl{width:100%;font-size:14px}
+  .experience[data-view] .fact{grid-template-columns:96px 1fr;padding:7px 0}
+  .experience[data-view="map"] .fact:nth-child(n){display:grid}
+  .booth-pill{display:flex;height:40px;margin-top:14px}
+}
+/* phone in landscape: side-by-side photo booth */
+@media (max-height:560px) and (orientation:landscape){
+  .experience[data-view] > .header{flex-wrap:nowrap;padding-top:calc(10px + env(safe-area-inset-top));padding-bottom:10px}
+  .nav{order:1;flex-basis:auto;width:auto;margin-right:8px}
+  .nav a{flex:none;padding:9px 16px}
+  .sound-wrap{order:2}
+  .menu{order:3}
+  .floating-logo.is-docked{top:calc(13px + env(safe-area-inset-top))}
+  .sound-panel{top:calc(64px + env(safe-area-inset-top));left:auto;right:12px;width:260px}
+  .experience[data-view] > .map-wrap{width:min(100%,calc(80vh * 580 / 615));width:min(100%,calc(80dvh * 580 / 615))}
+  .booth-inner{grid-template-columns:auto minmax(240px,340px);justify-items:stretch;align-items:start;padding:12px 16px}
+  .booth-stage{height:calc(100vh - 24px);height:calc(100dvh - 24px);width:auto}
+  .booth-panel .eyebrow,.booth-panel h2,.booth-note{display:none}
+  .gallery-grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+}
 @media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}.portal{transform:none!important}.floating-logo .petals{animation:none}}
 </style>
 </head>
@@ -1219,10 +1285,17 @@ function playGuide() {
 guidePlay.addEventListener('click', () => guideEl.classList.contains('is-playing') ? stopGuide() : playGuide());
 guideText.addEventListener('click', () => guideEl.classList.toggle('is-open'));
 
+// compact layout: keep the active region chip in view
+function centerActiveChip() {
+  const a = listEl.querySelector('.active');
+  if (a) listEl.scrollTo({left: a.offsetLeft - listEl.clientWidth / 2 + a.offsetWidth / 2, behavior: 'smooth'});
+}
 // keeps the region list clear of the big title by scaling it down when space is short
 function fitList() {
   listEl.style.removeProperty('--fs');
-  if (getComputedStyle(listEl).display === 'none') return;
+  const cs = getComputedStyle(listEl);
+  if (cs.display === 'none') return;
+  if (cs.flexDirection === 'row') { centerActiveChip(); return; }
   const top = listEl.getBoundingClientRect().top;
   let limit = innerHeight - 16;
   // Hangul glyphs of the display font rise a little above the tight line box
@@ -1249,6 +1322,7 @@ function render() {
   updateHoverUI();
   setPortalUrl(portalTarget().photo.src);
   renderGuide();
+  if (window.scrollY) window.scrollTo(0, 0);
   document.title = isMap ? '벚꽃 축제 · 대한민국 벚꽃 지도' : `${r.full} 벚꽃 · 벚꽃 축제`;
 }
 
