@@ -502,7 +502,7 @@ button,a,.province,select,label{touch-action:manipulation;-webkit-tap-highlight-
 </style>
 </head>
 <body>
-<main class="experience" data-view="map" data-region="gyeongnam">
+<main class="experience" data-view="map" data-region="seoul">
   <div class="backgrounds" aria-hidden="true">
     <img id="bg-a" class="background is-visible" alt="" crossorigin="anonymous">
     <img id="bg-b" class="background" alt="" crossorigin="anonymous">
@@ -569,9 +569,9 @@ button,a,.province,select,label{touch-action:manipulation;-webkit-tap-highlight-
   <section class="portal-wrap chrome" aria-label="다음 목적지">
     <div class="portal-heading">
       <span id="next-label">다음:</span>
-      <span><span id="next-number">[16]</span> <strong id="next-name">경남</strong></span>
+      <span><span id="next-number">[01]</span> <strong id="next-name">서울</strong></span>
     </div>
-    <button class="portal" id="portal" type="button" aria-label="이동: 경남"></button>
+    <button class="portal" id="portal" type="button" aria-label="이동: 서울특별시"></button>
     <button class="booth-pill" type="button" id="booth-pill">✿ 벚꽃 포토부스</button>
   </section>
 
@@ -703,7 +703,7 @@ REGIONS.forEach((r, i) => { r.num = '[' + String(i + 1).padStart(2, '0') + ']'; 
 const byKey = Object.fromEntries(REGIONS.map(r => [r.key, r]));
 const LABEL_OFFSET = {seoul:[0,-2],incheon:[-14,8],gyeonggi:[18,-30],daejeon:[0,0],sejong:[-8,-8],chungnam:[-30,6],ulsan:[6,0],busan:[4,2],gwangju:[0,0],daegu:[0,0]};
 const SMALL = new Set(['seoul','incheon','daejeon','sejong','ulsan','busan','gwangju','daegu']);
-const FEATURED = 'gyeongnam';
+const FEATURED = 'seoul';
 const MAP_BG = PHOTOS.seoul[0].src;
 const INTRO_FACTS = [
   ['개화 순서:','제주 3월 하순 → 남부 3월 말 → 서울 4월 초 → 강원 산간 4월 중순.'],
